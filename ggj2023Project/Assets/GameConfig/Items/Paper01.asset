@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8e940997666ee4a96408cc1b1afffa, type: 3}
   m_Name: Paper01
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
-  <Description>k__BackingField: 
-  <Image>k__BackingField: {fileID: 0}
-  <Collectable>k__BackingField: 0
+  <Name>k__BackingField: Test Tittle
+  <Description>k__BackingField: This is a text description
+  <Image>k__BackingField: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  <Collectable>k__BackingField: 1

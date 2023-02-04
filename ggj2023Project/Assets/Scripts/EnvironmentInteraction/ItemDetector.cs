@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class ItemDetector : MonoBehaviour
 {
     [field: SerializeField] 
@@ -8,9 +9,13 @@ public class ItemDetector : MonoBehaviour
     [field: SerializeField] 
     public InfoTextConfiguration InfoTextConfig { get; private set; }
 
+    [field: SerializeField] 
+    public bool CanBeTriggered { get; private set; }
+    
     private bool _collected;
     private void OnTriggerEnter()
     {
+        CanBeTriggered = true;
         if (!_collected)
         {
             GameManager.Instance.Character.InTrigger(this);
@@ -23,6 +28,7 @@ public class ItemDetector : MonoBehaviour
     
     private void OnTriggerExit()
     {
+        CanBeTriggered = false;
         GameManager.Instance.Character.InTrigger(null);
     }
 
