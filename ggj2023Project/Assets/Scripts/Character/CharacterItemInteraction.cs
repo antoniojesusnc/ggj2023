@@ -8,6 +8,9 @@ namespace Character
 		[SerializeField]
 		private CharacterMovementConfiguration CharacterMovementConfiguration;
 
+		[SerializeField]
+		private Animator _animator;
+
 		private ItemDetector _itemToInteract;
 
 		private void Start() {

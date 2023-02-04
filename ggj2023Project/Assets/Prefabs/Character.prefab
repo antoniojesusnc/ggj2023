@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterMovementConfiguration: {fileID: 11400000, guid: 385564dc8b42b4147a63b8f5a0d672ec, type: 2}
+  _animator: {fileID: 843419344729775229}
 --- !u!54 &8862278537737128325
 Rigidbody:
   m_ObjectHideFlags: 0
