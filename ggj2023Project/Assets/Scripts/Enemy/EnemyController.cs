@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour
 
         while (_following)
         {
-            Vector3 direction = (character.transform.position - transform.position).normalized;
+            Vector3 direction = (GameManager.Instance.Character.HeadTransform.position - transform.position).normalized;
             transform.position += direction * (_enemyEncounterConfig.Speed * Time.deltaTime);
 
             if (CheckIfIsPlayerCaptured())
