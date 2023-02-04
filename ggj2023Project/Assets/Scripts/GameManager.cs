@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] public Transform _character;
-    
     [field: SerializeField, Range(0,1)]
     public bool IsShaking { get; private set; }
     
     [field: SerializeField, Range(0,1)]
     public float Intensity { get; private set; }
 
-    public Vector3 CharacterPosition => _character.transform.position;
+    [field: SerializeField]
+    public CharacterController Character { get; private set; }
 
     
     [field: SerializeField] public event Action<bool> OnShakeStatusChanged;

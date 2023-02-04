@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -38,7 +37,7 @@ public class CameraManager : MonoBehaviour
         _originalFov = _camera.fieldOfView;
         _originalRotation = _camera.transform.rotation;
 
-        _camera.transform.DOLookAt(GameManager.Instance.CharacterPosition, _cameraConfig.TimeToBeginShakeLookAt);
+        _camera.transform.DOLookAt(GameManager.Instance.Character.HeadTransform.position, _cameraConfig.TimeToBeginShakeLookAt);
         _camera.DOFieldOfView(_cameraConfig.InitialFov, _cameraConfig.TimeToBeginShakeLookAt)
                .onComplete += () => _isEnabled = true;
     }
@@ -65,6 +64,6 @@ public class CameraManager : MonoBehaviour
         var intensity = GameManager.Instance.Intensity;
 
         var evaluation = _cameraConfig.Curve.Evaluate(intensity);
-        _camera.fieldOfView = Mathf.Lerp(_originalFov, _cameraConfig.MaxFov, evaluation);
+        _camera.fieldOfView = Mathf.Lerp(_cameraConfig.InitialFov, _cameraConfig.MaxFov, evaluation);
     }
 }

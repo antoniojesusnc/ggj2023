@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &121356037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3617786671058802709, guid: 00a80ef84c93aeb4188cfd36d1566ba1, type: 3}
+  m_PrefabInstance: {fileID: 1656102985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d2bad7d26e3d34bb698012d9884c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &177718759
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,9 +468,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 1
-  _character: {fileID: 1583241441}
   <IsShaking>k__BackingField: 0
   <Intensity>k__BackingField: 0
+  <Character>k__BackingField: {fileID: 121356037}
 --- !u!4 &774903019
 Transform:
   m_ObjectHideFlags: 0
@@ -631,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6326759081331061740, guid: db637a8640c75b74890cea89a51509bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6326759081331061743, guid: db637a8640c75b74890cea89a51509bc, type: 3}
       propertyPath: m_RootOrder
@@ -1112,43 +1123,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581443000}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1583241436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7809768884605230542, guid: 00a80ef84c93aeb4188cfd36d1566ba1, type: 3}
-  m_PrefabInstance: {fileID: 1582612893232997259}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1583241439
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583241436}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!4 &1583241441 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5971334805064214020, guid: 00a80ef84c93aeb4188cfd36d1566ba1, type: 3}
-  m_PrefabInstance: {fileID: 1582612893232997259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1655572121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,7 +1154,7 @@ Transform:
   m_Father: {fileID: 947452809}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1582612893232997259
+--- !u!1001 &1656102985
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1194,7 +1168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5971334805064214020, guid: 00a80ef84c93aeb4188cfd36d1566ba1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.02
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 5971334805064214020, guid: 00a80ef84c93aeb4188cfd36d1566ba1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1239,10 +1213,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7809768884605230542, guid: 00a80ef84c93aeb4188cfd36d1566ba1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1583241439}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00a80ef84c93aeb4188cfd36d1566ba1, type: 3}
 --- !u!1001 &5068566325716469609
 PrefabInstance:
