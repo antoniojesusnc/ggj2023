@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1170e049c8f67649b41c01f5d9bb67c, type: 3}
-  m_Name: UIConfiguration
+  m_Script: {fileID: 11500000, guid: 4e34296eeb837654f9360fff7536618e, type: 3}
+  m_Name: InitialText
   m_EditorClassIdentifier: 
-  <GameOverFadeTime>k__BackingField: 1
-  <CharactersPerFrame>k__BackingField: 2
-  <DelayRemoveInfoText>k__BackingField: 1
+  <Text>k__BackingField: Text lore ipsum
+  <Repeatable>k__BackingField: 0
