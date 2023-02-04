@@ -46,6 +46,6 @@ public class UIInfoText : Singleton<UIInfoText>
             StopCoroutine(_coroutine);
         }
         _infoCanvas.gameObject.SetActive(true);
-        _slowText.SetText(text);
+        _slowText.SetText(text, true);
     }
 }

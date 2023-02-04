@@ -17,6 +17,6 @@ public class UIItemToShow : MonoBehaviour
     {
         _tittle.SetText(itemToInteract.Name);
         _image.sprite = itemToInteract.Image;
-        _slowText.SetText(itemToInteract.Description);
+        _slowText.SetText(itemToInteract.Description, false);
     }
 }

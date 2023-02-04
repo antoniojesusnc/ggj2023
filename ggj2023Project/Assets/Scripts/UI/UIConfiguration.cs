@@ -8,6 +8,9 @@ public class UIConfiguration : ScriptableObject
     public float GameOverFadeTime { get; private set; }
 
     [field: SerializeField]
+    public float CharactersPerSecondsInfo { get; private set; }
+    
+    [field: SerializeField]
     public float CharactersPerSeconds { get; private set; }
 
     [field: SerializeField]

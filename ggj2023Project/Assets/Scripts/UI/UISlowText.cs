@@ -16,20 +16,21 @@ public class UISlowText : MonoBehaviour
 
     public event Action OnFinishText;
     
-    public void SetText(string description)
+    public void SetText(string description, bool isInfo)
     {
-        StartCoroutine(AnimText(description));
+        StartCoroutine(AnimText(description, isInfo));
     }
 
-    private IEnumerator AnimText(string description)
+    private IEnumerator AnimText(string description, bool isInfo)
     {
         int index = 0;
         float characters = 0f;
         while (index < description.Length)
         {
             _text.SetText(description.Substring(0, index));
-            
-            characters += _uiConfig.CharactersPerSeconds * Time.deltaTime;
+
+            float characterPerSeconds = isInfo ? _uiConfig.CharactersPerSecondsInfo : _uiConfig.CharactersPerSeconds;
+            characters += characterPerSeconds * Time.deltaTime;
             index = Mathf.Clamp((int)characters, 0, description.Length+1);
             yield return 0;
         }
