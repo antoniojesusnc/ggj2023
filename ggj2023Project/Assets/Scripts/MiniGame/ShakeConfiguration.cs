@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using DG.Tweening;
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class ShakeConfiguration : ScriptableObject
@@ -29,8 +27,9 @@ public class ShakeConfigurationInfo
 
     [field: Header("Jumps"), SerializeField]
     public float JumpDistance { get; private set; }
-    
     [field: SerializeField]
     public float JumpTime { get; private set; }
+    [field: SerializeField]
+    public float JumpTimeToStartCheck { get; private set; }
 
 }

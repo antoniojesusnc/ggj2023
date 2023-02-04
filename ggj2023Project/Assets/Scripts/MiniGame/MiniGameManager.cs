@@ -3,17 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class MiniGameManager : MonoBehaviour
 {
-    [SerializeField] private ShakeConfiguration _shakeConfiguration;
-    [SerializeField] private MousePointConfiguration _mousePointConfiguration;
+    [FormerlySerializedAs("_shakeConfiguration")]
+    [Header("Config")]
+    [SerializeField] private ShakeConfiguration _shakeConfig;
+    [SerializeField] private MousePointConfiguration _mousePointConfig;
 
+    [Header("Shake Objects")]
     [SerializeField] private RectTransform _objetiveRectTransform;
     [SerializeField] private RectTransform _mousePoint;
 
-    private ShakeConfigurationInfo _shakeConfig;
+    private ShakeConfigurationInfo _currentShakeConfig;
     private bool _isEnabled;
     private bool _isShaking;
 
@@ -28,16 +32,18 @@ public class MiniGameManager : MonoBehaviour
     {
         _mousePoint.position = Input.mousePosition;
         
+        _currentShakeConfig = _shakeConfig.GetConfigForIntensity(GameManager.Instance.Intensity);
+        
+        
         if (Input.GetKeyDown(KeyCode.S))
         {
-            var jump = Random.insideUnitCircle * _shakeConfig.JumpDistance * 0.5f;
+            var jump = Random.insideUnitCircle * (_currentShakeConfig.JumpDistance * 0.5f);
             _objetiveRectTransform.DOLocalMoveX(
-                _shakeConfig.JumpDistance * 0.5f + jump.x, _shakeConfig.JumpTime);
+                _currentShakeConfig.JumpDistance * 0.5f + jump.x, _currentShakeConfig.JumpTime);
             _objetiveRectTransform.DOLocalMoveY(
-                _shakeConfig.JumpDistance * 0.5f + jump.y, _shakeConfig.JumpTime);
+                _currentShakeConfig.JumpDistance * 0.5f + jump.y, _currentShakeConfig.JumpTime);
         }
 
-        _shakeConfig = _shakeConfiguration.GetConfigForIntensity(GameManager.Instance.Intensity);
 
         if (!_isShaking)
         {
@@ -50,11 +56,11 @@ public class MiniGameManager : MonoBehaviour
     {
         _isShaking = true;
 
-        var shake = Random.value <= _shakeConfig.RandomBigShakeChance
-            ? _shakeConfig.Strength * _shakeConfig.RandomBigShakeStrengthFactor
-            : _shakeConfig.Strength;
+        var shake = Random.value <= _currentShakeConfig.RandomBigShakeChance
+            ? _currentShakeConfig.Strength * _currentShakeConfig.RandomBigShakeStrengthFactor
+            : _currentShakeConfig.Strength;
         
-        _objetiveRectTransform.DOShakePosition(_shakeConfig.Duration,
+        _objetiveRectTransform.DOShakePosition(_currentShakeConfig.Duration,
                                                shake,
                                                1,
                                                1,
@@ -70,11 +76,36 @@ public class MiniGameManager : MonoBehaviour
         if (distance <= 0.5f*_objetiveRectTransform.lossyScale.x*_objetiveRectTransform.sizeDelta.x 
             + 0.5f*_mousePoint.sizeDelta.x *_mousePoint.lossyScale.x)
         {
-            Debug.Log("Dentro");
+            IncreaseSize();
         }
         else
         {
-            Debug.Log("Fuera");
+            DecreaseSize();
+        }
+    }
+
+    private void IncreaseSize()
+    {
+        var currentSize = _mousePoint.sizeDelta.x;
+        if (currentSize >= _mousePointConfig.MaxSize)
+        {
+            _mousePoint.sizeDelta = Vector2.one * _mousePointConfig.MaxSize;
+            return;
+        }
+
+        currentSize += _mousePointConfig.IncreaseFactorPerSecond * Time.deltaTime;
+        _mousePoint.sizeDelta = Vector2.one * currentSize;
+    }
+
+    private void DecreaseSize()
+    {
+        var currentSize = _mousePoint.sizeDelta.x;
+        currentSize -= _mousePointConfig.DecreaseFactorPerSecond * Time.deltaTime;
+        _mousePoint.sizeDelta = Vector2.one * currentSize;
+        
+        if (currentSize < _mousePointConfig.MinSize)
+        {
+            GameManager.Instance.GameOver();
         }
     }
 
