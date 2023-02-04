@@ -47,7 +47,7 @@ public class GameManager : Singleton<GameManager>
         if (itemToInteract.ItemInfoConfig.Collectable)
         {
             ItemsCollected.Add(itemToInteract.ItemInfoConfig);
-            Destroy(itemToInteract.gameObject);
+            itemToInteract.Collect();
         }
     }
 }

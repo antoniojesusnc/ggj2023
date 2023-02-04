@@ -9,4 +9,7 @@ public class UIConfiguration : ScriptableObject
 
     [field: SerializeField]
     public int CharactersPerFrame { get; private set; }
+
+    [field: SerializeField]
+    public float DelayRemoveInfoText { get; private set; }
 }

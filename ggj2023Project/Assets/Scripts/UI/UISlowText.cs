@@ -13,6 +13,8 @@ public class UISlowText : MonoBehaviour
     private UIConfiguration _uiConfig;
 
     private Coroutine _coroutine;
+
+    public event Action OnFinishText;
     
     public void SetText(string description)
     {
@@ -29,6 +31,8 @@ public class UISlowText : MonoBehaviour
             index += _uiConfig.CharactersPerFrame;
             yield return 0;
         }
+        
+        OnFinishText?.Invoke();
     }
     
     private void OnDisable()
