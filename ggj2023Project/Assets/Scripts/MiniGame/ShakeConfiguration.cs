@@ -3,11 +3,23 @@ using UnityEngine;
 
 public class ShakeConfiguration : ScriptableObject
 {
+    [field: SerializeField]
+    public float FadeInTime { get; private set; }
+    [field: SerializeField]
+    public float FadeOutTime { get; private set; }
+    
     [SerializeField]
     private List<ShakeConfigurationInfo> _configurationInfos;
     public ShakeConfigurationInfo GetConfigForIntensity(float instanceIntensity)
     {
-        return _configurationInfos[0];
+        for (int i = 0; i < _configurationInfos.Count-1; i++)
+        {
+            if (_configurationInfos[i + 1].IntensityInitial > instanceIntensity)
+            {
+                return _configurationInfos[i];
+            }
+        }
+        return _configurationInfos[_configurationInfos.Count];
     }
 }
 

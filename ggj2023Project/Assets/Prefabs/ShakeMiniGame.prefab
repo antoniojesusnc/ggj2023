@@ -238,6 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakeConfig: {fileID: 11400000, guid: 02e61091c6035bf42bc5415ab5c6989b, type: 2}
   _mousePointConfig: {fileID: 11400000, guid: 248572156a0d5e546959786ec6cdc9c0, type: 2}
+  _canvasGroup: {fileID: 1851934978613723129}
   _objetiveRectTransform: {fileID: 5886333539317153680}
   _mousePoint: {fileID: 6955230475602589257}
 --- !u!1 &6326759082682610091
@@ -252,6 +253,7 @@ GameObject:
   - component: {fileID: 6326759082682610087}
   - component: {fileID: 6326759082682610084}
   - component: {fileID: 6326759082682610085}
+  - component: {fileID: 1851934978613723129}
   m_Layer: 0
   m_Name: TromboneCanvas
   m_TagString: Untagged
@@ -342,6 +344,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &1851934978613723129
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326759082682610091}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8502666395350054644
 GameObject:
   m_ObjectHideFlags: 0

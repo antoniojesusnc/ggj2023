@@ -42,6 +42,11 @@ namespace Character
 		private void OnRightReleased(InputAction.CallbackContext context) => _rightPressed = false;
 
 		void FixedUpdate() {
+			if (GameManager.Instance.IsShaking)
+			{
+				return;
+			}
+			
 			// Movement
 			if (_forwardPressed) {
 				gameObject.transform.position += gameObject.transform.forward * _movementSpeed * Time.deltaTime;

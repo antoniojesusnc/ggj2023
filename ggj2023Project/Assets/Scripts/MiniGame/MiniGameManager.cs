@@ -14,6 +14,7 @@ public class MiniGameManager : MonoBehaviour
     [SerializeField] private MousePointConfiguration _mousePointConfig;
 
     [Header("Shake Objects")]
+    [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private RectTransform _objetiveRectTransform;
     [SerializeField] private RectTransform _mousePoint;
 
@@ -23,13 +24,49 @@ public class MiniGameManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
+
+        _canvasGroup.alpha = 0;
+    }
+
+    private void OnShakeStatusChanged(bool shaking)
+    {
+        if (shaking && !_isEnabled)
+        {
+            BeginShaker();
+        }
+        else if(!shaking && _isEnabled)
+        {
+            StopShaker();
+        }
+    }
+
+
+    void BeginShaker()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.DOFade(1, _shakeConfig.FadeInTime);
+        
         _objetiveRectTransform.anchoredPosition = Vector2.zero;
 
         _isEnabled = true;
     }
+    
+    private void StopShaker()
+    {
+        _canvasGroup.alpha = 1;
+        _canvasGroup.DOFade(0, _shakeConfig.FadeInTime);
+        
+        _isEnabled = false;
+    }
 
     void Update()
     {
+        if (!_isEnabled)
+        {
+            return;
+        }
+        
         _mousePoint.position = Input.mousePosition;
         
         _currentShakeConfig = _shakeConfig.GetConfigForIntensity(GameManager.Instance.Intensity);
