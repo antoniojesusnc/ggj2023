@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,6 +23,12 @@ public class UIGameOver : MonoBehaviour
 
     public void OnClickInPlayAgainButton()
     {
-        SceneManager.LoadScene((int)GameScenes.LoadingScene);
+        _canvasGroup.DOFade(0, _uIConfig.GameOverFadeTime).onComplete += () => OnPlayAgain();
+    }
+
+    private void OnPlayAgain()
+    {
+        _canvasGroup.GetComponent<Canvas>().gameObject.SetActive(false);
+        GameManager.Instance.PlayAgain();
     }
 }

@@ -55,6 +55,11 @@ public class GameManager : Singleton<GameManager>
         IsShaking = false;
         OnShakeStatusChanged?.Invoke(false);
     }
+
+    public void PlayAgain()
+    {
+        IsGameOver = false;
+    }
     
     public void GameOver()
     {

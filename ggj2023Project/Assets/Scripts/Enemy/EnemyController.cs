@@ -88,6 +88,11 @@ public class EnemyController : MonoBehaviour
 
     private void LeavePlayer()
     {
+        if (GameManager.Instance.IsGameOver)
+        {
+            Destroy(gameObject);
+            return;
+        }
         var direction = Random.insideUnitCircle;
         transform.DOMove(new Vector3(direction.x, transform.position.y, direction.y),
                          _enemyEncounterConfig.LeavingTime);
