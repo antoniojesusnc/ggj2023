@@ -199,8 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1eaa19059eb82479e229f005ee6faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 1
-  _rotationSpeed: 90
+  CharacterMovementConfiguration: {fileID: 11400000, guid: 385564dc8b42b4147a63b8f5a0d672ec, type: 2}
 --- !u!54 &8862278537737128325
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,10 +6,7 @@ namespace Character
 	public class CharacterMovement : MonoBehaviour
 	{
 		[SerializeField]
-		private float _movementSpeed = 5f;
-
-		[SerializeField]
-		private float _rotationSpeed = 5f;
+		private CharacterMovementConfiguration CharacterMovementConfiguration;
 
 		private bool _forwardPressed = false;
 		private bool _backwardsPressed = false;
@@ -49,16 +46,16 @@ namespace Character
 			
 			// Movement
 			if (_forwardPressed) {
-				gameObject.transform.position += gameObject.transform.forward * _movementSpeed * Time.deltaTime;
+				gameObject.transform.position += gameObject.transform.forward * CharacterMovementConfiguration.MovementSpeed * Time.deltaTime;
 			} else if (_backwardsPressed) {
-				gameObject.transform.position += gameObject.transform.forward * -_movementSpeed * Time.deltaTime;
+				gameObject.transform.position += gameObject.transform.forward * -CharacterMovementConfiguration.MovementSpeed * Time.deltaTime;
 			}
 
 			// Rotation
 			if (_leftPressed) {
-				gameObject.transform.Rotate(0.0f, -_rotationSpeed * Time.deltaTime, 0.0f, Space.Self);
+				gameObject.transform.Rotate(0.0f, -CharacterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
 			} else if (_rightPressed) {
-				gameObject.transform.Rotate(0.0f, _rotationSpeed * Time.deltaTime, 0.0f, Space.Self);
+				gameObject.transform.Rotate(0.0f, CharacterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
 			}
 		}
 	}
