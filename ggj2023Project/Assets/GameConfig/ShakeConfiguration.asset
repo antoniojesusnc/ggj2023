@@ -18,16 +18,12 @@ MonoBehaviour:
   - <IntensityInitial>k__BackingField: 0
     <Duration>k__BackingField: 0.5
     <Strength>k__BackingField: 20
-    <RandomBigShakeChance>k__BackingField: 0
-    <RandomBigShakeStrengthFactor>k__BackingField: 5
+    <RandomJumpChance>k__BackingField: 10
     <JumpDistance>k__BackingField: 240.9
     <JumpTime>k__BackingField: 1
-    <JumpTimeToStartCheck>k__BackingField: 0
-  - <IntensityInitial>k__BackingField: 0.1
+  - <IntensityInitial>k__BackingField: 0.2
     <Duration>k__BackingField: 0.5
     <Strength>k__BackingField: 20
-    <RandomBigShakeChance>k__BackingField: 0
-    <RandomBigShakeStrengthFactor>k__BackingField: 5
+    <RandomJumpChance>k__BackingField: 30
     <JumpDistance>k__BackingField: 240.9
     <JumpTime>k__BackingField: 1
-    <JumpTimeToStartCheck>k__BackingField: 0

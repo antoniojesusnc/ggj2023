@@ -8,19 +8,20 @@ using Random = UnityEngine.Random;
 
 public class MiniGameManager : MonoBehaviour
 {
-    [FormerlySerializedAs("_shakeConfiguration")]
-    [Header("Config")]
-    [SerializeField] private ShakeConfiguration _shakeConfig;
+    [FormerlySerializedAs("_shakeConfiguration")] [Header("Config")] [SerializeField]
+    private ShakeConfiguration _shakeConfig;
+
     [SerializeField] private MousePointConfiguration _mousePointConfig;
 
-    [Header("Shake Objects")]
-    [SerializeField] private CanvasGroup _canvasGroup;
+    [Header("Shake Objects")] [SerializeField]
+    private CanvasGroup _canvasGroup;
+
     [SerializeField] private RectTransform _objetiveRectTransform;
     [SerializeField] private RectTransform _mousePoint;
 
     private ShakeConfigurationInfo _currentShakeConfig;
-    private bool _isEnabled;
     private bool _isShaking;
+    private bool _isJumping;
 
     void Start()
     {
@@ -31,11 +32,11 @@ public class MiniGameManager : MonoBehaviour
 
     private void OnShakeStatusChanged(bool shaking)
     {
-        if (shaking && !_isEnabled)
+        if (shaking)
         {
             BeginShaker();
         }
-        else if(!shaking && _isEnabled)
+        else if (!shaking)
         {
             StopShaker();
         }
@@ -46,59 +47,68 @@ public class MiniGameManager : MonoBehaviour
     {
         _canvasGroup.alpha = 0;
         _canvasGroup.DOFade(1, _shakeConfig.FadeInTime);
-        
-        _objetiveRectTransform.anchoredPosition = Vector2.zero;
 
-        _isEnabled = true;
+        _objetiveRectTransform.anchoredPosition = Vector2.zero;
     }
-    
+
     private void StopShaker()
     {
         _canvasGroup.alpha = 1;
         _canvasGroup.DOFade(0, _shakeConfig.FadeInTime);
-        
-        _isEnabled = false;
     }
 
     void Update()
     {
-        if (!_isEnabled)
+        if (!GameManager.Instance.IsShaking)
         {
             return;
         }
-        
+
         _mousePoint.position = Input.mousePosition;
-        
+
         _currentShakeConfig = _shakeConfig.GetConfigForIntensity(GameManager.Instance.Intensity);
-        
-        
+
+
         if (Input.GetKeyDown(KeyCode.S))
         {
-            var jump = Random.insideUnitCircle * (_currentShakeConfig.JumpDistance * 0.5f);
-            _objetiveRectTransform.DOLocalMoveX(
-                _currentShakeConfig.JumpDistance * 0.5f + jump.x, _currentShakeConfig.JumpTime);
-            _objetiveRectTransform.DOLocalMoveY(
-                _currentShakeConfig.JumpDistance * 0.5f + jump.y, _currentShakeConfig.JumpTime);
+            
         }
 
-
-        if (!_isShaking)
+        if (!_isShaking && !_isJumping)
         {
-            Shake();
+            CheckJump();
+            if (!_isJumping)
+            {
+                Shake();
+            }
         }
 
         CheckCollisions();
     }
+
+    private void CheckJump()
+    {
+        var shouldJump = Random.value <= _currentShakeConfig.RandomJumpChance;
+        if (!shouldJump)
+        {
+            return;
+        }
+
+        _isJumping = true;
+        var jump = Random.insideUnitCircle * (_currentShakeConfig.JumpDistance * 0.5f);
+        _objetiveRectTransform.DOLocalMoveX(
+            _currentShakeConfig.JumpDistance * 0.5f + jump.x, _currentShakeConfig.JumpTime);
+        _objetiveRectTransform.DOLocalMoveY(
+            _currentShakeConfig.JumpDistance * 0.5f + jump.y, _currentShakeConfig.JumpTime)
+                              .onComplete += () => _isJumping = false;
+    }
+
     private void Shake()
     {
         _isShaking = true;
-
-        var shake = Random.value <= _currentShakeConfig.RandomBigShakeChance
-            ? _currentShakeConfig.Strength * _currentShakeConfig.RandomBigShakeStrengthFactor
-            : _currentShakeConfig.Strength;
         
         _objetiveRectTransform.DOShakePosition(_currentShakeConfig.Duration,
-                                               shake,
+                                               _currentShakeConfig.Strength,
                                                1,
                                                1,
                                                true,
