@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: UIConfiguration
   m_EditorClassIdentifier: 
   <GameOverFadeTime>k__BackingField: 1
-  <CharactersPerFrame>k__BackingField: 2
+  <CharactersPerSeconds>k__BackingField: 10
   <DelayRemoveInfoText>k__BackingField: 1

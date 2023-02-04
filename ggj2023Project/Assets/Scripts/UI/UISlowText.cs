@@ -24,19 +24,26 @@ public class UISlowText : MonoBehaviour
     private IEnumerator AnimText(string description)
     {
         int index = 0;
+        float characters = 0f;
         while (index < description.Length)
         {
-            _text.SetText(description.Substring(index));
-
-            index += _uiConfig.CharactersPerFrame;
+            _text.SetText(description.Substring(0, index));
+            
+            characters += _uiConfig.CharactersPerSeconds * Time.deltaTime;
+            index = Mathf.Clamp((int)characters, 0, description.Length+1);
             yield return 0;
         }
+        
+        _text.SetText(description);
         
         OnFinishText?.Invoke();
     }
     
     private void OnDisable()
     {
-        StopCoroutine(_coroutine);
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
     }
 }

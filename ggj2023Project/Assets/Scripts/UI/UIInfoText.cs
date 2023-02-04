@@ -20,6 +20,7 @@ public class UIInfoText : Singleton<UIInfoText>
     void Start()
     {
         _slowText.OnFinishText += OnFinishText;
+        HideInfo();
     }
 
     private void OnFinishText()
@@ -40,7 +41,10 @@ public class UIInfoText : Singleton<UIInfoText>
 
     public void ShowText(string text)
     {
-        StopCoroutine(_coroutine);
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
         _infoCanvas.gameObject.SetActive(true);
         _slowText.SetText(text);
     }
