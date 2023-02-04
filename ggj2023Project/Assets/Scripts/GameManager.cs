@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,14 +22,35 @@ public class GameManager : Singleton<GameManager>
     [field: SerializeField] public event Action OnGameOver;
 
     [ContextMenu("BeginShaker")]
-    public void BeginShaker()
+    public void BeginShaker(EnemyEncounterConfiguration enemyEncounterConfiguration)
     {
         IsShaking = true;
         OnShakeStatusChanged?.Invoke(true);
+
+        StartCoroutine(IncreaseIntensityOverTime(enemyEncounterConfiguration));
     }
-    
+
+    private IEnumerator IncreaseIntensityOverTime(EnemyEncounterConfiguration enemyEncounterConfig)
+    {
+        float timeStamp = 0;
+        while (IsShaking)
+        {
+            timeStamp += Time.deltaTime;
+
+            Intensity = enemyEncounterConfig.IntensityOverTime.Evaluate(timeStamp / enemyEncounterConfig.EncounterDuration);
+
+            if (timeStamp > enemyEncounterConfig.EncounterDuration)
+            {
+                FinishShaker();
+            }
+            
+            yield return 0;
+        }
+    }
+
+
     [ContextMenu("FinishShaker")]
-    private void FinishShaker()
+    public void FinishShaker()
     {
         IsShaking = false;
         OnShakeStatusChanged?.Invoke(false);
