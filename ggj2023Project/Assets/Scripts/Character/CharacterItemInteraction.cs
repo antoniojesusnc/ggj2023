@@ -11,9 +11,17 @@ namespace Character
 		private ItemDetector _itemToInteract;
 
 		private void Start() {
-			CharacterItemInteractionInput characterInputs = new();
-			characterInputs.ItemInteract.Enable();
-			characterInputs.ItemInteract.Interact.performed += OnInteract;
+			SubscribeEvents();
+		}
+
+		/// <summary>
+		/// Subscribes to all required events.
+		/// </summary>
+		private void SubscribeEvents() {
+			CharacterInputs characterInputs = new();
+			characterInputs.Character.Enable();
+
+			characterInputs.Character.Interact.performed += OnInteract;
 		}
 
 		private void OnInteract(InputAction.CallbackContext context)

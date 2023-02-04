@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Character
 {
@@ -16,6 +15,7 @@ namespace Character
 		private bool _backwardsPressed = false;
 		private bool _leftPressed = false;
 		private bool _rightPressed = false;
+		private bool _runPressed = false;
 
 		private void Start() {
 			SubscribeEvents();
@@ -41,17 +41,23 @@ namespace Character
 			CharacterInputs characterInputs = new();
 			characterInputs.Character.Enable();
 
+			// Movement
 			characterInputs.Character.Forward.performed += (context) => _forwardPressed = true;
 			characterInputs.Character.Forward.canceled += (context) => _forwardPressed = false;
 
 			characterInputs.Character.Backwards.performed += (context) => _backwardsPressed = true;
 			characterInputs.Character.Backwards.canceled += (context) => _backwardsPressed = false;
 
+			// Rotation
 			characterInputs.Character.Left.performed += (context) => _leftPressed = true;
 			characterInputs.Character.Left.canceled += (context) => _leftPressed = false;
 
 			characterInputs.Character.Right.performed += (context) => _rightPressed = true;
 			characterInputs.Character.Right.canceled += (context) => _rightPressed = false;
+
+			// Run
+			characterInputs.Character.Run.performed += (context) => _runPressed = true;
+			characterInputs.Character.Run.canceled += (context) => _runPressed = false;
 		}
 
 		/// <summary>
@@ -59,11 +65,21 @@ namespace Character
 		/// </summary>
 		private void CheckMovement() {
 			if (_forwardPressed) {
-				gameObject.transform.position += gameObject.transform.forward * _characterMovementConfiguration.MovementSpeed * Time.deltaTime;
+				gameObject.transform.position += gameObject.transform.forward * (CurrentSpeed() * Time.deltaTime);
 			} else if (_backwardsPressed) {
-				gameObject.transform.position += gameObject.transform.forward * -_characterMovementConfiguration.MovementSpeed * Time.deltaTime;
+				gameObject.transform.position += gameObject.transform.forward * (-CurrentSpeed() * Time.deltaTime);
 			}
 		}
+
+		/// <summary>
+		/// Returns the current Character speed, taking into account if is walking or running.
+		/// </summary>
+		/// <returns>Movement speed.</returns>
+		private float CurrentSpeed() =>
+			_runPressed
+				? _characterMovementConfiguration.MovementSpeed * _characterMovementConfiguration.RunFactor
+				: _characterMovementConfiguration.MovementSpeed;
+
 
 		/// <summary>
 		/// Checks if any rotation key is pressed and assings the moement values to the object.
@@ -81,6 +97,7 @@ namespace Character
 		/// </summary>
 		private void SetAnimationValues() {
 			_animator.SetBool("isWalking", IsMoving());
+			_animator.SetBool("isRunning", IsRunning());
 			_animator.SetBool("isRotating", IsRotating());
 		}
 
@@ -90,6 +107,13 @@ namespace Character
 		/// <returns><see langword="true"/> if any movement key is pressed, <see langword="false"/> otherwise.</returns>
 		public bool IsMoving() =>
 			_forwardPressed || _backwardsPressed;
+
+		/// <summary>
+		/// Returns if the Character is moving and the run key is pressed or not.
+		/// </summary>
+		/// <returns><see langword="true"/> if any movement key is pressed, <see langword="false"/> otherwise.</returns>
+		public bool IsRunning() =>
+			IsMoving() && _runPressed;
 
 		/// <summary>
 		/// Returns whether any rotation key is pressed or not.
