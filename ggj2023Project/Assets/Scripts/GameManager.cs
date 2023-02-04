@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
 
     
     [field: SerializeField] public event Action<bool> OnShakeStatusChanged;
+    [field: SerializeField] public event Action OnGameOver;
 
     [ContextMenu("BeginShaker")]
     public void BeginShaker()
@@ -32,7 +33,6 @@ public class GameManager : Singleton<GameManager>
     public void GameOver()
     {
         FinishShaker();
-        Debug.Log("GAME OVER");
     }
 
 }

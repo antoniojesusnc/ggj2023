@@ -19,7 +19,7 @@ public class ShakeConfiguration : ScriptableObject
                 return _configurationInfos[i];
             }
         }
-        return _configurationInfos[_configurationInfos.Count];
+        return _configurationInfos[_configurationInfos.Count-1];
     }
 }
 
