@@ -8,6 +8,9 @@ public class UIInfoText : Singleton<UIInfoText>
 {
     [SerializeField]
     private UISlowText _slowText;
+
+    [SerializeField]
+    private Canvas _infoCanvas;
     
     [SerializeField]
     private UIConfiguration _uiConfig;
@@ -26,7 +29,7 @@ public class UIInfoText : Singleton<UIInfoText>
 
     private void HideInfo()
     {
-        _slowText.gameObject.SetActive(false);
+        _infoCanvas.gameObject.SetActive(false);
     }
 
     private IEnumerator DelayCall(float delayRemoveInfoText, Action delayedCall)
@@ -38,7 +41,7 @@ public class UIInfoText : Singleton<UIInfoText>
     public void ShowText(string text)
     {
         StopCoroutine(_coroutine);
-        _slowText.gameObject.SetActive(true);
+        _infoCanvas.gameObject.SetActive(true);
         _slowText.SetText(text);
     }
 }
