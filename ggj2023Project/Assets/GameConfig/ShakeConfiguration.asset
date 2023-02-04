@@ -18,7 +18,7 @@ MonoBehaviour:
   - <IntensityInitial>k__BackingField: 0
     <Duration>k__BackingField: 0.5
     <Strength>k__BackingField: 20
-    <RandomJumpChance>k__BackingField: 10
+    <RandomJumpChance>k__BackingField: 0.1
     <JumpDistance>k__BackingField: 240.9
     <JumpTime>k__BackingField: 1
   - <IntensityInitial>k__BackingField: 0.2

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MousePointConfiguration
   m_EditorClassIdentifier: 
   <MinSize>k__BackingField: 5
-  <DecreaseFactorPerSecond>k__BackingField: 20
+  <DecreaseFactorPerSecond>k__BackingField: 1
   <MaxSize>k__BackingField: 50
   <IncreaseFactorPerSecond>k__BackingField: 10

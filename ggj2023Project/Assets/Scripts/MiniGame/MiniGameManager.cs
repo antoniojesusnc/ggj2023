@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -22,6 +20,7 @@ public class MiniGameManager : MonoBehaviour
     private ShakeConfigurationInfo _currentShakeConfig;
     private bool _isShaking;
     private bool _isJumping;
+    private bool _isEnable;
 
     void Start()
     {
@@ -49,6 +48,8 @@ public class MiniGameManager : MonoBehaviour
         _canvasGroup.DOFade(1, _shakeConfig.FadeInTime);
 
         _objetiveRectTransform.anchoredPosition = Vector2.zero;
+        _mousePoint.GetComponent<CanvasGroup>().alpha = 0;
+        _isEnable = false;
     }
 
     private void StopShaker()
@@ -62,6 +63,19 @@ public class MiniGameManager : MonoBehaviour
         if (!GameManager.Instance.IsShaking)
         {
             return;
+        }
+
+        if (!_isEnable)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                Enable();
+            }
+            else
+            {
+                Disable();
+                return;
+            }
         }
 
         _mousePoint.position = Input.mousePosition;
@@ -84,6 +98,17 @@ public class MiniGameManager : MonoBehaviour
         }
 
         CheckCollisions();
+    }
+
+
+    private void Enable()
+    {
+        _isEnable = true;
+        _mousePoint.GetComponent<CanvasGroup>().alpha = 1;
+    }
+    private void Disable()
+    {
+        _isEnable = false;
     }
 
     private void CheckJump()

@@ -11,7 +11,7 @@ public class GameManager : Singleton<GameManager>
 
     
     [field: SerializeField]
-    public CharacterController Character { get; private set; }
+    public CharacterManager Character { get; private set; }
     
     public bool IsGameOver { get; private set; }
     
@@ -36,6 +36,7 @@ public class GameManager : Singleton<GameManager>
     {
         IsGameOver = true;
         FinishShaker();
+        OnGameOver?.Invoke();
     }
 
 }
