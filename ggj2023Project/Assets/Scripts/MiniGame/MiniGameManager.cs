@@ -109,27 +109,29 @@ public class MiniGameManager : MonoBehaviour
     {
         if (_leftMovement)
         {
-        _mousePoint.transform.position += 
-            Vector3.left * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+            _mousePoint.transform.position +=
+                Vector3.left * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
         }
+
         if (_rightMovement)
         {
-            _mousePoint.transform.position += 
+            _mousePoint.transform.position +=
                 Vector3.right * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
         }
-        
+
         if (_upMovement)
         {
-            _mousePoint.transform.position += 
+            _mousePoint.transform.position +=
                 Vector3.up * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
         }
+
         if (_downMovement)
         {
-            _mousePoint.transform.position += 
+            _mousePoint.transform.position +=
                 Vector3.down * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
         }
     }
-    
+
     private void CheckJump()
     {
         var shouldJump = Random.value <= _currentShakeConfig.RandomJumpChance;
