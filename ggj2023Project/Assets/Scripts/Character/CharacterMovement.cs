@@ -6,7 +6,10 @@ namespace Character
 	public class CharacterMovement : MonoBehaviour
 	{
 		[SerializeField]
-		private CharacterMovementConfiguration CharacterMovementConfiguration;
+		private CharacterMovementConfiguration _characterMovementConfiguration;
+		
+		[SerializeField]
+		private Animator _animator;
 
 		private bool _forwardPressed = false;
 		private bool _backwardsPressed = false;
@@ -36,20 +39,25 @@ namespace Character
 			{
 				return;
 			}
-			
+
+			_animator.SetBool("isWalking", IsMoving());
+
 			// Movement
 			if (_forwardPressed) {
-				gameObject.transform.position += gameObject.transform.forward * CharacterMovementConfiguration.MovementSpeed * Time.deltaTime;
+				gameObject.transform.position += gameObject.transform.forward * _characterMovementConfiguration.MovementSpeed * Time.deltaTime;
 			} else if (_backwardsPressed) {
-				gameObject.transform.position += gameObject.transform.forward * -CharacterMovementConfiguration.MovementSpeed * Time.deltaTime;
+				gameObject.transform.position += gameObject.transform.forward * -_characterMovementConfiguration.MovementSpeed * Time.deltaTime;
 			}
 
 			// Rotation
 			if (_leftPressed) {
-				gameObject.transform.Rotate(0.0f, -CharacterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
+				gameObject.transform.Rotate(0.0f, -_characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
 			} else if (_rightPressed) {
-				gameObject.transform.Rotate(0.0f, CharacterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
+				gameObject.transform.Rotate(0.0f, _characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
 			}
 		}
+
+		public bool IsMoving() =>
+			_forwardPressed || _backwardsPressed;
 	}
 }
