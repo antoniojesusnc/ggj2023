@@ -24,5 +24,4 @@ namespace Camera
 			cameraController.Enable(true);
 		}
 	}
-
 }
