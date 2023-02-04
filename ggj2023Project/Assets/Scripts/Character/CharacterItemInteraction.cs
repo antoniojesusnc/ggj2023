@@ -25,6 +25,8 @@ namespace Character
 			characterInputs.Character.Enable();
 
 			characterInputs.Character.Interact.performed += OnInteract;
+
+			PickingUp.OnPickedUp += OnPickedUp;
 		}
 
 		private void OnInteract(InputAction.CallbackContext context)
@@ -34,6 +36,11 @@ namespace Character
 				return;
 			}
 
+			// Start Picking up animation
+			_animator.SetBool("isPickingUp", true);
+		}
+
+		private void OnPickedUp() {
 			GameManager.Instance.OpenItem(_itemToInteract);
 		}
 
