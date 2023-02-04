@@ -1,7 +1,42 @@
+using System;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [field: SerializeField]
+    [field: SerializeField, Range(0,1)]
+    public bool IsShaking { get; private set; }
+    
+    [field: SerializeField, Range(0,1)]
     public float Intensity { get; private set; }
+
+    
+    [field: SerializeField]
+    public CharacterManager Character { get; private set; }
+    
+    public bool IsGameOver { get; private set; }
+    
+    [field: SerializeField] public event Action<bool> OnShakeStatusChanged;
+    [field: SerializeField] public event Action OnGameOver;
+
+    [ContextMenu("BeginShaker")]
+    public void BeginShaker()
+    {
+        IsShaking = true;
+        OnShakeStatusChanged?.Invoke(true);
+    }
+    
+    [ContextMenu("FinishShaker")]
+    private void FinishShaker()
+    {
+        IsShaking = false;
+        OnShakeStatusChanged?.Invoke(false);
+    }
+    
+    public void GameOver()
+    {
+        IsGameOver = true;
+        FinishShaker();
+        OnGameOver?.Invoke();
+    }
+
 }

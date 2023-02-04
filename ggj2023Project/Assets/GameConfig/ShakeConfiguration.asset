@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d94ce2a0018e5745a0af0db248de1ba, type: 3}
   m_Name: ShakeConfiguration
   m_EditorClassIdentifier: 
+  <FadeInTime>k__BackingField: 0.5
+  <FadeOutTime>k__BackingField: 0.5
   _configurationInfos:
   - <IntensityInitial>k__BackingField: 0
     <Duration>k__BackingField: 0.5
     <Strength>k__BackingField: 20
-    <RandomBigShakeChance>k__BackingField: 0
-    <RandomBigShakeStrengthFactor>k__BackingField: 5
+    <RandomJumpChance>k__BackingField: 0.1
     <JumpDistance>k__BackingField: 240.9
     <JumpTime>k__BackingField: 1
   - <IntensityInitial>k__BackingField: 0.2
     <Duration>k__BackingField: 0.5
     <Strength>k__BackingField: 20
-    <RandomBigShakeChance>k__BackingField: 0
-    <RandomBigShakeStrengthFactor>k__BackingField: 5
+    <RandomJumpChance>k__BackingField: 30
     <JumpDistance>k__BackingField: 240.9
     <JumpTime>k__BackingField: 1

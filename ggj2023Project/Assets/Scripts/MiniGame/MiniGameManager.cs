@@ -1,61 +1,139 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class MiniGameManager : MonoBehaviour
 {
-    [SerializeField] private ShakeConfiguration _shakeConfiguration;
-    [SerializeField] private MousePointConfiguration _mousePointConfiguration;
+    [FormerlySerializedAs("_shakeConfiguration")] [Header("Config")] [SerializeField]
+    private ShakeConfiguration _shakeConfig;
+
+    [SerializeField] private MousePointConfiguration _mousePointConfig;
+
+    [Header("Shake Objects")] [SerializeField]
+    private CanvasGroup _canvasGroup;
 
     [SerializeField] private RectTransform _objetiveRectTransform;
     [SerializeField] private RectTransform _mousePoint;
 
-    private ShakeConfigurationInfo _shakeConfig;
-    private bool _isEnabled;
+    private ShakeConfigurationInfo _currentShakeConfig;
     private bool _isShaking;
+    private bool _isJumping;
+    private bool _isEnable;
 
     void Start()
     {
-        _objetiveRectTransform.anchoredPosition = Vector2.zero;
+        GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
 
-        _isEnabled = true;
+        _canvasGroup.alpha = 0;
+    }
+
+    private void OnShakeStatusChanged(bool shaking)
+    {
+        if (shaking)
+        {
+            BeginShaker();
+        }
+        else if (!shaking)
+        {
+            StopShaker();
+        }
+    }
+
+
+    void BeginShaker()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.DOFade(1, _shakeConfig.FadeInTime);
+
+        _objetiveRectTransform.anchoredPosition = Vector2.zero;
+        _mousePoint.GetComponent<CanvasGroup>().alpha = 0;
+        _isEnable = false;
+    }
+
+    private void StopShaker()
+    {
+        _canvasGroup.alpha = 1;
+        _canvasGroup.DOFade(0, _shakeConfig.FadeInTime);
     }
 
     void Update()
     {
-        _mousePoint.position = Input.mousePosition;
-        
-        if (Input.GetKeyDown(KeyCode.S))
+        if (!GameManager.Instance.IsShaking)
         {
-            var jump = Random.insideUnitCircle * _shakeConfig.JumpDistance * 0.5f;
-            _objetiveRectTransform.DOLocalMoveX(
-                _shakeConfig.JumpDistance * 0.5f + jump.x, _shakeConfig.JumpTime);
-            _objetiveRectTransform.DOLocalMoveY(
-                _shakeConfig.JumpDistance * 0.5f + jump.y, _shakeConfig.JumpTime);
+            return;
         }
 
-        _shakeConfig = _shakeConfiguration.GetConfigForIntensity(GameManager.Instance.Intensity);
-
-        if (!_isShaking)
+        if (!_isEnable)
         {
-            Shake();
+            if (Input.GetMouseButton(0))
+            {
+                Enable();
+            }
+            else
+            {
+                Disable();
+                return;
+            }
+        }
+
+        _mousePoint.position = Input.mousePosition;
+
+        _currentShakeConfig = _shakeConfig.GetConfigForIntensity(GameManager.Instance.Intensity);
+
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            
+        }
+
+        if (!_isShaking && !_isJumping)
+        {
+            CheckJump();
+            if (!_isJumping)
+            {
+                Shake();
+            }
         }
 
         CheckCollisions();
     }
+
+
+    private void Enable()
+    {
+        _isEnable = true;
+        _mousePoint.GetComponent<CanvasGroup>().alpha = 1;
+    }
+    private void Disable()
+    {
+        _isEnable = false;
+    }
+
+    private void CheckJump()
+    {
+        var shouldJump = Random.value <= _currentShakeConfig.RandomJumpChance;
+        if (!shouldJump)
+        {
+            return;
+        }
+
+        _isJumping = true;
+        var jump = Random.insideUnitCircle * (_currentShakeConfig.JumpDistance * 0.5f);
+        _objetiveRectTransform.DOLocalMoveX(
+            _currentShakeConfig.JumpDistance * 0.5f + jump.x, _currentShakeConfig.JumpTime);
+        _objetiveRectTransform.DOLocalMoveY(
+            _currentShakeConfig.JumpDistance * 0.5f + jump.y, _currentShakeConfig.JumpTime)
+                              .onComplete += () => _isJumping = false;
+    }
+
     private void Shake()
     {
         _isShaking = true;
-
-        var shake = Random.value <= _shakeConfig.RandomBigShakeChance
-            ? _shakeConfig.Strength * _shakeConfig.RandomBigShakeStrengthFactor
-            : _shakeConfig.Strength;
         
-        _objetiveRectTransform.DOShakePosition(_shakeConfig.Duration,
-                                               shake,
+        _objetiveRectTransform.DOShakePosition(_currentShakeConfig.Duration,
+                                               _currentShakeConfig.Strength,
                                                1,
                                                1,
                                                true,
@@ -70,11 +148,36 @@ public class MiniGameManager : MonoBehaviour
         if (distance <= 0.5f*_objetiveRectTransform.lossyScale.x*_objetiveRectTransform.sizeDelta.x 
             + 0.5f*_mousePoint.sizeDelta.x *_mousePoint.lossyScale.x)
         {
-            Debug.Log("Dentro");
+            IncreaseSize();
         }
         else
         {
-            Debug.Log("Fuera");
+            DecreaseSize();
+        }
+    }
+
+    private void IncreaseSize()
+    {
+        var currentSize = _mousePoint.sizeDelta.x;
+        if (currentSize >= _mousePointConfig.MaxSize)
+        {
+            _mousePoint.sizeDelta = Vector2.one * _mousePointConfig.MaxSize;
+            return;
+        }
+
+        currentSize += _mousePointConfig.IncreaseFactorPerSecond * Time.deltaTime;
+        _mousePoint.sizeDelta = Vector2.one * currentSize;
+    }
+
+    private void DecreaseSize()
+    {
+        var currentSize = _mousePoint.sizeDelta.x;
+        currentSize -= _mousePointConfig.DecreaseFactorPerSecond * Time.deltaTime;
+        _mousePoint.sizeDelta = Vector2.one * currentSize;
+        
+        if (currentSize < _mousePointConfig.MinSize)
+        {
+            GameManager.Instance.GameOver();
         }
     }
 
