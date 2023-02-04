@@ -64,6 +64,24 @@ namespace Character
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""2933eab6-494f-4c82-b40e-5ce56d209636"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c15f58a-ecb8-4d9c-b4ff-4b230e1c77e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -154,6 +172,28 @@ namespace Character
                     ""action"": ""Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9719feba-1ce3-4f1c-9a5d-67bf838e974d"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc6303c9-59bd-41f5-b15e-fd31f68f37b9"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +206,8 @@ namespace Character
             m_Character_Backwards = m_Character.FindAction("Backwards", throwIfNotFound: true);
             m_Character_Left = m_Character.FindAction("Left", throwIfNotFound: true);
             m_Character_Right = m_Character.FindAction("Right", throwIfNotFound: true);
+            m_Character_Run = m_Character.FindAction("Run", throwIfNotFound: true);
+            m_Character_Interact = m_Character.FindAction("Interact", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -229,6 +271,8 @@ namespace Character
         private readonly InputAction m_Character_Backwards;
         private readonly InputAction m_Character_Left;
         private readonly InputAction m_Character_Right;
+        private readonly InputAction m_Character_Run;
+        private readonly InputAction m_Character_Interact;
         public struct CharacterActions
         {
             private @CharacterInputs m_Wrapper;
@@ -237,6 +281,8 @@ namespace Character
             public InputAction @Backwards => m_Wrapper.m_Character_Backwards;
             public InputAction @Left => m_Wrapper.m_Character_Left;
             public InputAction @Right => m_Wrapper.m_Character_Right;
+            public InputAction @Run => m_Wrapper.m_Character_Run;
+            public InputAction @Interact => m_Wrapper.m_Character_Interact;
             public InputActionMap Get() { return m_Wrapper.m_Character; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -258,6 +304,12 @@ namespace Character
                     @Right.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRight;
                     @Right.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRight;
                     @Right.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRight;
+                    @Run.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRun;
+                    @Run.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRun;
+                    @Run.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnRun;
+                    @Interact.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteract;
+                    @Interact.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteract;
+                    @Interact.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteract;
                 }
                 m_Wrapper.m_CharacterActionsCallbackInterface = instance;
                 if (instance != null)
@@ -274,6 +326,12 @@ namespace Character
                     @Right.started += instance.OnRight;
                     @Right.performed += instance.OnRight;
                     @Right.canceled += instance.OnRight;
+                    @Run.started += instance.OnRun;
+                    @Run.performed += instance.OnRun;
+                    @Run.canceled += instance.OnRun;
+                    @Interact.started += instance.OnInteract;
+                    @Interact.performed += instance.OnInteract;
+                    @Interact.canceled += instance.OnInteract;
                 }
             }
         }
@@ -284,6 +342,8 @@ namespace Character
             void OnBackwards(InputAction.CallbackContext context);
             void OnLeft(InputAction.CallbackContext context);
             void OnRight(InputAction.CallbackContext context);
+            void OnRun(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
         }
     }
 }

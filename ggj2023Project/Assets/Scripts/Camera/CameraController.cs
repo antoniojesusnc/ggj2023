@@ -32,7 +32,7 @@ namespace Camera
 		}
 
 		public void Enable(bool enable) {
-			_camera.enabled = enable;
+			gameObject.SetActive(enable);
 		}
 
 		private void BeginShaker() {
