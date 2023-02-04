@@ -14,10 +14,12 @@ public class UIGameOver : MonoBehaviour
     {
         GameManager.Instance.OnGameOver += OnGameOver;
         _canvasGroup.alpha = 0;
+        _canvasGroup.GetComponent<Canvas>().gameObject.SetActive(false);
     }
 
     private void OnGameOver()
     {
+        _canvasGroup.GetComponent<Canvas>().gameObject.SetActive(true);
         _canvasGroup.DOFade(1, _uIConfig.GameOverFadeTime);
     }
 

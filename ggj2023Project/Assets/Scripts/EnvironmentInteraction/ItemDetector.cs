@@ -11,12 +11,12 @@ public class ItemDetector : MonoBehaviour
 
     [field: SerializeField] 
     public bool CanBeTriggered { get; private set; }
+    public bool IsCollected { get; private set; }
     
-    private bool _collected;
     private void OnTriggerEnter()
     {
         CanBeTriggered = true;
-        if (!_collected)
+        if (!IsCollected)
         {
             GameManager.Instance.Character.InTrigger(this);
         }
@@ -34,6 +34,6 @@ public class ItemDetector : MonoBehaviour
 
     public void Collect()
     {
-        _collected = true;
+        IsCollected = true;
     }
 }

@@ -66,7 +66,7 @@ public class GameManager : Singleton<GameManager>
     public void OpenItem(ItemDetector itemToInteract)
     {
         UIDiary.Instance.OpenItem(itemToInteract.ItemInfoConfig);
-        if (itemToInteract.ItemInfoConfig.Collectable)
+        if (itemToInteract.ItemInfoConfig.Collectable && !itemToInteract.IsCollected)
         {
             ItemsCollected.Add(itemToInteract.ItemInfoConfig);
             itemToInteract.Collect();
