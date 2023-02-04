@@ -1118,6 +1118,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5068566327357903528, guid: 9c25d13f81e677545ae09be6078f7dbb, type: 3}
   m_PrefabInstance: {fileID: 2346617457947129437}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8615591032839513996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2954248928228568623, guid: 9c25d13f81e677545ae09be6078f7dbb, type: 3}
+  m_PrefabInstance: {fileID: 2346617457947129437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d43dc090463bb241af03883346cf59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5794916217544427666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1133,7 +1144,7 @@ PrefabInstance:
     - target: {fileID: 5751053033120435759, guid: e308a49ef02ea2d4daa0c5159e0b13bc, type: 3}
       propertyPath: _roomCameraController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8615591032839513996}
     - target: {fileID: 6066034037934178803, guid: e308a49ef02ea2d4daa0c5159e0b13bc, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1211,7 +1222,7 @@ PrefabInstance:
     - target: {fileID: 5751053033120435759, guid: e308a49ef02ea2d4daa0c5159e0b13bc, type: 3}
       propertyPath: _roomCameraController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8615591032839513996}
     - target: {fileID: 6066034037934178803, guid: e308a49ef02ea2d4daa0c5159e0b13bc, type: 3}
       propertyPath: m_RootOrder
       value: -1
