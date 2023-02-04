@@ -16,7 +16,7 @@ namespace Character
 		private void Start() {
 			CharacterInputs characterInputs = new();
 			characterInputs.Character.Enable();
-			characterInputs.Character.Forward.performed += OnForwardPressed;
+			characterInputs.Character.Forward.performed += (context) => _forwardPressed = true;
 			characterInputs.Character.Forward.canceled += OnForwardReleased;
 			characterInputs.Character.Backwards.performed += OnBackwardsPressed;
 			characterInputs.Character.Backwards.canceled += OnBackwardsReleased;
