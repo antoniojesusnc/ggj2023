@@ -16,29 +16,22 @@ namespace Character
 		private void Start() {
 			CharacterInputs characterInputs = new();
 			characterInputs.Character.Enable();
+
 			characterInputs.Character.Forward.performed += (context) => _forwardPressed = true;
-			characterInputs.Character.Forward.canceled += OnForwardReleased;
-			characterInputs.Character.Backwards.performed += OnBackwardsPressed;
-			characterInputs.Character.Backwards.canceled += OnBackwardsReleased;
-			characterInputs.Character.Left.performed += OnLeftPressed;
-			characterInputs.Character.Left.canceled += OnLeftReleased;
-			characterInputs.Character.Right.performed += OnRightPressed;
-			characterInputs.Character.Right.canceled += OnRightReleased;
+			characterInputs.Character.Forward.canceled += (context) => _forwardPressed = false;
+			
+			characterInputs.Character.Backwards.performed += (context) => _backwardsPressed = true;
+			characterInputs.Character.Backwards.canceled += (context) => _backwardsPressed = false;
+			
+			characterInputs.Character.Left.performed += (context) => _leftPressed = true;
+			characterInputs.Character.Left.canceled += (context) => _leftPressed = false;
+			
+			characterInputs.Character.Right.performed += (context) => _rightPressed = true;
+			characterInputs.Character.Right.canceled += (context) => _rightPressed = false;
 		}
 
-		private void OnForwardPressed(InputAction.CallbackContext context) => _forwardPressed = true;
-		private void OnForwardReleased(InputAction.CallbackContext context) => _forwardPressed = false;
-
-		private void OnBackwardsPressed(InputAction.CallbackContext context) => _backwardsPressed = true;
-		private void OnBackwardsReleased(InputAction.CallbackContext context) => _backwardsPressed = false;
-
-		private void OnLeftPressed(InputAction.CallbackContext context) => _leftPressed = true;
-		private void OnLeftReleased(InputAction.CallbackContext context) => _leftPressed = false;
-
-		private void OnRightPressed(InputAction.CallbackContext context) => _rightPressed = true;
-		private void OnRightReleased(InputAction.CallbackContext context) => _rightPressed = false;
-
-		void FixedUpdate() {
+		void Update() {
+			// Do not allow to move the Character while the mini-game is active
 			if (GameManager.Instance.IsShaking)
 			{
 				return;
