@@ -2,6 +2,7 @@ using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class MiniGameManager : MonoBehaviour
@@ -20,13 +21,33 @@ public class MiniGameManager : MonoBehaviour
     private ShakeConfigurationInfo _currentShakeConfig;
     private bool _isShaking;
     private bool _isJumping;
-    private bool _isEnable;
+
+    private bool _leftMovement;
+    private bool _rightMovement;
+    private bool _upMovement;
+    private bool _downMovement;
 
     void Start()
     {
         GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
 
         _canvasGroup.alpha = 0;
+
+        SubscribeToInput();
+    }
+
+    private void SubscribeToInput()
+    {
+        MiniGameInputs miniGameInputs = new();
+        miniGameInputs.MiniGame.Left.performed += (context) =>  _leftMovement = true;
+        miniGameInputs.MiniGame.Left.canceled += (context) =>  _leftMovement = false;
+        miniGameInputs.MiniGame.Right.performed += (context) =>  _rightMovement = true;
+        miniGameInputs.MiniGame.Right.canceled += (context) =>  _rightMovement = false;
+        miniGameInputs.MiniGame.Up.performed += (context) =>  _upMovement = true;
+        miniGameInputs.MiniGame.Up.canceled += (context) =>  _upMovement = false;
+        miniGameInputs.MiniGame.Down.performed += (context) =>  _downMovement = true;
+        miniGameInputs.MiniGame.Down.canceled += (context) =>  _downMovement = false;
+        miniGameInputs.Enable();
     }
 
     private void OnShakeStatusChanged(bool shaking)
@@ -40,16 +61,14 @@ public class MiniGameManager : MonoBehaviour
             StopShaker();
         }
     }
-
-
+    
     void BeginShaker()
     {
         _canvasGroup.alpha = 0;
         _canvasGroup.DOFade(1, _shakeConfig.FadeInTime);
 
         _objetiveRectTransform.anchoredPosition = Vector2.zero;
-        _mousePoint.GetComponent<CanvasGroup>().alpha = 0;
-        _isEnable = false;
+        _mousePoint.anchoredPosition = Vector2.zero;
     }
 
     private void StopShaker()
@@ -65,28 +84,16 @@ public class MiniGameManager : MonoBehaviour
             return;
         }
 
-        if (!_isEnable)
-        {
-            if (Input.GetMouseButton(0))
-            {
-                Enable();
-            }
-            else
-            {
-                Disable();
-                return;
-            }
-        }
+        MoveMouseInput();
 
-        _mousePoint.position = Input.mousePosition;
+        UpdateShakeOrMovement();
 
+        CheckCollisions();
+    }
+
+    private void UpdateShakeOrMovement()
+    {
         _currentShakeConfig = _shakeConfig.GetConfigForIntensity(GameManager.Instance.Intensity);
-
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            
-        }
 
         if (!_isShaking && !_isJumping)
         {
@@ -96,21 +103,33 @@ public class MiniGameManager : MonoBehaviour
                 Shake();
             }
         }
-
-        CheckCollisions();
     }
 
-
-    private void Enable()
+    private void MoveMouseInput()
     {
-        _isEnable = true;
-        _mousePoint.GetComponent<CanvasGroup>().alpha = 1;
+        if (_leftMovement)
+        {
+        _mousePoint.transform.position += 
+            Vector3.left * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+        }
+        if (_rightMovement)
+        {
+            _mousePoint.transform.position += 
+                Vector3.right * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+        }
+        
+        if (_upMovement)
+        {
+            _mousePoint.transform.position += 
+                Vector3.up * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+        }
+        if (_downMovement)
+        {
+            _mousePoint.transform.position += 
+                Vector3.down * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+        }
     }
-    private void Disable()
-    {
-        _isEnable = false;
-    }
-
+    
     private void CheckJump()
     {
         var shouldJump = Random.value <= _currentShakeConfig.RandomJumpChance;
