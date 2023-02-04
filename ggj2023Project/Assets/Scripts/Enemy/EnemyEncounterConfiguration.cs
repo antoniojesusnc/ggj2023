@@ -13,7 +13,7 @@ public class EnemyEncounterConfiguration : ScriptableObject
     public float FadeTime { get; private set; }
     
     [field: SerializeField]
-    public float Distance { get; private set; }
+    public float DetectDistance { get; private set; }
 
     [field: SerializeField]
     public float Speed { get; private set; }

@@ -49,7 +49,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemInfoConfig>k__BackingField: {fileID: 11400000, guid: 76526be6d187d464094259d4f078ce0f, type: 2}
   <InfoTextConfig>k__BackingField: {fileID: 11400000, guid: 3b25fc61a114ee54588f4a3e39a756d9, type: 2}
+  <CanBeTriggered>k__BackingField: 0
 --- !u!1 &8364163716060887099
 GameObject:
   m_ObjectHideFlags: 0

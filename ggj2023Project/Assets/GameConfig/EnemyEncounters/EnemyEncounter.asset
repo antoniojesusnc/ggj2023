@@ -15,10 +15,10 @@ MonoBehaviour:
   <Image>k__BackingField: {fileID: 21300000, guid: 50a0832a530f6bc49beacbba91a3e21e, type: 3}
   <ApproximationTime>k__BackingField: 5
   <FadeTime>k__BackingField: 2
-  <Distance>k__BackingField: 4
-  <Speed>k__BackingField: 3
+  <DetectDistance>k__BackingField: 2
+  <Speed>k__BackingField: 1
   <EncounterDuration>k__BackingField: 5
-  <LeavingEncounterDuration>k__BackingField: 2
+  <LeavingEncounterDuration>k__BackingField: 0.5
   <IntensityOverTime>k__BackingField:
     serializedVersion: 2
     m_Curve:
@@ -52,4 +52,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <LeavingTime>k__BackingField: 2
+  <LeavingTime>k__BackingField: 1

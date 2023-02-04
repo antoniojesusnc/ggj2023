@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     public void SetEncounter(EnemyEncounterConfiguration enemyEncounterConfig)
     {
         _enemyEncounterConfig = enemyEncounterConfig;
-
+        _image.sprite = enemyEncounterConfig.Image;
         StartFade();
         StartFollow();
     }
@@ -41,8 +41,9 @@ public class EnemyController : MonoBehaviour
     private IEnumerator StartCountDownFollowCo()
     {
         yield return new WaitForSeconds(_enemyEncounterConfig.ApproximationTime);
+        EndHuntLeavePlayer(_enemyEncounterConfig.LeavingEncounterDuration);
     }
-
+    
     private IEnumerator FollowPlayerCo()
     {
         var character = GameManager.Instance.Character;
@@ -65,7 +66,8 @@ public class EnemyController : MonoBehaviour
     {
         var character = GameManager.Instance.Character;
 
-        return Vector3.Distance(character.transform.position, transform.position) < _enemyEncounterConfig.Distance;
+        Debug.Log($"Distance: {Vector3.Distance(character.transform.position, transform.position)}, detectDistacne: {_enemyEncounterConfig.DetectDistance*0.5f}");
+        return Vector3.Distance(character.transform.position, transform.position) < _enemyEncounterConfig.DetectDistance*0.5f;
     }
 
     private void StartShaking()
@@ -89,14 +91,19 @@ public class EnemyController : MonoBehaviour
         var direction = Random.insideUnitCircle;
         transform.DOMove(new Vector3(direction.x, transform.position.y, direction.y),
                          _enemyEncounterConfig.LeavingTime);
-        _image.DOFade( 0, _enemyEncounterConfig.LeavingTime);
+        EndHuntLeavePlayer(_enemyEncounterConfig.LeavingTime);
+    }
+    
+    private void EndHuntLeavePlayer(float leaveTime)
+    {
+        _image.DOFade( 0, leaveTime).onComplete += () => Destroy(gameObject);
     }
 
     private void OnDrawGizmos()
     {
         if (_enemyEncounterConfig != null)
         {
-            Gizmos.DrawSphere(transform.position, _enemyEncounterConfig.Distance);
+            Gizmos.DrawSphere(transform.position, _enemyEncounterConfig.DetectDistance-0.5f);
         }
     }
 }

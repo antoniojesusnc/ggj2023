@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 1
-  _enemyControllerPrefab: {fileID: 0}
+  _enemyControllerPrefab: {fileID: 3123999495013517280, guid: 7520e457632977249be794bb295876e7, type: 3}
