@@ -29,9 +29,9 @@ namespace Character
 			SetAnimationValues();
 
 			// Check movement inputs
-			CheckMovement();
+			DoMovement();
 			// Check rotation inputs
-			CheckRotation();
+			DoRotation();
 		}
 
 		/// <summary>
@@ -63,11 +63,22 @@ namespace Character
 		/// <summary>
 		/// Checks if any movement key is pressed and assings the moement values to the object.
 		/// </summary>
-		private void CheckMovement() {
+		private void DoMovement() {
 			if (_forwardPressed) {
 				gameObject.transform.position += gameObject.transform.forward * (CurrentSpeed() * Time.deltaTime);
 			} else if (_backwardsPressed) {
 				gameObject.transform.position += gameObject.transform.forward * (-CurrentSpeed() * Time.deltaTime);
+			}
+		}
+
+		/// <summary>
+		/// Checks if any rotation key is pressed and assings the moement values to the object.
+		/// </summary>
+		private void DoRotation() {
+			if (IsRotatingLeft()) {
+				gameObject.transform.Rotate(0.0f, -_characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
+			} else if (IsRotatingRight()) {
+				gameObject.transform.Rotate(0.0f, _characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
 			}
 		}
 
@@ -80,25 +91,14 @@ namespace Character
 				? _characterMovementConfiguration.MovementSpeed * _characterMovementConfiguration.RunFactor
 				: _characterMovementConfiguration.MovementSpeed;
 
-
-		/// <summary>
-		/// Checks if any rotation key is pressed and assings the moement values to the object.
-		/// </summary>
-		private void CheckRotation() {
-			if (_leftPressed) {
-				gameObject.transform.Rotate(0.0f, -_characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
-			} else if (_rightPressed) {
-				gameObject.transform.Rotate(0.0f, _characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
-			}
-		}
-
 		/// <summary>
 		/// Sets all the movement-related animator properties.
 		/// </summary>
 		private void SetAnimationValues() {
 			_animator.SetBool("isWalking", IsMoving());
 			_animator.SetBool("isRunning", IsRunning());
-			_animator.SetBool("isRotating", IsRotating());
+			_animator.SetBool("isRotatingLeft", !IsMoving() && IsRotatingLeft());
+			_animator.SetBool("isRotatingRight", !IsMoving() && IsRotatingRight());
 		}
 
 		/// <summary>
@@ -109,11 +109,31 @@ namespace Character
 			_forwardPressed || _backwardsPressed;
 
 		/// <summary>
-		/// Returns if the Character is moving and the run key is pressed or not.
+		/// Calculates if the Character is moving and the run key is pressed or not.
 		/// </summary>
 		/// <returns><see langword="true"/> if any movement key is pressed, <see langword="false"/> otherwise.</returns>
 		public bool IsRunning() =>
 			IsMoving() && _runPressed;
+
+		/// <summary>
+		/// Calculates if the Character is rotating left or not.
+		/// </summary>
+		/// <remarks>
+		/// Left rotation has priority over right rotation.
+		/// </remarks>
+		/// <returns><see langword="true"/> if any rotation key is pressed, <see langword="false"/> otherwise.</returns>
+		public bool IsRotatingLeft() =>
+			_leftPressed;
+
+		/// <summary>
+		/// Calculates if the Character is rotating left or not.
+		/// </summary>
+		/// <remarks>
+		/// Left rotation has priority over right rotation.
+		/// </remarks>
+		/// <returns><see langword="true"/> if any rotation key is pressed, <see langword="false"/> otherwise.</returns>
+		public bool IsRotatingRight() =>
+			!IsRotatingLeft() && _rightPressed;
 
 		/// <summary>
 		/// Returns whether any rotation key is pressed or not.
