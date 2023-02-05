@@ -9,9 +9,19 @@ public class Door : MonoBehaviour
         
     [SerializeField]
     private float _lastRotation;
+    
+    [SerializeField]
+    private Transform _door;
 
+    private void OnTriggerEnter()
+    {
+        if (ItemManager.Instance.HasKey)
+        {
+            OpenDoor();
+        }
+    }
     public void OpenDoor()
     {
-        transform.DORotate(Vector3.up*_lastRotation, _uiConfig.OpenDoorDelay);
+        _door.DORotate(Vector3.up*_lastRotation, _uiConfig.OpenDoorDelay);
     } 
 }
