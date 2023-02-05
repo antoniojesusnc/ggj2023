@@ -27,6 +27,8 @@ public class MiniGameManager : MonoBehaviour
     private bool _upMovement;
     private bool _downMovement;
 
+    float _originalSize;
+    
     void Start()
     {
         GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
@@ -34,6 +36,8 @@ public class MiniGameManager : MonoBehaviour
         _canvasGroup.alpha = 0;
 
         SubscribeToInput();
+
+        _originalSize = _mousePoint.sizeDelta.x;
     }
 
     private void SubscribeToInput()
@@ -64,6 +68,7 @@ public class MiniGameManager : MonoBehaviour
     
     void BeginShaker()
     {
+        _mousePoint.sizeDelta = Vector2.one * _originalSize;
         _canvasGroup.alpha = 0;
         _canvasGroup.DOFade(1, _shakeConfig.FadeInTime);
 
@@ -75,6 +80,8 @@ public class MiniGameManager : MonoBehaviour
     {
         _canvasGroup.alpha = 1;
         _canvasGroup.DOFade(0, _shakeConfig.FadeInTime);
+
+        _mousePoint.sizeDelta = Vector2.one * _originalSize;
     }
 
     void Update()
