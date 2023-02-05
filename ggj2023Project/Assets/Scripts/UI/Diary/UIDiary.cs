@@ -25,6 +25,8 @@ public class UIDiary : Singleton<UIDiary>
             item.SetData(itemsCollected[i]);
         }
         
+        
+        
         _canvas.gameObject.SetActive(true);
         _itemToShow.gameObject.SetActive(false);
         
@@ -57,6 +59,11 @@ public class UIDiary : Singleton<UIDiary>
         if (IsOpened && Input.GetKeyDown(KeyCode.Space))
         {
             Close();
+        }
+        
+        if (!IsOpened && Input.GetKeyDown(KeyCode.I))
+        {
+            OpenInventory();
         }
     }
 }
