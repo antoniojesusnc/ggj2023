@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6816856597950590868
+--- !u!1001 &731043678414098364
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -52,9 +52,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e74235ecd0325c14ba7da63fa111d306, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d156993681c4a8c47973e2d3e38e06a8, type: 2}
     - target: {fileID: 919132149155446097, guid: e74235ecd0325c14ba7da63fa111d306, type: 3}
       propertyPath: m_Name
-      value: Chimenea
+      value: Chimenea Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
