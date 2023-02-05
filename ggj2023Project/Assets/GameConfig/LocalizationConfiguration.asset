@@ -19,24 +19,46 @@ MonoBehaviour:
       <Tittle>k__BackingField: 
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "\"27 de Noviembre, 1999  Eve Dwight visita la hacienda
-        que ha heredado.  Al parecer lleva abandonada 100 a\xF1os, y tu tatarabuelo
-        dio instrucciones precisas de que solo la heredase su tataranieto. En fin...
-        cosas de se\xF1oros victorianos, tendr\xE1 que conformarse con que lo herede
-        una tataranieta.\""
-      <Description>k__BackingField: "\"27 de Noviembre, 1999  Eve Dwight visita la
-        hacienda que ha heredado.  Al parecer lleva abandonada 100 a\xF1os, y tu
-        tatarabuelo dio instrucciones precisas de que solo la heredase su tataranieto.
-        En fin... cosas de se\xF1oros victorianos, tendr\xE1 que conformarse con
-        que lo herede una tataranieta.\""
+      <Tittle>k__BackingField: "\"27 de Noviembre, 1999  Eva Dwight ha llegado a
+        la hacienda que ha heredado. \"\"\xA1No me lo puedo creer!\"\" pensaba, en
+        la suerte que hab\xEDa tenido.  Al parecer la mansi\xF3n lleva abandonada
+        100 a\xF1os, y mi propio tatarabuelo dio instrucciones precisas de que solo
+        la heredase su tataranieto. En fin... \"\"cosas de se\xF1oros victorianos,
+        tendr\xE1 que conformarse con que lo herede una tataranieta\"\" piensa Eva
+        de forma optimista. Detr\xE1s de si, la puerta de la mansi\xF3n se cierra.\""
+      <Description>k__BackingField: "\"27 de Noviembre, 1999  Eva Dwight ha llegado
+        a la hacienda que ha heredado. \"\"\xA1No me lo puedo creer!\"\" pensaba,
+        en la suerte que hab\xEDa tenido.  Al parecer la mansi\xF3n lleva abandonada
+        100 a\xF1os, y mi propio tatarabuelo dio instrucciones precisas de que solo
+        la heredase su tataranieto. En fin... \"\"cosas de se\xF1oros victorianos,
+        tendr\xE1 que conformarse con que lo herede una tataranieta\"\" piensa Eva
+        de forma optimista. Detr\xE1s de si, la puerta de la mansi\xF3n se cierra.\""
   - <LocalizationTypes>k__BackingField: 1
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
       <Tittle>k__BackingField: 
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 
+      <Tittle>k__BackingField: "\"Eva agarras con decisi\xF3n la botella con ambas
+        manos, y lo lanza al suelo quebrandola contra las raices.  Un humo verde
+        comienza a ascender desde los restos de la botella introduci\xE9ndose por
+        la boca, nariz y ojos de Eva, ahog\xE1ndole todo grito.  La chica cae colapsada
+        al suelo. Tras unos minutos se levanta recuperada. Se mira los brazos y revisa
+        su cuerpo con la mirada.  Albert Sickert: \"\"Oh vaya, al parecer de la linea
+        familiar solo quedaba una tataranieta. Tendr\xE1 que valer...  Siglo XXI,
+        llego a tiempo de verte nacer...\"\"  Eva Sickert asciende por las escaleras
+        del s\xF3tano con paso vacilante, pero silbando una alegre aunque anticuada
+        melod\xEDa.  FIN\""
+      <Description>k__BackingField: "\"Eva agarras con decisi\xF3n la botella con
+        ambas manos, y lo lanza al suelo quebrandola contra las raices.  Un humo
+        verde comienza a ascender desde los restos de la botella introduci\xE9ndose
+        por la boca, nariz y ojos de Eva, ahog\xE1ndole todo grito.  La chica cae
+        colapsada al suelo. Tras unos minutos se levanta recuperada. Se mira los
+        brazos y revisa su cuerpo con la mirada.  Albert Sickert: \"\"Oh vaya, al
+        parecer de la linea familiar solo quedaba una tataranieta. Tendr\xE1 que
+        valer...  Siglo XXI, llego a tiempo de verte nacer...\"\"  Eva Sickert asciende
+        por las escaleras del s\xF3tano con paso vacilante, pero silbando una alegre
+        aunque anticuada melod\xEDa.  FIN\""
   - <LocalizationTypes>k__BackingField: 2
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
@@ -85,9 +107,24 @@ MonoBehaviour:
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: "\xBF?\xBF?"
-      <Description>k__BackingField: "\"YA VEREMOS, DESCUBRIMIENTO DEL ARBOL RAIZ 
-        El \xE1rbol tiene un receso natural en forma de altar. Es increible, \xA1Es
-        el lugar perfecto que estaba buscando para la cuna!\""
+      <Description>k__BackingField: "\"(fecha ininteligible)  La correspondencia
+        con Sir W.W.Gull no puede ser de lo m\xE1s fascinante. Si tan solo el correo
+        fuese m\xE1s r\xE1pido en este maldito pa\xEDs... Me ha aceptado como su
+        disc\xEDpulo, y juntos nos estamos adentrando en la Ciencia de las Sales
+        del Alma. A Mary Anne no le gusta el Sir. Gull, dice que tiene un aire extra\xF1o,
+        y que no le gusta como mira al resto del mundo, como si fu\xE9semos recipientes
+        para su propio uso. \xA1Bah, qu\xE9 sabr\xE1 ella!, si incluso ha sido tan
+        amable de estar dispuesto a financiar las remodelaciones en la mansi\xF3n
+        Dwight para la construcci\xF3n de un laboratorio.  La ampliaci\xF3n del ala
+        este no acababa ni de empezar cuando un trabajador se ha hundido en el suelo
+        y se ha precipitado hacia su muerte. El descubrimiento ha sido fascinante:
+        Hab\xEDa una c\xE1mara subterr\xE1nea que linda con la mansi\xF3n Dwight,
+        justo debajo del ese gran \xE1rbol en direcci\xF3n a los pantanos. Es como
+        si las raices del este sujetasen la tierra mundo para luego volver a crecer
+        de forma invertida, debajo del suelo, como si el mism\xEDsimo Atlas hubiese
+        elegido este lugar para sujetar el mundo.  Este \"\"\xE1rbol subterr\xE1neo\"\"
+        tiene un receso natural en forma de altar. Es increible, \xA1Es el lugar
+        perfecto que estaba buscando para la cuna!\""
   - <LocalizationTypes>k__BackingField: 5
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
@@ -95,8 +132,24 @@ MonoBehaviour:
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: "P\xE1gina 3"
-      <Description>k__BackingField: "\"viernes, 3 de marzo de 1854   La correspondencia
-        con W.W.Gull no puede ser de lo m\xE1s fascinante.\""
+      <Description>k__BackingField: "\"(fecha ininteligible)  La correspondencia
+        con Sir W.W.Gull no puede ser de lo m\xE1s fascinante. Si tan solo el correo
+        fuese m\xE1s r\xE1pido en este maldito pa\xEDs... Me ha aceptado como su
+        disc\xEDpulo, y juntos nos estamos adentrando en la Ciencia de las Sales
+        del Alma. A Mary Anne no le gusta el Sir. Gull, dice que tiene un aire extra\xF1o,
+        y que no le gusta como mira al resto del mundo, como si fu\xE9semos recipientes
+        para su propio uso. \xA1Bah, qu\xE9 sabr\xE1 ella!, si incluso ha sido tan
+        amable de estar dispuesto a financiar las remodelaciones en la mansi\xF3n
+        Dwight para la construcci\xF3n de un laboratorio.  La ampliaci\xF3n del ala
+        este no acababa ni de empezar cuando un trabajador se ha hundido en el suelo
+        y se ha precipitado hacia su muerte. El descubrimiento ha sido fascinante:
+        Hab\xEDa una c\xE1mara subterr\xE1nea que linda con la mansi\xF3n Dwight,
+        justo debajo del ese gran \xE1rbol en direcci\xF3n a los pantanos. Es como
+        si las raices del este sujetasen la tierra mundo para luego volver a crecer
+        de forma invertida, debajo del suelo, como si el mism\xEDsimo Atlas hubiese
+        elegido este lugar para sujetar el mundo.  Este \"\"\xE1rbol subterr\xE1neo\"\"
+        tiene un receso natural en forma de altar. Es increible, \xA1Es el lugar
+        perfecto que estaba buscando para la cuna!\""
   - <LocalizationTypes>k__BackingField: 6
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
@@ -104,15 +157,16 @@ MonoBehaviour:
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: "P\xE1gina 4"
-      <Description>k__BackingField: "\"jueves, 31 de agosto de 1854  Estoy listo
+      <Description>k__BackingField: "\"Jueves, 31 de agosto de 1854  Estoy listo
         para iniciar el primer paso de mi gran obra maestra. Me he asegurado que
         la calidad de las sales sea de la m\xE1xima pureza posible. He revisado las
         f\xF3rmulas con W.W.Gull decenas de veces. Son perfectas. Tan solo falta
         un elemento esencial, que afortunadamente, ambos poseemos: un recipiente
         de nuestra propia sangre: A pesar de la mala fortuna que he tenido no puedo
         sentirme m\xE1s bendecido de haberme procurado una familia y descendencia.
-        \xA1Ja! Si el avaro de Dwight pudiera verme ahora MUAHA! Bah, no entender\xEDa
-        la magnitud de lo que estoy apunto de iniciar aqu\xED. \xA1ILUSO!\""
+        \xA1Ja! Si el avaro de Dwight pudiera verme ahora MWUAHAHA! Bah, no entender\xEDa
+        la magnitud de lo que estoy apunto de iniciar aqu\xED. \xA1VIEJO ILUSO! \xA1Te
+        sobrevivir\xE9 a t\xED y os sobrevivir\xE9 a todos!\""
   - <LocalizationTypes>k__BackingField: 7
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
@@ -142,8 +196,26 @@ MonoBehaviour:
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: "P\xE1gina 6"
-      <Description>k__BackingField: "\"viernes, 9 de noviembre de 1888  \xC9xito
-        del experimento\""
+      <Description>k__BackingField: "\"Viernes, 9 de noviembre de 1888  Tras el abandono
+        de Mary Anne, durante un tiempo estuve muy perdido. Vagu\xE9 por los pasillos
+        de la mansi\xF3n vac\xEDa de calor humano,vociferando grandes gritos, ahogado
+        en la bebida y con visiones de fantasmas que no estaban ah\xED.  W.W.Gull
+        me rescat\xF3, pero no porque me tuviese en alta estima, a\xFAn me necesitaba
+        para sus propios planes... as\xED mismo me lo dijo, y mir\xE1ndo dentro de
+        mi alma, destap\xF3 todo mi patetismo para apiadarse de m\xED. Me permitir\xEDa
+        hacer este viaje con \xE9l. Ese mismo d\xEDa hemos realizado la transposici\xF3n
+        del alma en las botellas. El proceso no pudo ser m\xE1s agotador, tras el
+        cual permanecimos en cama durante m\xE1s de tres d\xEDas.  Las botellas son
+        preciosas, pod\xEDa estar horas mirando su resplandor y calidez. En cambio
+        la botella de Gull me produc\xEDa una repulsi\xF3n inexplicable, y dejaba
+        en mi una sensaci\xF3n de fr\xEDo aterrador.  A partir de ah\xED Gull y yo
+        nos embarcamos en un viaje de placer, poder y las experiencias m\xE1s extremas
+        que eramos capaz de experimentar, para testar los l\xEDmites de nuestro reci\xE9n
+        adquirido poder.  Tras a\xF1os de investigaciones y experimentos, hemos logrado
+        otra importante etapa. Pero a\xFAn falta el \xFAltimo proceso.  Eso s\xED,
+        las sales son sensibles al calor extremo, un fuego intenso arruinar\xEDa
+        su esencia y dar\xEDa con el traste todos nuestros esfuerzos. Es por esto
+        que \"\"la cuna\"\" ha resultado el lugar ideal para completar el proceso.\""
   - <LocalizationTypes>k__BackingField: 9
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
@@ -155,22 +227,23 @@ MonoBehaviour:
         descendencia.  Si has llegado hasta aqu\xED es que eres digno heredero de
         tu nombre. No importa que, aunque mi querid\xEDsima Anne me repudiase conservado
         su apellido de soltera, debes saber que en lo m\xE1s profundo de tu alma
-        llevas la semilla de tu verdadero ancestro. Te escribo a trav\xE9s de los
-        siglos.  Tras lograr dominar la ciencia de las sales del alma anduve con
-        las peores de las compa\xF1\xEDas, en las peores posibles de las aventuras,
-        pensando que hab\xEDa esquivado la condenaci\xF3n de mi alma, pero esta que
-        me ha llevado hasta aqu\xED es m\xE1s opaca de lo que esperaba y no solo
-        me ha condenado, \xA1sino que la corrupci\xF3n de mi cuerpo finalmente ha
-        sido inevitable, y de hecho es inminente! El fin est\xE1 cerca y temo haber
-        condenado mi alma mortal por toda la eternidad.  Me arrepiento profundamente
-        de la vida que he llevado. Me arrepiento profundamente de haber alejado a
-        mi querida Mary Anne y mi peque\xF1a Anni de mi. No espero comprensi\xF3n,
+        llevas la semilla de tu verdadero ancestro. Te escribo a trav\xE9s del tiempo. 
+        Tras lograr dominar la ciencia de las sales del alma anduve con las peores
+        de las compa\xF1\xEDas, en las peores posibles de las aventuras, pensando
+        que hab\xEDa esquivado la condenaci\xF3n de mi alma, pero en el proceso,
+        esta se ha tornado m\xE1s opaca de lo que esperaba y no solo me ha condenado,
+        \xA1sino que la corrupci\xF3n de mi cuerpo finalmente ha sido inevitable,
+        y de hecho es inminente! El fin est\xE1 cerca y aunque la botella me ata
+        aqu\xED, temo haber condenado mi alma mortal por toda la eternidad.  Me arrepiento
+        profundamente de la vida que he llevado. Me arrepiento profundamente de haber
+        alejado de mi a mis queridas Mary Anne y la peque\xF1a Anni. No espero comprensi\xF3n,
         o redenci\xF3n, se que no son posibles, pero no puedo pasar toda la eternidad
         sin volver a ver a mi familia.  Es por esto que necesito tu ayuda. De las
-        dos jarras selladas que ves ante ti, una de ellas debe a\xFAn brillar con
+        dos botellas selladas que ves ante ti, una de ellas debe a\xFAn brillar con
         el fulgor de las sales. La f\xF3rmula ha estado preparada para compensar
-        los pecados de mi alma durante estos 100 a\xF1os.  \xA1Ven a mi! Tu querido
-        tatarabuelo...  Fdo. Albert Sickert\""
+        los pecados de mi alma durante estos 100 a\xF1os. \xA1R\xF3mpela para liberarme
+        y que pueda descansar!  \xA1Ven a mi! Tu querido tatarabuelo...  Fdo. Albert
+        Sickert\""
   - <LocalizationTypes>k__BackingField: 10
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
