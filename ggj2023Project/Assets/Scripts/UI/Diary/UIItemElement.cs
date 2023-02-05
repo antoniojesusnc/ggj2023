@@ -18,7 +18,7 @@ public class UIItemElement : MonoBehaviour
     public void SetData(ItemInfoConfiguration itemConfig)
     {
         ItemConfig = itemConfig;
-        _text.SetText(ItemConfig.Name);
+        _text.SetText(LocalizationManager.Instance.GetTittleText(ItemConfig.Name));
         _image.sprite = ItemConfig.Image;
     }
 }
