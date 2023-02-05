@@ -49,7 +49,11 @@ public class UIDiary : Singleton<UIDiary>
     {
         _itemToShow.gameObject.SetActive(false);
         _canvas.gameObject.SetActive(false);
-        IsOpened = false;
+        // Remove all the elements in the inventory
+		foreach (UIItemElement item in _fullInventory.gameObject.GetComponentsInChildren<UIItemElement>()) {
+            Destroy(item.gameObject);
+        }
+		IsOpened = false;
     }
 
     void Update()
