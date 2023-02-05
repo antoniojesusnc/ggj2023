@@ -42,6 +42,10 @@ namespace Character
 
 		private void OnPickedUp() {
 			GameManager.Instance.OpenItem(_itemToInteract);
+			_itemToInteract = null;
+			
+			GameManager.Instance.Character.InTrigger(null);
+			UITriggerInput.Instance.ShowSpace(false);
 		}
 
 		public void SetTrigger(ItemDetector itemDetector)

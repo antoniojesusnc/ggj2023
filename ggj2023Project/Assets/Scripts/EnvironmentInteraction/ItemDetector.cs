@@ -1,3 +1,4 @@
+using EnvironmentInteraction;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
@@ -27,6 +28,15 @@ public class ItemDetector : MonoBehaviour
             {
                 UIInfoText.Instance.ShowText(LocalizationManager.Instance.GetText(InfoTextConfig.Text));
             }
+        }
+    }
+
+    void Update()
+    {
+        if (IsCollected)
+        {
+            GetComponentInChildren<Beam>().gameObject.SetActive(false);
+            enabled = false;
         }
     }
     
