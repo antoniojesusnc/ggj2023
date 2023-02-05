@@ -15,4 +15,7 @@ public class UIConfiguration : ScriptableObject
 
     [field: SerializeField]
     public float DelayRemoveInfoText { get; private set; }
+    
+    [field: Header("Furnitures"), SerializeField]
+    public float OpenDoorDelay { get; private set; }
 }

@@ -16,3 +16,4 @@ MonoBehaviour:
   <CharactersPerSecondsInfo>k__BackingField: 20
   <CharactersPerSeconds>k__BackingField: 10
   <DelayRemoveInfoText>k__BackingField: 1
+  <OpenDoorDelay>k__BackingField: 2
