@@ -25,4 +25,5 @@ public enum LocalizationTypes
 	MenuPlay,
 	MenuCredits,
 	MenuExit,
+	Llave,
 }
