@@ -1,21 +1,22 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Camera
 {
 	public class CameraManager : Singleton<CameraManager>
 	{
-		[SerializeField]
-		private CameraController _activeCamera;
+		[field: SerializeField]
+		public CameraController ActiveCamera { get; set; }
 
 		private void Start() {
-			_activeCamera.Enable(true);
+			ActiveCamera.Enable(true);
 
 			GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
 		}
 
 		private void OnShakeStatusChanged(bool shaking)
 		{
-			_activeCamera.GetComponent<AudioListener>().enabled = !shaking;
+			ActiveCamera.GetComponent<AudioListener>().enabled = !shaking;
 		}
 
 		/// <summary>
@@ -24,9 +25,9 @@ namespace Camera
 		/// <param name="cameraController">Camera controller managing the camera to be enabled.</param>
 		public void SetCamera(CameraController cameraController) {
 			// Disable the current active camera
-			_activeCamera.Enable(false);
+			ActiveCamera.Enable(false);
 			// Set the received camera as currently active
-			_activeCamera = cameraController;
+			ActiveCamera = cameraController;
 			// Enable the new active camera
 			cameraController.Enable(true);
 		}

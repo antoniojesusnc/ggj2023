@@ -79,7 +79,7 @@ public class GameManager : Singleton<GameManager>
 
     public void OpenItem(ItemDetector itemToInteract)
     {
-        var nextItem = ItemManager.Instance.GetNextDiary();
+        var nextItem = ItemManager.Instance.GetNextDiary(itemToInteract);
         UIDiary.Instance.OpenItem(nextItem);
         ItemsCollected.Add(nextItem);
         itemToInteract.Collect();

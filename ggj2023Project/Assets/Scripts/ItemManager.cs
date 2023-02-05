@@ -16,8 +16,9 @@ public class ItemManager : Singleton<ItemManager>
         _index = 0;
     }
 
-    public ItemInfoConfiguration GetNextDiary()
+    public ItemInfoConfiguration GetNextDiary(ItemDetector itemToInteract)
     {
+        return itemToInteract.ItemInfoConfig;
         if (_index < _itemInfoConfig.Count)
         {
             return _itemInfoConfig[_index++];
