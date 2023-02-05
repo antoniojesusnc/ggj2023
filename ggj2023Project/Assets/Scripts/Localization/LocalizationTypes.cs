@@ -21,4 +21,5 @@ public enum LocalizationTypes
     escalera_colapsada,
     puerta_cerrada,
     fuente,
+    None,
 }

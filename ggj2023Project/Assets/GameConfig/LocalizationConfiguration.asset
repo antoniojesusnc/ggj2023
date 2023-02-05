@@ -44,8 +44,16 @@ MonoBehaviour:
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: "P\xE1gina 1"
-      <Description>k__BackingField: '" lunes, 1 de noviembre de 1852 LLEGADA DE ALBER
-        SICKER A LA MANSION DWIGHT"'
+      <Description>k__BackingField: "\"Lunes, 1 de noviembre de 1852  \xA1Al fin
+        aqu\xED! Hemos llegado a la mansi\xF3n Dwight despu\xE9s de un viaje agotador
+        desde Londres, mi esposa, Mary Anne Sickert, y mi hija, la peque\xF1a Anni
+        Ariadne.  El recibimiento por parte del patriarca Dwight no ha podido se
+        m\xE1s fr\xEDo. Nunca ha confiado en mi, y no ha sido sino tras mucha insistencia
+        de Mary Anne y su madre que el gran patriarca se ha rebajado a legarme la
+        finca familiar, mientras ellos se retiran a su residencia de verano (mucho
+        m\xE1s grande y lujosa) de forma permanente.  Tengo grandes planes para la
+        finca, le demostrar\xE9 al viejo avaro que puedo manejar las cosas mejor
+        que \xE9l.  \xA1Por fin la buena fortuna me sonr\xEDe!\""
   - <LocalizationTypes>k__BackingField: 3
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
@@ -53,8 +61,23 @@ MonoBehaviour:
       <Description>k__BackingField: 
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: "P\xE1gina 2"
-      <Description>k__BackingField: '"domingo, 23 de octubre de 1853 MEN OF GOOD
-        FORTUNE"'
+      <Description>k__BackingField: "\"Domingo, 23 de octubre de 1853  Estamos en
+        la ruina. \xA1No ha pasado ni un a\xF1o sin que toda la administraci\xF3n
+        de la finca Dwight se haya ido al traste!  A veces me pregunto si no habr\xE1
+        sido una herencia envenenada por parte del patriarca Dwight. Nunca le he
+        gustado a ese viejo avaro. El maldito viejo Dwight no paraba de decirme que
+        no se puede ganar dinero de forma tan r\xE1pida, que hab\xEDa que esperar
+        y progresar poco a poco. Estaba ah\xED esperando a verme fracasar...  Pero
+        no, no tengo a nadie m\xE1s que culpar excepto a mi mismo. Realic\xE9 una
+        serie de malas decisiones de negocio, que no han prosperado como pensaba.
+        Tampoco ha sido barata nuestra presentaci\xF3n en sociedad, una serie de
+        fiestas y bailes car\xEDsimos. Todos esos viejos ricachones vinieron, se
+        comieron mi comida, se bebieron mi bebida, para luego decirme con aire de
+        grandeza el por qu\xE9 no pod\xEDan apoyar mi negocio. \xA1Gorrones!  Al
+        menos algo bueno he sacado de todo ello. He entrado en contacto con la Sociedad
+        por la Ciencia Cristiana, un interesante grupo de practicantes del mesmerismo.
+        Me interesa sobremanera pero con lo poco que da la hacienda solo nos queda
+        para malvivir de la misma manera que malviv\xEDamos en Londres.\""
   - <LocalizationTypes>k__BackingField: 4
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
