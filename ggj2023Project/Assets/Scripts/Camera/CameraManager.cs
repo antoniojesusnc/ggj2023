@@ -9,6 +9,13 @@ namespace Camera
 
 		private void Start() {
 			_activeCamera.Enable(true);
+
+			GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
+		}
+
+		private void OnShakeStatusChanged(bool shaking)
+		{
+			_activeCamera.GetComponent<AudioListener>().enabled = !shaking;
 		}
 
 		/// <summary>

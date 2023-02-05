@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b764a36e8bc6a9d42bad558cc9cb4130, type: 3}
-  m_Name: MousePointConfiguration
+  m_Script: {fileID: 11500000, guid: c89df75db20567342ae34f79204378cb, type: 3}
+  m_Name: AudiodConfiguration
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 1
-  <MinSize>k__BackingField: 5
-  <DecreaseFactorPerSecond>k__BackingField: 20
-  <MaxSize>k__BackingField: 50
-  <IncreaseFactorPerSecond>k__BackingField: 10
