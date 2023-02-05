@@ -4,22 +4,34 @@ using UnityEngine.SceneManagement;
 
 public class UICreditsMenu : MonoBehaviour
 {
-    /*[SerializeField]
-    private TextMeshProUGUI _playButton;
+    [SerializeField]
+    private TextMeshProUGUI _role2dArtist;
 
 	[SerializeField]
-    private TextMeshProUGUI _creditsButton;
+    private TextMeshProUGUI _role3dArtist;
 
 	[SerializeField]
-    private TextMeshProUGUI _exitButton;*/
+    private TextMeshProUGUI _roleProgramming;
+
+	[SerializeField]
+    private TextMeshProUGUI _roleMusic;
+
+	[SerializeField]
+    private TextMeshProUGUI _roleGameDesign;
+
+	[SerializeField]
+	private TextMeshProUGUI _closeButton;
 
 	[SerializeField]
     private Canvas _canvasMainMenu;
 
 	private void Start () {
-		/*_playButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuPlay);
-		_creditsButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuCredits);
-		_exitButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuExit);*/
+		_role2dArtist.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRole2dArtist);
+		_role3dArtist.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRole3dArtist);
+		_roleProgramming.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRoleProgramming);
+		_roleMusic.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRoleMusic);
+		_roleGameDesign.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRoleGameDesign);
+		_closeButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuClose);
 	}
 
 	private void Update() {
