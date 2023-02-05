@@ -7,7 +7,8 @@ public class InfoTextDetector : MonoBehaviour
     public InfoTextConfiguration InfoTextConfig { get; private set; } 
     private void OnTriggerEnter()
     {
-        UIInfoText.Instance.ShowText(InfoTextConfig.Text);
+        string text = LocalizationManager.Instance.GetText(InfoTextConfig.Text);
+        UIInfoText.Instance.ShowText(text);
     }
     
    

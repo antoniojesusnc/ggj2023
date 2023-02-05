@@ -7,10 +7,16 @@ public class LocalizationConfiguration : ScriptableObject
     [SerializeField]
     private List<LocalizationConfigurationInfo> _localizationConfig;
 
-    public string GetKey(LocalizationTypes localizationKey, Languages language = Languages.Es)
+    public string GetTittleKeyText(LocalizationTypes localizationKey, Languages language = Languages.Es)
     {
         var localizationConfigurationInfo = _localizationConfig.Find(language => language.LocalizationTypes == localizationKey);
-        return localizationConfigurationInfo.GetByLanguage(language);
+        return localizationConfigurationInfo.GetTittleByLanguage(language);
+    }
+    
+    public string GetKeyText(LocalizationTypes localizationKey, Languages language = Languages.Es)
+    {
+        var localizationConfigurationInfo = _localizationConfig.Find(language => language.LocalizationTypes == localizationKey);
+        return localizationConfigurationInfo.GetDescriptionByLanguage(language);
     }
 }
 
@@ -23,9 +29,14 @@ public class LocalizationConfigurationInfo
     [field: SerializeField]
     public List<LocalizationConfigurationInfoLanguage> Text { get; private set; }
 
-    public string GetByLanguage(Languages language)
+    public string GetTittleByLanguage(Languages language)
     {
-        return Text.Find(text => text.Language == language).Text;
+        return Text.Find(text => text.Language == language).Tittle;
+    }
+    
+    public string GetDescriptionByLanguage(Languages language)
+    {
+        return Text.Find(text => text.Language == language).Description;
     }
 }
 
@@ -36,7 +47,10 @@ public class LocalizationConfigurationInfoLanguage
     public Languages Language { get; private set; }
 
     [field: SerializeField]
-    public string Text { get; private set; }
+    public string Tittle { get; private set; }
+    
+    [field: SerializeField]
+    public string Description { get; private set; }
 }
     
 public enum Languages

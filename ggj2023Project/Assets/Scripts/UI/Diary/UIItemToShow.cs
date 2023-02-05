@@ -15,8 +15,8 @@ public class UIItemToShow : MonoBehaviour
     
     public void Open(ItemInfoConfiguration itemToInteract)
     {
-        _tittle.SetText(itemToInteract.Name);
+        _tittle.SetText(LocalizationManager.Instance.GetTittleText(itemToInteract.Name));
         _image.sprite = itemToInteract.Image;
-        _slowText.SetText(itemToInteract.Description, false);
+        _slowText.SetText(LocalizationManager.Instance.GetText(itemToInteract.Description), false);
     }
 }
