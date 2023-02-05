@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewEncounter", menuName = "ScriptableObjects/CreateEnemyEncounter", order = 1)]
 public class EnemyEncounterConfiguration : ScriptableObject
 {
+    [field: SerializeField]
+    public float ScreamingSoundDelay { get; private set; } 
+    
     [field: Header("Image"), SerializeField]
     public Sprite Image { get; private set; }
     

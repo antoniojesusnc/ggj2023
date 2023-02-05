@@ -84,8 +84,31 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator ScreamingRandomCo()
     {
-        yield return 0;
-            
+        while (GameManager.Instance.IsShaking)
+        {
+            var audioScream = GetAudioScream();
+            AudioManager.Instance.PlaySound(audioScream);
+            float duration = AudioManager.Instance.GetDuration(audioScream);
+            yield return new WaitForSeconds(duration+_enemyEncounterConfig.ScreamingSoundDelay);
+        }
+    }
+
+    private AudioTypes GetAudioScream()
+    {
+        var value = UnityEngine.Random.value;
+        if (value < 0.33f)
+        {
+            return AudioTypes.Grito01;
+        }
+        else
+        if (value < 0.66f)
+        {
+            return AudioTypes.Grito02;
+        }
+        else
+        {
+            return AudioTypes.Grito03;
+        }
     }
 
     private IEnumerator OnFinishShake()
@@ -93,6 +116,10 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(_enemyEncounterConfig.EncounterDuration);
         GameManager.Instance.FinishShaker();
         LeavePlayer();
+        
+        AudioManager.Instance.FinishAudio(AudioTypes.Grito01);
+        AudioManager.Instance.FinishAudio(AudioTypes.Grito02);
+        AudioManager.Instance.FinishAudio(AudioTypes.Grito03);
     }
 
     private void LeavePlayer()

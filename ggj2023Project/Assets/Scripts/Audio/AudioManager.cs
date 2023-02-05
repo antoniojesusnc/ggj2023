@@ -114,6 +114,16 @@ public class AudioManager : Singleton<AudioManager>
             DestroyAudioSourceAfter(audioSource, 0);
         }
     }
+
+    public float GetDuration(AudioTypes audioType)
+    {
+        if (!_audioConfig.TryGetSoundConfig(audioType, out var audioSourcesInfo))
+        {
+            return 0;
+        }
+
+        return audioSourcesInfo.AudioClip.length;
+    }
 }
 
 public class AudioManagerInfo
