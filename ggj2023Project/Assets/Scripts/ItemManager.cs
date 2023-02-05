@@ -9,7 +9,7 @@ public class ItemManager : Singleton<ItemManager>
     [SerializeField]
     private List<ItemInfoConfiguration> _itemInfoConfig;
 
-    [SerializeField] public bool HasKey => _hasKeyFake || _index == _itemInfoConfig.Count;
+    [SerializeField] public bool HasKey => _hasKeyFake || GameManager.Instance.ItemsCollected.Exists(item => item.Name == LocalizationTypes.Llave);
     
     void Start()
     {

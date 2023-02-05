@@ -24,6 +24,7 @@ public class ItemDetector : MonoBehaviour
         }
         else
         {
+            return;
             if (InfoTextConfig.Text != LocalizationTypes.None)
             {
                 UIInfoText.Instance.ShowText(LocalizationManager.Instance.GetText(InfoTextConfig.Text));
