@@ -13,6 +13,9 @@ public class UIMainMenu : MonoBehaviour
 	[SerializeField]
     private TextMeshProUGUI _exitButton;
 
+	[SerializeField]
+    private Canvas _canvasCredits;
+
 	private void Start () {
 		_playButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuPlay);
 		_creditsButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuCredits);
@@ -20,10 +23,9 @@ public class UIMainMenu : MonoBehaviour
 	}
 
 	private void Update() {
-        		// Pressed Sscape
+		// Pressed Scape --> Close game
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			// Close game
-            CloseGame();
+			CloseGame();
 		}
 	}
 
@@ -34,7 +36,10 @@ public class UIMainMenu : MonoBehaviour
 
     public void OnClickOnCredits()
     {
-        SceneManager.LoadScene((int)GameScenes.MainScene);
+        // Enable credits canvas
+        _canvasCredits.gameObject.SetActive(true);
+        // Disable this canvas
+        gameObject.SetActive(false);
     }
 
     public void OnClickOnExit()
