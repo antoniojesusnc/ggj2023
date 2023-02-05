@@ -31,5 +31,6 @@ public enum LocalizationTypes
 	CreditsRoleProgramming,
 	CreditsRoleMusic,
 	CreditsRoleGameDesign,
+	CannotFinish,
 	MenuClose,
 }

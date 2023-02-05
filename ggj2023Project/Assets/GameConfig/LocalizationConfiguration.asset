@@ -291,3 +291,11 @@ MonoBehaviour:
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: 
       <Description>k__BackingField: Cerrar
+  - <LocalizationTypes>k__BackingField: 31
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Close
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: No Sabria que hacer con este frasco
