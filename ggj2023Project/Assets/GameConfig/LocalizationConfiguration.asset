@@ -148,3 +148,51 @@ MonoBehaviour:
         el fulgor de las sales. La f\xF3rmula ha estado preparada para compensar
         los pecados de mi alma durante estos 100 a\xF1os.  \xA1Ven a mi! Tu querido
         tatarabuelo...  Fdo. Albert Sickert\""
+  - <LocalizationTypes>k__BackingField: 10
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Anciano
+  - <LocalizationTypes>k__BackingField: 11
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Familia Albert
+  - <LocalizationTypes>k__BackingField: 12
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Tocha
+  - <LocalizationTypes>k__BackingField: 13
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Madre Sola
+  - <LocalizationTypes>k__BackingField: 14
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Masion
+  - <LocalizationTypes>k__BackingField: 15
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Nina Sola
