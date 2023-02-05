@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class UICreditsMenu : MonoBehaviour
 {
@@ -26,6 +25,10 @@ public class UICreditsMenu : MonoBehaviour
     private Canvas _canvasMainMenu;
 
 	private void Start () {
+		UpdateTextsToLanguage();
+	}
+
+	public void UpdateTextsToLanguage() {
 		_role2dArtist.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRole2dArtist);
 		_role3dArtist.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRole3dArtist);
 		_roleProgramming.text = LocalizationManager.Instance.GetText(LocalizationTypes.CreditsRoleProgramming);
