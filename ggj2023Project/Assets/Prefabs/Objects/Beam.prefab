@@ -49,7 +49,7 @@ MonoBehaviour:
   _delayTime: 6
   _beamTime: 2
   _targetScale: 2
-  _minimumOpacity: 0.5
+  _minimumOpacity: 0.7
   _sprite: {fileID: 7817446832517445383}
 --- !u!1 &6185251455966514624
 GameObject:
