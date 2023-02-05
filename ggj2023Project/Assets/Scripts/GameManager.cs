@@ -60,7 +60,7 @@ public class GameManager : Singleton<GameManager>
         PlayAmbienceAudio();
     }
 
-    private void PlayAmbienceAudio()
+    public void PlayAmbienceAudio()
     {
         var audio = UnityEngine.Random.value < 0.5f ? AudioTypes.Ambiente01 : AudioTypes.Ambiente02;
         AudioManager.Instance.PlaySound(audio);

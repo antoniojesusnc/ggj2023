@@ -67,6 +67,23 @@ public class AudioManager : Singleton<AudioManager>
     private IEnumerator DestroyAudioSourceAfter(AudioSource audioSource, float audioClipLength)
     {
         yield return new WaitForSeconds(audioClipLength);
+
+        bool loop = false;
+        if (_audioConfig.TryGetSoundConfig(AudioTypes.Ambiente01, out var soundConfigInfo))
+        {
+            loop = true;
+        }
+        
+        if (_audioConfig.TryGetSoundConfig(AudioTypes.Ambiente02, out var soundConfigInfo2))
+        {
+            loop = true;
+        }
+
+        if (loop)
+        {
+            GameManager.Instance.PlayAmbienceAudio();
+        }
+            
         Destroy(audioSource);
     }
 
