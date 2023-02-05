@@ -19,6 +19,8 @@ namespace Character
 
 		private void Start() {
 			SubscribeEvents();
+
+			//GameManager.Instance.OnShakeStatusChanged
 		}
 
 		void Update() {
@@ -64,9 +66,9 @@ namespace Character
 		/// Checks if any movement key is pressed and assings the moement values to the object.
 		/// </summary>
 		private void DoMovement() {
-			if (_forwardPressed) {
+			if (IsWalkingForward()) {
 				gameObject.transform.position += gameObject.transform.forward * (CurrentSpeed() * Time.deltaTime);
-			} else if (_backwardsPressed) {
+			} else if (IsWalkingBackwards()) {
 				gameObject.transform.position += gameObject.transform.forward * (-CurrentSpeed() * Time.deltaTime);
 			}
 		}
@@ -86,16 +88,26 @@ namespace Character
 		/// Returns the current Character speed, taking into account if is walking or running.
 		/// </summary>
 		/// <returns>Movement speed.</returns>
-		private float CurrentSpeed() =>
-			_runPressed
-				? _characterMovementConfiguration.MovementSpeed * _characterMovementConfiguration.RunFactor
-				: _characterMovementConfiguration.MovementSpeed;
+		private float CurrentSpeed() {
+			float result = 0.0f;
+
+			if (IsWalkingForward()) {
+				result = _runPressed
+					? _characterMovementConfiguration.MovementSpeed * _characterMovementConfiguration.RunFactor
+					: _characterMovementConfiguration.MovementSpeed;
+			} else if (IsWalkingBackwards()) {
+				result = _characterMovementConfiguration.MovementSpeed * _characterMovementConfiguration.MovementBackwardsFactor;
+			}
+
+			return result;
+		}
 
 		/// <summary>
 		/// Sets all the movement-related animator properties.
 		/// </summary>
 		private void SetAnimationValues() {
-			_animator.SetBool("isWalking", IsMoving());
+			_animator.SetBool("isWalkingForward", IsWalkingForward());
+			_animator.SetBool("isWalkingBackwards", IsWalkingBackwards());
 			_animator.SetBool("isRunning", IsRunning());
 			_animator.SetBool("isRotatingLeft", !IsMoving() && IsRotatingLeft());
 			_animator.SetBool("isRotatingRight", !IsMoving() && IsRotatingRight());
@@ -109,11 +121,31 @@ namespace Character
 			_forwardPressed || _backwardsPressed;
 
 		/// <summary>
+		/// Calculates if the Character is walking forward or not.
+		/// </summary>
+		/// <remarks>
+		/// Walking forward has priority over walking backwards.
+		/// </remarks>
+		/// <returns><see langword="true"/> if the Character is walking forward, <see langword="false"/> otherwise.</returns>
+		public bool IsWalkingForward() =>
+			_forwardPressed;
+
+		/// <summary>
+		/// Calculates if the Character is walking backwards or not.
+		/// </summary>
+		/// <remarks>
+		/// Walking forward has priority over walking backwards.
+		/// </remarks>
+		/// <returns><see langword="true"/> if the Character is walking backwards, <see langword="false"/> otherwise.</returns>
+		public bool IsWalkingBackwards() =>
+			!IsWalkingForward() && _backwardsPressed;
+
+		/// <summary>
 		/// Calculates if the Character is moving and the run key is pressed or not.
 		/// </summary>
 		/// <returns><see langword="true"/> if any movement key is pressed, <see langword="false"/> otherwise.</returns>
 		public bool IsRunning() =>
-			IsMoving() && _runPressed;
+			IsWalkingForward() && _runPressed;
 
 		/// <summary>
 		/// Calculates if the Character is rotating left or not.
@@ -121,7 +153,7 @@ namespace Character
 		/// <remarks>
 		/// Left rotation has priority over right rotation.
 		/// </remarks>
-		/// <returns><see langword="true"/> if any rotation key is pressed, <see langword="false"/> otherwise.</returns>
+		/// <returns><see langword="true"/> if the Character is rotating left, <see langword="false"/> otherwise.</returns>
 		public bool IsRotatingLeft() =>
 			_leftPressed;
 
@@ -131,7 +163,7 @@ namespace Character
 		/// <remarks>
 		/// Left rotation has priority over right rotation.
 		/// </remarks>
-		/// <returns><see langword="true"/> if any rotation key is pressed, <see langword="false"/> otherwise.</returns>
+		/// <returns><see langword="true"/> if the Character is rotating right, <see langword="false"/> otherwise.</returns>
 		public bool IsRotatingRight() =>
 			!IsRotatingLeft() && _rightPressed;
 
