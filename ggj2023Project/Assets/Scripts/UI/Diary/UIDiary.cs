@@ -56,9 +56,10 @@ public class UIDiary : Singleton<UIDiary>
 
     void Update()
     {
-        if (IsOpened && Input.GetKeyDown(KeyCode.Space))
+        if (IsOpened && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.I)))
         {
             Close();
+            return;
         }
         
         if (!IsOpened && Input.GetKeyDown(KeyCode.I))
