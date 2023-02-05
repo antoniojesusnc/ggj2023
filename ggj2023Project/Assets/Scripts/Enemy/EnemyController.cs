@@ -84,7 +84,8 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator ScreamingRandomCo()
     {
-        
+        yield return 0;
+            
     }
 
     private IEnumerator OnFinishShake()
