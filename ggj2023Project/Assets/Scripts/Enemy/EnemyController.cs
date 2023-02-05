@@ -66,8 +66,7 @@ public class EnemyController : MonoBehaviour
     {
         var character = GameManager.Instance.Character;
 
-        Debug.Log($"Distance: {Vector3.Distance(character.transform.position, transform.position)}, detectDistacne: {_enemyEncounterConfig.DetectDistance*0.5f}");
-        return Vector3.Distance(character.transform.position, transform.position) < _enemyEncounterConfig.DetectDistance*0.5f;
+        return Vector3.Distance(GameManager.Instance.Character.HeadTransform.position, transform.position) < _enemyEncounterConfig.DetectDistance*0.5f;
     }
 
     private void StartShaking()

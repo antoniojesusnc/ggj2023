@@ -47,6 +47,8 @@ public class AudioManager : Singleton<AudioManager>
             audioSource = GetNewAudioSource(parent);
             StartCoroutine(DestroyAudioSourceAfter(audioSource, soundConfigInfo.AudioClip.length));
         }
+
+        transform.position = transform.position + transform.forward;
         audioSource.clip = soundConfigInfo.AudioClip;
         audioSource.volume = soundConfigInfo.Volume;
         
