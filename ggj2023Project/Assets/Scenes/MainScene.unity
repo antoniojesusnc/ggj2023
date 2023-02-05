@@ -633,7 +633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_text
-      value: Music/Sound design
+      value: Music/sound design
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -645,6 +645,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3014511822550942779, guid: 343d850311bdf754681f162350deff8c, type: 3}
   m_PrefabInstance: {fileID: 250842969}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &262364103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
+  m_PrefabInstance: {fileID: 1801665385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &272647269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -725,7 +736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &306915379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,6 +838,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b47d8bd61806d74cabf91da61474301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _role2dArtist: {fileID: 1036726545}
+  _role3dArtist: {fileID: 2050960628}
+  _roleProgramming: {fileID: 1307059222}
+  _roleMusic: {fileID: 1661973348}
+  _roleGameDesign: {fileID: 262364103}
+  _closeButton: {fileID: 13689960}
   _canvasMainMenu: {fileID: 1933381978}
 --- !u!1 &563014105
 GameObject:
@@ -1472,6 +1489,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1036726545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
+  m_PrefabInstance: {fileID: 2986137201901577193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1230154941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,6 +1634,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230154941}
   m_CullTransparentMesh: 1
+--- !u!114 &1307059222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
+  m_PrefabInstance: {fileID: 1641354178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1364263909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2113043147189934265, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_Name
-      value: Roles 3D artists
+      value: Roles 3D artist
       objectReference: {fileID: 0}
     - target: {fileID: 3014511822550942779, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_Pivot.x
@@ -1935,7 +1974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_text
-      value: 3D artist/modeler
+      value: 3D artist/modeling
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2077,6 +2116,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3014511822550942779, guid: 343d850311bdf754681f162350deff8c, type: 3}
   m_PrefabInstance: {fileID: 1641354178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1661973348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
+  m_PrefabInstance: {fileID: 250842969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742462010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,7 +2424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_text
-      value: Game design/Narrative
+      value: Game design/narrative
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2405,7 +2455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1933381976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2644,6 +2694,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987301203}
   m_CullTransparentMesh: 1
+--- !u!114 &2050960628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
+  m_PrefabInstance: {fileID: 1610743595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2986137201901577193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2666,7 +2727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2113043147189934265, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_Name
-      value: Roles 2D artists
+      value: Roles 2D artist
       objectReference: {fileID: 0}
     - target: {fileID: 3014511822550942779, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_Pivot.x
@@ -2758,7 +2819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5616774622707854456, guid: 343d850311bdf754681f162350deff8c, type: 3}
       propertyPath: m_text
-      value: Concept Artists/2D
+      value: Concept Artist/2D
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -243,3 +243,51 @@ MonoBehaviour:
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: 
       <Description>k__BackingField: Salir
+  - <LocalizationTypes>k__BackingField: 26
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Concept Artist/2D
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Artista conceptual/2D
+  - <LocalizationTypes>k__BackingField: 27
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 3D artist/modeling
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Artista 3D/modelado
+  - <LocalizationTypes>k__BackingField: 28
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Programming/3D design
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: "Programaci\xF3n/dise\xF1o 3D"
+  - <LocalizationTypes>k__BackingField: 29
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Music/sound design
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: "M\xFAsica/dise\xF1o de sonido"
+  - <LocalizationTypes>k__BackingField: 30
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Game design/narrative
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: "Dise\xF1o de juego/narrativa"
+  - <LocalizationTypes>k__BackingField: 31
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Close
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Cerrar
