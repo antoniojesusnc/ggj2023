@@ -22,7 +22,6 @@ public class SoundConfigurationInfo
     
     [field: SerializeField]
     public AudioClip AudioClip { get; private set; }
-    
-    [field: SerializeField]
-    public float Volume { get; private set; }
+
+    [field: SerializeField] public float Volume { get; private set; } = 1;
 }

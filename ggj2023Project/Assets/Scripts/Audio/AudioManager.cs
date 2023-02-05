@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class AudioManager : Singleton<AudioManager>
@@ -9,14 +10,18 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] 
     private AudioConfiguration audioConfig;
 
-    private void Start()
+    void Start()
     {
-        GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnShakeStatusChanged(bool shake)
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        
+        var audioSources = GetComponents<AudioSource>();
+        for (int i = 0; i < audioSources.Length; i++)
+        {
+            audioSources[i].Stop();
+        }
     }
 
     public void PlaySound(AudioTypes audioType)
@@ -51,7 +56,7 @@ public class AudioManager : Singleton<AudioManager>
         transform.position = transform.position + transform.forward;
         audioSource.clip = soundConfigInfo.AudioClip;
         audioSource.volume = soundConfigInfo.Volume;
-        
+        audioSource.Play();
     }
 
     private IEnumerator DestroyAudioSourceAfter(AudioSource audioSource, float audioClipLength)
