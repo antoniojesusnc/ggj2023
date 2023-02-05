@@ -20,12 +20,16 @@ namespace Character
 		private void Start() {
 			SubscribeEvents();
 
-			//GameManager.Instance.OnShakeStatusChanged
+			GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
 		}
 
 		void Update() {
 			// The mini-game is active --> Do not allow to move the Character
-			if (GameManager.Instance.IsShaking || GameManager.Instance.IsGameOver || UIDiary.Instance.IsOpened) return;
+			if (GameManager.Instance.IsShaking || 
+			    GameManager.Instance.IsGameOver || 
+			    UIDiary.Instance.IsOpened || 
+			    UIGameOver.Instance.IsGameOver) 
+				return;
 
 			// Set animator values
 			SetAnimationValues();
@@ -173,5 +177,10 @@ namespace Character
 		/// <returns><see langword="true"/> if any rotation key is pressed, <see langword="false"/> otherwise.</returns>
 		public bool IsRotating() =>
 			_leftPressed || _rightPressed;
+		
+		private void OnShakeStatusChanged(bool obj)
+		{
+				
+		}
 	}
 }
