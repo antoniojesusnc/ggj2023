@@ -22,4 +22,7 @@ public enum LocalizationTypes
     puerta_cerrada,
     fuente,
     None,
+	MenuPlay,
+	MenuCredits,
+	MenuExit,
 }

@@ -219,3 +219,27 @@ MonoBehaviour:
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: 
       <Description>k__BackingField: Nina Sola
+  - <LocalizationTypes>k__BackingField: 21
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Play
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Jugar
+  - <LocalizationTypes>k__BackingField: 22
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Credits
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: "Cr\xE9ditos"
+  - <LocalizationTypes>k__BackingField: 23
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Exit
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: Salir
