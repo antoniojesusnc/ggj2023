@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d799dcc2e068f44fbafe4f9a5f7e710, type: 3}
+  m_Name: EnemyEncounter06
+  m_EditorClassIdentifier: 
+  <ScreamingSoundDelay>k__BackingField: 0
+  <Image>k__BackingField: {fileID: 21300000, guid: 50a0832a530f6bc49beacbba91a3e21e, type: 3}
+  <ApproximationTime>k__BackingField: 5
+  <FadeTime>k__BackingField: 2
+  <DetectDistance>k__BackingField: 2
+  <Speed>k__BackingField: 3
+  <EncounterDuration>k__BackingField: 5
+  <LeavingEncounterDuration>k__BackingField: 0.5
+  <IntensityOverTime>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2949334
+      value: 0.29351798
+      inSlope: 0.7274435
+      outSlope: 0.7274435
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9958191
+      value: 0.4863472
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <LeavingTime>k__BackingField: 1

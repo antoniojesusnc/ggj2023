@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 1
-  audioConfig: {fileID: 11400000, guid: 1753dccdffa74b94cbdc27fbea4f0788, type: 2}
+  _audioConfig: {fileID: 11400000, guid: 1753dccdffa74b94cbdc27fbea4f0788, type: 2}
