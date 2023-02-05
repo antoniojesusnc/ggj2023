@@ -22,7 +22,7 @@ public class ItemDetector : MonoBehaviour
         }
         else
         {
-            UIInfoText.Instance.ShowText(InfoTextConfig.Text);
+            UIInfoText.Instance.ShowText(LocalizationManager.Instance.GetText(InfoTextConfig.Text));
         }
     }
     

@@ -4,7 +4,7 @@ using UnityEngine;
 public class InfoTextConfiguration : ScriptableObject
 {
     [field: SerializeField]
-    public string Text { get; private set; }
+    public LocalizationTypes Text { get; private set; }
     
     [field: SerializeField]
     public bool Repeatable { get; private set; }

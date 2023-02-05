@@ -16,12 +16,135 @@ MonoBehaviour:
   - <LocalizationTypes>k__BackingField: 0
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
-      <Text>k__BackingField: 
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
     - <Language>k__BackingField: 2
-      <Text>k__BackingField: 
+      <Tittle>k__BackingField: "\"27 de Noviembre, 1999  Eve Dwight visita la hacienda
+        que ha heredado.  Al parecer lleva abandonada 100 a\xF1os, y tu tatarabuelo
+        dio instrucciones precisas de que solo la heredase su tataranieto. En fin...
+        cosas de se\xF1oros victorianos, tendr\xE1 que conformarse con que lo herede
+        una tataranieta.\""
+      <Description>k__BackingField: "\"27 de Noviembre, 1999  Eve Dwight visita la
+        hacienda que ha heredado.  Al parecer lleva abandonada 100 a\xF1os, y tu
+        tatarabuelo dio instrucciones precisas de que solo la heredase su tataranieto.
+        En fin... cosas de se\xF1oros victorianos, tendr\xE1 que conformarse con
+        que lo herede una tataranieta.\""
   - <LocalizationTypes>k__BackingField: 1
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
-      <Text>k__BackingField: 
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
     - <Language>k__BackingField: 2
-      <Text>k__BackingField: 
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+  - <LocalizationTypes>k__BackingField: 2
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "P\xE1gina 1"
+      <Description>k__BackingField: '" lunes, 1 de noviembre de 1852 LLEGADA DE ALBER
+        SICKER A LA MANSION DWIGHT"'
+  - <LocalizationTypes>k__BackingField: 3
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "P\xE1gina 2"
+      <Description>k__BackingField: '"domingo, 23 de octubre de 1853 MEN OF GOOD
+        FORTUNE"'
+  - <LocalizationTypes>k__BackingField: 4
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "\xBF?\xBF?"
+      <Description>k__BackingField: "\"YA VEREMOS, DESCUBRIMIENTO DEL ARBOL RAIZ 
+        El \xE1rbol tiene un receso natural en forma de altar. Es increible, \xA1Es
+        el lugar perfecto que estaba buscando para la cuna!\""
+  - <LocalizationTypes>k__BackingField: 5
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "P\xE1gina 3"
+      <Description>k__BackingField: "\"viernes, 3 de marzo de 1854   La correspondencia
+        con W.W.Gull no puede ser de lo m\xE1s fascinante.\""
+  - <LocalizationTypes>k__BackingField: 6
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "P\xE1gina 4"
+      <Description>k__BackingField: "\"jueves, 31 de agosto de 1854  Estoy listo
+        para iniciar el primer paso de mi gran obra maestra. Me he asegurado que
+        la calidad de las sales sea de la m\xE1xima pureza posible. He revisado las
+        f\xF3rmulas con W.W.Gull decenas de veces. Son perfectas. Tan solo falta
+        un elemento esencial, que afortunadamente, ambos poseemos: un recipiente
+        de nuestra propia sangre: A pesar de la mala fortuna que he tenido no puedo
+        sentirme m\xE1s bendecido de haberme procurado una familia y descendencia.
+        \xA1Ja! Si el avaro de Dwight pudiera verme ahora MUAHA! Bah, no entender\xEDa
+        la magnitud de lo que estoy apunto de iniciar aqu\xED. \xA1ILUSO!\""
+  - <LocalizationTypes>k__BackingField: 7
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "P\xE1gina 5"
+      <Description>k__BackingField: "\"Mary Anne me ha abandonado, llev\xE1ndose
+        a la peque\xF1a Anni con ella. Es cierto que nuestra relaci\xF3n se ha ido
+        distanciando en estos \xFAltimos a\xF1os tras tanta mala fortuna, y que yo
+        he estado m\xE1s distante de lo que el deber sagrado del matrimonio recomienda.
+        No he sido un marido devoto, pero sigo albergando rencor por que no pudiera
+        darme m\xE1s hijos.  La gota que colm\xF3 el vaso, seg\xFAn ella, fue el
+        experimento que conduje con la peque\xF1a Annie. \xA1Pero si fue un \xE9xito!
+        \xA1Y puse todo el cuidado que un padre debiera tener, pero hubo un efecto
+        secudario no esperado y la peque\xF1a cay\xF3 enferma con fiebres altas durante
+        una semana. Se la llev\xF3 a casa de sus padres para recuperarse, y a la
+        semana volvi\xF3 con el carruaje de su padre para recoger sus cosas y ya
+        no volvieron jam\xE1s.  El servicio tambi\xE9n se ha despedido alegando que
+        no soportan m\xE1s el olor que emana del s\xF3tano.  No importa. Tengo experimentos
+        que hacer, formulaciones que calcular y el hecho de no tener a nadie por
+        aqu\xED lo hace m\xE1s propicio para las fases que W.W.Gull yo hemos planeado.\""
+  - <LocalizationTypes>k__BackingField: 8
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "P\xE1gina 6"
+      <Description>k__BackingField: "\"viernes, 9 de noviembre de 1888  \xC9xito
+        del experimento\""
+  - <LocalizationTypes>k__BackingField: 9
+    <Text>k__BackingField:
+    - <Language>k__BackingField: 1
+      <Tittle>k__BackingField: 
+      <Description>k__BackingField: 
+    - <Language>k__BackingField: 2
+      <Tittle>k__BackingField: "P\xE1gina 7"
+      <Description>k__BackingField: "\"domingo, 31 de diciembre de 1899  Mi querida
+        descendencia.  Si has llegado hasta aqu\xED es que eres digno heredero de
+        tu nombre. No importa que, aunque mi querid\xEDsima Anne me repudiase conservado
+        su apellido de soltera, debes saber que en lo m\xE1s profundo de tu alma
+        llevas la semilla de tu verdadero ancestro. Te escribo a trav\xE9s de los
+        siglos.  Tras lograr dominar la ciencia de las sales del alma anduve con
+        las peores de las compa\xF1\xEDas, en las peores posibles de las aventuras,
+        pensando que hab\xEDa esquivado la condenaci\xF3n de mi alma, pero esta que
+        me ha llevado hasta aqu\xED es m\xE1s opaca de lo que esperaba y no solo
+        me ha condenado, \xA1sino que la corrupci\xF3n de mi cuerpo finalmente ha
+        sido inevitable, y de hecho es inminente! El fin est\xE1 cerca y temo haber
+        condenado mi alma mortal por toda la eternidad.  Me arrepiento profundamente
+        de la vida que he llevado. Me arrepiento profundamente de haber alejado a
+        mi querida Mary Anne y mi peque\xF1a Anni de mi. No espero comprensi\xF3n,
+        o redenci\xF3n, se que no son posibles, pero no puedo pasar toda la eternidad
+        sin volver a ver a mi familia.  Es por esto que necesito tu ayuda. De las
+        dos jarras selladas que ves ante ti, una de ellas debe a\xFAn brillar con
+        el fulgor de las sales. La f\xF3rmula ha estado preparada para compensar
+        los pecados de mi alma durante estos 100 a\xF1os.  \xA1Ven a mi! Tu querido
+        tatarabuelo...  Fdo. Albert Sickert\""
