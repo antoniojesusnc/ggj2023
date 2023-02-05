@@ -16,21 +16,28 @@ MonoBehaviour:
   - <AudioType>k__BackingField: 0
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 20ed59d2083188949b02485cedd17631, type: 3}
     <Volume>k__BackingField: 1
+    <FadeOut>k__BackingField: 0
   - <AudioType>k__BackingField: 1
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 44250566c41c5ea4ea7fd1f8030ba17e, type: 3}
     <Volume>k__BackingField: 1
+    <FadeOut>k__BackingField: 0
   - <AudioType>k__BackingField: 2
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 4210afb79ce674a46b020133f3037c57, type: 3}
     <Volume>k__BackingField: 1
+    <FadeOut>k__BackingField: 0
   - <AudioType>k__BackingField: 3
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 7df851b88497d2f42a9f60c52f5a8a3f, type: 3}
     <Volume>k__BackingField: 1
+    <FadeOut>k__BackingField: 0
   - <AudioType>k__BackingField: 4
     <AudioClip>k__BackingField: {fileID: 8300000, guid: e0e2e9f939f49a34d9ac4be1fefc5c4c, type: 3}
     <Volume>k__BackingField: 1
+    <FadeOut>k__BackingField: 2
   - <AudioType>k__BackingField: 5
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 57f7f214252c4a9489a16c01d795904b, type: 3}
     <Volume>k__BackingField: 1
+    <FadeOut>k__BackingField: 0
   - <AudioType>k__BackingField: 6
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 447ac0c73c4fa9344aabff79dc9187c9, type: 3}
     <Volume>k__BackingField: 1
+    <FadeOut>k__BackingField: 0

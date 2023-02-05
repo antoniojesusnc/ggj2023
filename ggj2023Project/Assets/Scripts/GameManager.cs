@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -54,6 +55,14 @@ public class GameManager : Singleton<GameManager>
     {
         IsShaking = false;
         OnShakeStatusChanged?.Invoke(false);
+
+        PlayAmbienceAudio();
+    }
+
+    private void PlayAmbienceAudio()
+    {
+        var audio = UnityEngine.Random.value < 0.5f ? AudioTypes.Ambiente01 : AudioTypes.Ambiente02;
+        AudioManager.Instance.PlaySound(audio);
     }
 
     public void PlayAgain()
