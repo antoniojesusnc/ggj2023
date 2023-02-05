@@ -219,7 +219,7 @@ MonoBehaviour:
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: 
       <Description>k__BackingField: Nina Sola
-  - <LocalizationTypes>k__BackingField: 21
+  - <LocalizationTypes>k__BackingField: 22
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
       <Tittle>k__BackingField: 
@@ -227,7 +227,7 @@ MonoBehaviour:
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: 
       <Description>k__BackingField: Jugar
-  - <LocalizationTypes>k__BackingField: 22
+  - <LocalizationTypes>k__BackingField: 23
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
       <Tittle>k__BackingField: 
@@ -235,7 +235,7 @@ MonoBehaviour:
     - <Language>k__BackingField: 2
       <Tittle>k__BackingField: 
       <Description>k__BackingField: "Cr\xE9ditos"
-  - <LocalizationTypes>k__BackingField: 23
+  - <LocalizationTypes>k__BackingField: 24
     <Text>k__BackingField:
     - <Language>k__BackingField: 1
       <Tittle>k__BackingField: 
