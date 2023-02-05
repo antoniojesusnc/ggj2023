@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Llave
   m_EditorClassIdentifier: 
   <Name>k__BackingField: 25
-  <Description>k__BackingField: 21
+  <Description>k__BackingField: 25
   <Image>k__BackingField: {fileID: 21300000, guid: bc44358b56acb3f48b88fcb29b528bb0, type: 3}
   <Collectable>k__BackingField: 1

@@ -26,4 +26,11 @@ public enum LocalizationTypes
 	MenuCredits,
 	MenuExit,
 	Llave,
+	CreditsRole2dArtist,
+	CreditsRole3dArtist,
+	CreditsRoleProgramming,
+	CreditsRoleMusic,
+	CreditsRoleGameDesign,
+	CannotFinish,
+	MenuClose,
 }

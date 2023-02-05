@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,17 +14,23 @@ public class UIMainMenu : MonoBehaviour
 	[SerializeField]
     private TextMeshProUGUI _exitButton;
 
+	[SerializeField]
+    private Canvas _canvasCredits;
+
 	private void Start () {
+		UpdateTextsToLanguage();
+	}
+
+	private void UpdateTextsToLanguage() {
 		_playButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuPlay);
 		_creditsButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuCredits);
 		_exitButton.text = LocalizationManager.Instance.GetText(LocalizationTypes.MenuExit);
 	}
 
 	private void Update() {
-        		// Pressed Sscape
+		// Pressed Scape --> Close game
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			// Close game
-            CloseGame();
+			CloseGame();
 		}
 	}
 
@@ -34,7 +41,12 @@ public class UIMainMenu : MonoBehaviour
 
     public void OnClickOnCredits()
     {
-        SceneManager.LoadScene((int)GameScenes.MainScene);
+        // Enable credits canvas
+        _canvasCredits.gameObject.SetActive(true);
+		// Update language on texts for the credits canvas
+		_canvasCredits.GetComponent<UICreditsMenu>().UpdateTextsToLanguage();
+		// Disable this canvas
+		gameObject.SetActive(false);
     }
 
     public void OnClickOnExit()
@@ -48,5 +60,15 @@ public class UIMainMenu : MonoBehaviour
 #elif !UNITY_WEBGL
 		Application.Quit();
 #endif
+	}
+
+    public void SetLanguageEs() {
+		GeneralSetting.Instance.SetLanguage(Languages.Es);
+		UpdateTextsToLanguage();
+	}
+
+    public void SetLanguageEn() {
+		GeneralSetting.Instance.SetLanguage(Languages.En);
+		UpdateTextsToLanguage();
 	}
 }

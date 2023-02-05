@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public class UIGameOver : MonoBehaviour
+public class UIGameOver : Singleton<UIGameOver>
 {
     [SerializeField]
     private CanvasGroup _canvasGroupGameOver;

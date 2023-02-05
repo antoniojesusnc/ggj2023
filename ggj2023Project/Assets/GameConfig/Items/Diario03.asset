@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Diario03
   m_EditorClassIdentifier: 
   <Name>k__BackingField: 5
-  <Description>k__BackingField: 21
+  <Description>k__BackingField: 5
   <Image>k__BackingField: {fileID: 21300000, guid: d67603fc46e20074d82fd33a29b6f1f5, type: 3}
   <Collectable>k__BackingField: 1

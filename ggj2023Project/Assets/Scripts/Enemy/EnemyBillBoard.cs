@@ -5,6 +5,6 @@ public class EnemyBillBoard : MonoBehaviour
 {
     void Update()
     {
-        transform.LookAt(CameraManager.Instance.transform);
+        transform.LookAt(CameraManager.Instance.ActiveCamera.transform);
     }
 }
