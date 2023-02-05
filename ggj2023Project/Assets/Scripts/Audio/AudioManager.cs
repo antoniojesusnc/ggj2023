@@ -1,22 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] 
-    private AudioConfiguration audioConfig;
+    private AudioConfiguration _audioConfig;
 
-    private void Start()
+    private List<AudioManagerInfo> _audioSourcesInfo = new();
+    
+    void Start()
     {
-        GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnShakeStatusChanged(bool shake)
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        
+        var audioSources = GetComponents<AudioSource>();
+        for (int i = 0; i < audioSources.Length; i++)
+        {
+            audioSources[i].Stop();
+        }
     }
 
     public void PlaySound(AudioTypes audioType)
@@ -26,7 +34,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySound(AudioTypes audioType, Transform parent)
     {
-        if (!audioConfig.TryGetSoundConfig(audioType, out var soundConfigInfo))
+        if (!_audioConfig.TryGetSoundConfig(audioType, out var soundConfigInfo))
         {
             Debug.LogWarning("Audio not set");
             return;
@@ -45,13 +53,15 @@ public class AudioManager : Singleton<AudioManager>
         else
         {
             audioSource = GetNewAudioSource(parent);
-            StartCoroutine(DestroyAudioSourceAfter(audioSource, soundConfigInfo.AudioClip.length));
+            StartCoroutine(DestroyAudioSourceAfter(audioSource, soundConfigInfo.AudioClip.length + soundConfigInfo.FadeOut));
         }
 
         transform.position = transform.position + transform.forward;
         audioSource.clip = soundConfigInfo.AudioClip;
         audioSource.volume = soundConfigInfo.Volume;
+        audioSource.Play();
         
+        _audioSourcesInfo.Add( new AudioManagerInfo(soundConfigInfo.AudioType, audioSource));
     }
 
     private IEnumerator DestroyAudioSourceAfter(AudioSource audioSource, float audioClipLength)
@@ -77,5 +87,43 @@ public class AudioManager : Singleton<AudioManager>
     private AudioSource GetNewAudioSource(Transform parent)
     {
         return parent.gameObject.AddComponent<AudioSource>();
+    }
+
+    public void FinishAudio(AudioTypes audioToFade)
+    {
+        var audioSource =_audioSourcesInfo.Find(audioInfo => audioInfo.AudioTypes == audioToFade);
+        if (audioSource == null)
+        {
+            return;
+        }
+
+
+        FadeOut(audioToFade, audioSource.AudioSource);
+    }
+
+    private void FadeOut(AudioTypes audioToFade, AudioSource audioSource)
+    {
+        _audioConfig.TryGetSoundConfig(audioToFade, out var _audioSourcesInfo);
+
+        if (_audioSourcesInfo.FadeOut > 0)
+        {
+            audioSource.DOFade(0, _audioSourcesInfo.FadeOut).onComplete += () => DestroyAudioSourceAfter(audioSource, 0);
+        }
+        else
+        {
+            DestroyAudioSourceAfter(audioSource, 0);
+        }
+    }
+}
+
+public class AudioManagerInfo
+{
+    public AudioTypes AudioTypes { get; private set; }
+    public AudioSource AudioSource { get; private set; }
+
+    public AudioManagerInfo(AudioTypes audioTypes, AudioSource audioSource)
+    {
+        AudioTypes = audioTypes;
+        AudioSource = audioSource;
     }
 }

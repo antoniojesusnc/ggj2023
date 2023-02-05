@@ -36,6 +36,8 @@ public class EnemyController : MonoBehaviour
         _following = true;
         StartCoroutine(FollowPlayerCo());
         _countDownCoroutine = StartCoroutine(StartCountDownFollowCo());
+        
+        AudioManager.Instance.PlaySound(AudioTypes.Fantasma);
     }
 
     private IEnumerator StartCountDownFollowCo()
@@ -76,6 +78,13 @@ public class EnemyController : MonoBehaviour
 
         GameManager.Instance.BeginShaker(_enemyEncounterConfig);
         StartCoroutine(OnFinishShake());
+
+        StartCoroutine(ScreamingRandomCo());
+    }
+
+    private IEnumerator ScreamingRandomCo()
+    {
+        
     }
 
     private IEnumerator OnFinishShake()
@@ -96,6 +105,8 @@ public class EnemyController : MonoBehaviour
         transform.DOMove(new Vector3(direction.x, transform.position.y, direction.y),
                          _enemyEncounterConfig.LeavingTime);
         EndHuntLeavePlayer(_enemyEncounterConfig.LeavingTime);
+
+        AudioManager.Instance.FinishAudio(AudioTypes.Fantasma);
     }
     
     private void EndHuntLeavePlayer(float leaveTime)
