@@ -6,6 +6,9 @@ public class CharacterMovementConfiguration : ScriptableObject
 	public float MovementSpeed { get; private set; } = 2.0f;
 	
 	[field: SerializeField]
+	public float MovementBackwardsFactor { get; private set; } = 0.5f;
+	
+	[field: SerializeField]
 	public float RunFactor { get; private set; } = 2.0f;
 
 	[field: SerializeField]
