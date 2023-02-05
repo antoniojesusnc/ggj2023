@@ -19,10 +19,14 @@ public class ItemDetector : MonoBehaviour
         if (!IsCollected)
         {
             GameManager.Instance.Character.InTrigger(this);
+            UITriggerInput.Instance.ShowSpace(true);
         }
         else
         {
-            UIInfoText.Instance.ShowText(LocalizationManager.Instance.GetText(InfoTextConfig.Text));
+            if (InfoTextConfig.Text != LocalizationTypes.None)
+            {
+                UIInfoText.Instance.ShowText(LocalizationManager.Instance.GetText(InfoTextConfig.Text));
+            }
         }
     }
     
@@ -30,6 +34,7 @@ public class ItemDetector : MonoBehaviour
     {
         CanBeTriggered = false;
         GameManager.Instance.Character.InTrigger(null);
+        UITriggerInput.Instance.ShowSpace(false);
     }
 
     public void Collect()
