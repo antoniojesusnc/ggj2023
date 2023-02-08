@@ -25,11 +25,20 @@ namespace Character
 
 		void Update() {
 			// The mini-game is active --> Do not allow to move the Character
-			if (GameManager.Instance.IsShaking || 
-			    GameManager.Instance.IsGameOver || 
-			    UIDiary.Instance.IsOpened || 
-			    UIGameOver.Instance.IsGameOver) 
+			if (GameManager.Instance.IsShaking ||
+			    GameManager.Instance.IsGameOver ||
+			    UIDiary.Instance.IsOpened ||
+			    UIGameOver.Instance.IsGameOver)
+			{
+				_forwardPressed = false;
+				_backwardsPressed = false;
+				_leftPressed = false;
+				_rightPressed = false;
+				_runPressed = false;
+
+				SetAnimationValues();
 				return;
+			}
 
 			// Set animator values
 			SetAnimationValues();

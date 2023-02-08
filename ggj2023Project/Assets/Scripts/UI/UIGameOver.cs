@@ -6,17 +6,22 @@ using UnityEngine.Serialization;
 
 public class UIGameOver : Singleton<UIGameOver>
 {
+    [SerializeField] 
+    private UIConfiguration _uIConfig;
+    
     [SerializeField]
     private CanvasGroup _canvasGroupGameOver;
     
+    [Header("Success")]
     [SerializeField]
     private CanvasGroup _canvasGroupGameOverSuccess;
     
     [SerializeField]
-    private TextMeshProUGUI victoryMessage;
-
-    [SerializeField] private UIConfiguration _uIConfig;
+    private UISlowText victoryMessage;
     
+    [SerializeField]
+    private GameObject _playAgainButton;
+
     [SerializeField]
     public bool IsGameOver { get; private set; }
     
@@ -52,9 +57,13 @@ public class UIGameOver : Singleton<UIGameOver>
     public void ShowEndGameSuccess()
     {
         IsGameOver = true;
+        _canvasGroupGameOverSuccess.gameObject.SetActive(true);
         _canvasGroupGameOverSuccess.GetComponent<Canvas>().gameObject.SetActive(true);
-        _canvasGroupGameOverSuccess.DOFade(0, _uIConfig.GameOverFadeTime);
-        victoryMessage.SetText(LocalizationManager.Instance.GetText(LocalizationTypes.final_scene));
+        _canvasGroupGameOverSuccess.DOFade(1, _uIConfig.GameOverFadeTime);
+        victoryMessage.SetText(LocalizationManager.Instance.GetText(LocalizationTypes.final_scene), false);
+        
+        _playAgainButton.SetActive(false);
+        victoryMessage.OnFinishText += () => _playAgainButton.SetActive(true);
     }
 
     public void OnClickInRestart()

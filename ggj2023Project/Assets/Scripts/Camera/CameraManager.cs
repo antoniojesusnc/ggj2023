@@ -9,7 +9,7 @@ namespace Camera
 		public CameraController ActiveCamera { get; set; }
 
 		private void Start() {
-			ActiveCamera.Enable(true);
+			ActiveCamera.gameObject.SetActive(true);
 
 			GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
 		}

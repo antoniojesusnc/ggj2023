@@ -14,4 +14,13 @@ public class EnemyDetector : MonoBehaviour
         EnemyManager.Instance.InitEncounter(EnemyEncounterConfig, _spawnPoint);
         Destroy(gameObject);
     }
+    
+    private void OnDrawGizmos() {
+        DrawGizmosUtil.Draw(Color.red, transform);
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(_spawnPoint.position, 0.5f);
+        Gizmos.DrawLine(transform.position, _spawnPoint.position);
+        
+    }
 }

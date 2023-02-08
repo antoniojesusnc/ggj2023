@@ -3,26 +3,32 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
+    [SerializeField] private ItemInfoConfiguration _key;
+    
     [SerializeField] private bool _hasKeyFake;
     
-    private int _index;
-    [SerializeField]
-    private List<ItemInfoConfiguration> _itemInfoConfig;
+    [SerializeField] private int _numItemsToGetKey;
 
-    [SerializeField] public bool HasKey => _hasKeyFake || GameManager.Instance.ItemsCollected.Exists(item => item.Name == LocalizationTypes.Llave);
+    [field:SerializeField]
+    public List<ItemInfoConfiguration> ItemsCollected { get; private set; } = new();
+
+    [SerializeField] public bool HasKey => _hasKeyFake || ItemsCollected.Exists(item => item.Name == LocalizationTypes.Llave);
     
-    void Start()
+
+    public void CollectItem(ItemInfoConfiguration nextItem)
     {
-        _index = 0;
+        ItemsCollected.Add(nextItem);
+
+        
+        if (ItemsCollected.Count >= _numItemsToGetKey)
+        {
+            ItemsCollected.Add(_key);
+        }
+        ItemsCollected.Sort(SortByName);
     }
 
-    public ItemInfoConfiguration GetNextDiary(ItemDetector itemToInteract)
+    private int SortByName(ItemInfoConfiguration x, ItemInfoConfiguration y)
     {
-        return itemToInteract.ItemInfoConfig;
-        if (_index < _itemInfoConfig.Count)
-        {
-            return _itemInfoConfig[_index++];
-        }
-        return _itemInfoConfig[_itemInfoConfig.Count-1];
+        return x.Name.CompareTo(y.Name);
     }
 }

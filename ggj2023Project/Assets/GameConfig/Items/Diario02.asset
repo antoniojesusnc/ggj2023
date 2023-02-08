@@ -15,4 +15,4 @@ MonoBehaviour:
   <Name>k__BackingField: 3
   <Description>k__BackingField: 3
   <Image>k__BackingField: {fileID: 21300000, guid: 459980f52d0d0cb4ea7fb484b3d6c323, type: 3}
-  <Collectable>k__BackingField: 1
+  <IsCollectable>k__BackingField: 1

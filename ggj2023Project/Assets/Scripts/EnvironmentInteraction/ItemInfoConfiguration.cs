@@ -13,5 +13,5 @@ public class ItemInfoConfiguration : ScriptableObject
     public Sprite Image { get; private set; }
     
     [field: SerializeField]
-    public bool Collectable { get; private set; }
+    public bool IsCollectable { get; private set; }
 }

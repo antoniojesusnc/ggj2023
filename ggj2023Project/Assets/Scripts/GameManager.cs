@@ -16,9 +16,6 @@ public class GameManager : Singleton<GameManager>
     public CharacterManager Character { get; private set; }
     
     public bool IsGameOver { get; private set; }
-    
-    public List<ItemInfoConfiguration> ItemsCollected { get; private set; } = new();
-    public bool HasItem07 => ItemsCollected.Exists(item => item.Name == LocalizationTypes.diario07);
 
     [field: SerializeField] public event Action<bool> OnShakeStatusChanged;
     [field: SerializeField] public event Action OnGameOver;
@@ -80,9 +77,16 @@ public class GameManager : Singleton<GameManager>
 
     public void OpenItem(ItemDetector itemToInteract)
     {
-        var nextItem = ItemManager.Instance.GetNextDiary(itemToInteract);
-        UIDiary.Instance.OpenItem(nextItem);
-        ItemsCollected.Add(nextItem);
-        itemToInteract.Collect();
+        UIDiary.Instance.OpenItem(itemToInteract.ItemInfoConfig);
+        ItemManager.Instance.CollectItem(itemToInteract.ItemInfoConfig);
+        if (itemToInteract.ItemInfoConfig.IsCollectable)
+        {
+            itemToInteract.Collect();
+        }
+    }
+
+    public void GameOverSuccess()
+    {
+        IsGameOver = true;
     }
 }

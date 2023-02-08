@@ -4,8 +4,9 @@ public class EndGame : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (GameManager.Instance.HasItem07)
+        if (ItemManager.Instance.HasKey)
         {
+            GameManager.Instance.GameOverSuccess();
             UIGameOver.Instance.ShowEndGameSuccess();
         }
         else

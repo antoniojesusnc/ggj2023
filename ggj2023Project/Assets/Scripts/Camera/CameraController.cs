@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ namespace Camera
 
 		private void Awake() {
 			_camera = GetComponent<UnityEngine.Camera>();
+			_camera.gameObject.SetActive(false);
 		}
 
 		private void Start() {
@@ -63,6 +65,22 @@ namespace Camera
 
 			var evaluation = _cameraConfig.Curve.Evaluate(intensity);
 			_camera.fieldOfView = Mathf.Lerp(_cameraConfig.InitialFov, _cameraConfig.MaxFov, evaluation);
+		}
+
+		private void OnDrawGizmos()
+		{
+			Gizmos.color = new Color(1f,1f,0f,0.4f);
+			var camera = GetComponent<UnityEngine.Camera>();
+			Gizmos.matrix = Matrix4x4.TRS( transform.position, transform.rotation, new Vector3(camera.aspect, 1.0f, 1.0f) );
+			for (int i = 0; i < 20; i+=2)
+			{
+			Gizmos.DrawFrustum(Vector3.zero, 
+			                   i, 
+			                   5, 
+			                   camera.nearClipPlane, 
+			                   camera.aspect);
+				
+			}
 		}
 	}
 }

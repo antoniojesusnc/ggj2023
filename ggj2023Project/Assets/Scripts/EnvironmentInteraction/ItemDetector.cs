@@ -52,4 +52,10 @@ public class ItemDetector : MonoBehaviour
     {
         IsCollected = true;
     }
+    
+    private void OnDrawGizmos()
+    {
+        DrawGizmosUtil.Draw(Color.blue, transform);
+        
+    }
 }

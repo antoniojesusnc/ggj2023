@@ -18,8 +18,9 @@ namespace EnvironmentInteraction
 	    /// Visual help to locate the affected area in the editor.
 	    /// </summary>
 	    private void OnDrawGizmos() {
+		    DrawGizmosUtil.Draw(Color.cyan, transform);
 		    Gizmos.color = Color.cyan;
-		    Gizmos.DrawWireCube(this.transform.position, this.transform.lossyScale);
+		    Gizmos.DrawLine(transform.position, _roomCameraController.transform.position);
 	    }
     }
 }
