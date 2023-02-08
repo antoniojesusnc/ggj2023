@@ -11,6 +11,8 @@ public class UIDiary : Singleton<UIDiary>
     private bool _isItemOpened;
     private bool _isInventoryOpened;
 
+    private bool _keyGet;
+    
     void Awake()
     {
         _canvas.gameObject.SetActive(false);
@@ -56,6 +58,16 @@ public class UIDiary : Singleton<UIDiary>
             return;
         }
 
+        if (!_keyGet)
+        {
+            if (ItemManager.Instance.HasKey)
+            {
+                OpenItem(ItemManager.Instance.ItemsCollected.Find(item => item.Name == LocalizationTypes.Llave));
+                _keyGet = true;
+                return;
+            }
+        }
+        
         _canvas.gameObject.SetActive(false);
         // Remove all the elements in the inventory
         foreach (UIItemElement item in _fullInventory.gameObject.GetComponentsInChildren<UIItemElement>())
@@ -69,13 +81,13 @@ public class UIDiary : Singleton<UIDiary>
 
     void Update()
     {
-        if (_isItemOpened && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Escape)))
+        if (IsOpened && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Escape)))
         {
             Close();
             return;
         }
         
-        if (!_isItemOpened && Input.GetKeyDown(KeyCode.I))
+        if (!IsOpened && Input.GetKeyDown(KeyCode.I))
         {
             OpenInventory();
         }
