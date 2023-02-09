@@ -22,9 +22,15 @@ public class ItemManager : Singleton<ItemManager>
         
         if (ItemsCollected.Count >= _numItemsToGetKey && !HasKey)
         {
-            ItemsCollected.Add(_key);
+            AddKey();
         }
         ItemsCollected.Sort(SortByName);
+    }
+
+    private void AddKey()
+    {
+        ItemsCollected.Add(_key);
+        AudioManager.Instance.PlaySound(AudioTypes.Llave);
     }
 
     private int SortByName(ItemInfoConfiguration x, ItemInfoConfiguration y)

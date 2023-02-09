@@ -77,6 +77,7 @@ public class UIDiary : Singleton<UIDiary>
 
         _isInventoryOpened = false;
         _isItemOpened = false;
+        AudioManager.Instance.PlaySound(AudioTypes.CerrarDiario);
     }
 
     void Update()

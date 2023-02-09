@@ -79,25 +79,25 @@ MonoBehaviour:
     <FadeOut>k__BackingField: 0
     <CanPlayTwice>k__BackingField: 0
   - <AudioType>k__BackingField: 12
-    <AudioClip>k__BackingField: {fileID: 8300000, guid: 447ac0c73c4fa9344aabff79dc9187c9, type: 3}
-    <Volume>k__BackingField: 0.7
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: f1d9d0ebad9409b4ab2a313731c08f3c, type: 3}
+    <Volume>k__BackingField: 1
     <FadeOut>k__BackingField: 0
     <CanPlayTwice>k__BackingField: 0
   - <AudioType>k__BackingField: 13
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 02ab0fbb3ebceac4d86059a465145f4e, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 1
     <CanPlayTwice>k__BackingField: 0
   - <AudioType>k__BackingField: 14
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 11f3f009f340d3a4888ed92157e4f842, type: 3}
-    <Volume>k__BackingField: 0.7
+    <Volume>k__BackingField: 0.5
     <FadeOut>k__BackingField: 0
     <CanPlayTwice>k__BackingField: 0
   - <AudioType>k__BackingField: 15
     <AudioClip>k__BackingField: {fileID: 8300000, guid: e2c935565ee6cb548a2d6a163c1c0538, type: 3}
-    <Volume>k__BackingField: 0.7
+    <Volume>k__BackingField: 0.5
     <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 16
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 8d6b6f04540ad094381a73b1095dfeb8, type: 3}
     <Volume>k__BackingField: 0.7
@@ -146,5 +146,10 @@ MonoBehaviour:
   - <AudioType>k__BackingField: 18
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 7b848b5b747edf74eb4b5aa1efeb4dae, type: 3}
     <Volume>k__BackingField: 0.7
+    <FadeOut>k__BackingField: 0
+    <CanPlayTwice>k__BackingField: 0
+  - <AudioType>k__BackingField: 26
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 6faf96e62b140c748a329a914476c2dd, type: 3}
+    <Volume>k__BackingField: 0.5
     <FadeOut>k__BackingField: 0
     <CanPlayTwice>k__BackingField: 0

@@ -26,4 +26,5 @@ public enum AudioTypes
     Paso07,
     Paso08,
     Paso09,
+    Cajon,
 }

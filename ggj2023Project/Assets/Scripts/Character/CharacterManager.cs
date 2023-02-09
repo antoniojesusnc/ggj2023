@@ -15,6 +15,11 @@ public class CharacterManager : MonoBehaviour
     private void OnShakeStatusChanged(bool shaking)
     {
         GetComponent<AudioListener>().enabled = shaking;
+
+        if (!shaking)
+        {
+            AudioManager.Instance.PlaySound(AudioTypes.RespiracionAgitada);
+        }
     }
 
     public void InTrigger(ItemDetector itemDetector)

@@ -64,6 +64,8 @@ public class UIGameOver : Singleton<UIGameOver>
         
         _playAgainButton.SetActive(false);
         victoryMessage.OnFinishText += () => _playAgainButton.SetActive(true);
+        
+        AudioManager.Instance.PlaySound(AudioTypes.TarroRompiendose);
     }
 
     public void OnClickInRestart()

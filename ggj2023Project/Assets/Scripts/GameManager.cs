@@ -80,11 +80,7 @@ public class GameManager : Singleton<GameManager>
     public void OpenItem(ItemDetector itemToInteract)
     {
         UIDiary.Instance.OpenItem(itemToInteract.ItemInfoConfig);
-        ItemManager.Instance.CollectItem(itemToInteract.ItemInfoConfig);
-        if (itemToInteract.ItemInfoConfig.IsCollectable)
-        {
-            itemToInteract.Collect();
-        }
+        itemToInteract.Interact();
     }
 
     public void GameOverSuccess()

@@ -10,6 +10,9 @@ public class ItemDetector : MonoBehaviour
     [field: SerializeField] 
     public InfoTextConfiguration InfoTextConfig { get; private set; }
 
+    [SerializeField] 
+    private AudioTypes _audioWhenInteract;
+
     [field: SerializeField] 
     public bool CanBeTriggered { get; private set; }
     public bool IsCollected { get; private set; }
@@ -48,9 +51,14 @@ public class ItemDetector : MonoBehaviour
         UITriggerInput.Instance.ShowSpace(false);
     }
 
-    public void Collect()
+    public void Interact()
     {
-        IsCollected = true;
+        if (ItemInfoConfig.IsCollectable)
+        {
+            ItemManager.Instance.CollectItem(ItemInfoConfig);
+            IsCollected = true;
+        }
+        AudioManager.Instance.PlaySound(_audioWhenInteract);
     }
     
     private void OnDrawGizmos()
