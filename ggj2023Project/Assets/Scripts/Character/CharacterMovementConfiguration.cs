@@ -22,4 +22,6 @@ public class CharacterMovementConfiguration : ScriptableObject
 	public float BackwardStepDuration { get; private set; }
 	[field: SerializeField]
 	public float RotateStepDuration { get; private set; }
+	[field: SerializeField]
+	public float RespirationDuration { get; private set; }
 }

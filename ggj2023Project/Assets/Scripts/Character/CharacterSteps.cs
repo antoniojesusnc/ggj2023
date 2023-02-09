@@ -65,7 +65,7 @@ public class CharacterSteps : MonoBehaviour
     {
         _timestamp = stepDuration;
         _lastStepType = GetRandomStep();
-        AudioManager.Instance.PlaySound(_lastStepType);
+        AudioManager.Instance.PlaySound(_lastStepType, transform);
         AudioManager.Instance.DestroyAudioSourceAfter(_lastStepType, stepDuration);
     }
 

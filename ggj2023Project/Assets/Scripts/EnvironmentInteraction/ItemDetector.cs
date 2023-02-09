@@ -58,7 +58,7 @@ public class ItemDetector : MonoBehaviour
             ItemManager.Instance.CollectItem(ItemInfoConfig);
             IsCollected = true;
         }
-        AudioManager.Instance.PlaySound(_audioWhenInteract);
+        AudioManager.Instance.PlaySound(_audioWhenInteract, transform);
     }
     
     private void OnDrawGizmos()

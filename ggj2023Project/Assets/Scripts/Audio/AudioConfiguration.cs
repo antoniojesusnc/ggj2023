@@ -4,7 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewItem", menuName = "ScriptableObjects/SoundConfiguration", order = 1)]
 public class AudioConfiguration : ScriptableObject
 {
-    [SerializeField]
+    [field: SerializeField]
+    public float AudioDistance { get; private set; }
+
+        [SerializeField]
     private List<SoundConfigurationInfo> _audios = new();
     
     public bool TryGetSoundConfig(AudioTypes audioType, out SoundConfigurationInfo soundConfigInfo)

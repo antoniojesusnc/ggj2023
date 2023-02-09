@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(FollowPlayerCo());
         _countDownCoroutine = StartCoroutine(StartCountDownFollowCo());
         
-        AudioManager.Instance.PlaySound(AudioTypes.Fantasma);
+        AudioManager.Instance.PlaySound(AudioTypes.Fantasma,transform);
     }
 
     private IEnumerator StartCountDownFollowCo()
@@ -85,7 +85,7 @@ public class EnemyController : MonoBehaviour
         while (GameManager.Instance.IsShaking)
         {
             var audioScream = GetAudioScream();
-            AudioManager.Instance.PlaySound(audioScream);
+            AudioManager.Instance.PlaySound(audioScream,transform);
             float duration = AudioManager.Instance.GetDuration(audioScream);
             yield return new WaitForSeconds(duration+_enemyEncounterConfig.ScreamingSoundDelay);
         }

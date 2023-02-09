@@ -37,13 +37,13 @@ public class Door : MonoBehaviour
     {
         _originalRotation = transform.eulerAngles.y;
         _door.DORotate(Vector3.up*_lastRotation, _uiConfig.OpenDoorDelay);
-        AudioManager.Instance.PlaySound(AudioTypes.PuertaAbriendose);
+        AudioManager.Instance.PlaySound(AudioTypes.PuertaAbriendose,transform);
     }
     
     public void CloseDoor()
     {
         _door.DORotate(Vector3.up*_originalRotation, _uiConfig.OpenDoorDelay);
-        AudioManager.Instance.PlaySound(AudioTypes.PuertaCerrandose);
+        AudioManager.Instance.PlaySound(AudioTypes.PuertaCerrandose,transform);
         GetComponent<Collider>().enabled = false;
     } 
 }

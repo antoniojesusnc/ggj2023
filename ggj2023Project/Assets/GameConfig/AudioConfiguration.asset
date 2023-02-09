@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89df75db20567342ae34f79204378cb, type: 3}
   m_Name: AudioConfiguration
   m_EditorClassIdentifier: 
+  <AudioDistance>k__BackingField: 15
   _audios:
   - <AudioType>k__BackingField: 0
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 20ed59d2083188949b02485cedd17631, type: 3}
@@ -70,8 +71,8 @@ MonoBehaviour:
     <CanPlayTwice>k__BackingField: 0
   - <AudioType>k__BackingField: 10
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 7755c7d47af980444a97420286b302d8, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
+    <Volume>k__BackingField: 0.2
+    <FadeOut>k__BackingField: 5
     <CanPlayTwice>k__BackingField: 0
   - <AudioType>k__BackingField: 11
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 455b01d22ce8ebb4b80a6f869a559a08, type: 3}

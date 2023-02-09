@@ -17,12 +17,14 @@ public class AudioTrigger : MonoBehaviour
     private AudioTypes _sound;
     [SerializeField] 
     private bool _stopWhenLeave;
+    [SerializeField] 
+    private Transform _soundOrigin;
 
     public void OnTriggerEnter(Collider other)
     {
         if (_when == EAudioTrigger.Enter)
         {
-            AudioManager.Instance.PlaySound(_sound);
+            AudioManager.Instance.PlaySound(_sound, _soundOrigin);
         }
     }
 
@@ -30,7 +32,7 @@ public class AudioTrigger : MonoBehaviour
     {
         if (_when == EAudioTrigger.Stay)
         {
-            AudioManager.Instance.PlaySound(_sound);
+            AudioManager.Instance.PlaySound(_sound, _soundOrigin);
         }
     }
 
@@ -38,7 +40,7 @@ public class AudioTrigger : MonoBehaviour
     {
         if (_when == EAudioTrigger.Exit)
         {
-            AudioManager.Instance.PlaySound(_sound);
+            AudioManager.Instance.PlaySound(_sound, _soundOrigin);
         }
 
         if (_stopWhenLeave)

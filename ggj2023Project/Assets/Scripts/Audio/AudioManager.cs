@@ -70,7 +70,7 @@ public class AudioManager : Singleton<AudioManager>
         }
         
         AudioSource audioSource;
-        if (parent != transform)
+        if (parent == transform)
         {
             audioSource = GetAudioSource();
             _audioSourcesInfo.Add( new AudioManagerInfo(soundConfigInfo.AudioType, audioSource));
@@ -166,7 +166,17 @@ public class AudioManager : Singleton<AudioManager>
 
     private AudioSource GetNewAudioSource(Transform parent)
     {
-        return parent.gameObject.AddComponent<AudioSource>();
+        var audioSource = parent.gameObject.AddComponent<AudioSource>();
+
+        if (parent != transform)
+        {
+            audioSource.spatialBlend = 1;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
+            audioSource.minDistance = 0;
+            audioSource.maxDistance = _audioConfig.AudioDistance;
+        }
+        return audioSource;
+
     }
 
     public void FinishAudio(AudioTypes audioToFade)
@@ -176,8 +186,7 @@ public class AudioManager : Singleton<AudioManager>
         {
             return;
         }
-
-
+        
         FadeOut(audioSourcesInfo);
     }
 

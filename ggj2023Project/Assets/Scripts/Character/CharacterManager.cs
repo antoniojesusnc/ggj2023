@@ -7,6 +7,8 @@ public class CharacterManager : MonoBehaviour
     [field: SerializeField] 
     public Transform HeadTransform { get; private set; }
 
+    [field: SerializeField] 
+    public CharacterMovementConfiguration _config { get; private set; }
     private void Start()
     {
         GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
@@ -18,7 +20,8 @@ public class CharacterManager : MonoBehaviour
 
         if (!shaking)
         {
-            AudioManager.Instance.PlaySound(AudioTypes.RespiracionAgitada);
+            AudioManager.Instance.PlaySound(AudioTypes.RespiracionAgitada, transform);
+            AudioManager.Instance.FinishAudio(AudioTypes.RespiracionAgitada);
         }
     }
 

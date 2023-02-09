@@ -20,3 +20,4 @@ MonoBehaviour:
   <RunningStepDuration>k__BackingField: 1
   <BackwardStepDuration>k__BackingField: 0.75
   <RotateStepDuration>k__BackingField: 0.5
+  <RespirationDuration>k__BackingField: 3
