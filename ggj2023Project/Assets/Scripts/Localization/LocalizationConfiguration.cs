@@ -1,9 +1,14 @@
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LocalizationConfiguration", menuName = "ScriptableObjects/LocalizationConfiguration", order = 1)]
 public class LocalizationConfiguration : ScriptableObject
 {
+    private string LOCALIZATION_FOLDER = "Assets/GameConfig/Localization/";
+    private string LOCALIZATION_FILE = "localizationData.json";
+    
     [SerializeField]
     private List<LocalizationConfigurationInfo> _localizationConfig;
 
@@ -17,6 +22,24 @@ public class LocalizationConfiguration : ScriptableObject
     {
         var localizationConfigurationInfo = _localizationConfig.Find(language => language.LocalizationTypes == localizationKey);
         return localizationConfigurationInfo.GetDescriptionByLanguage(language);
+    }
+
+    [ContextMenu("ExportLocalization")]
+    public void ExportLocalization()
+    {
+        var json = Newtonsoft.Json.JsonConvert.SerializeObject(_localizationConfig);
+        File.WriteAllText(LOCALIZATION_FOLDER+LOCALIZATION_FILE, json);
+    }
+    
+    [ContextMenu("ImportLocalization")]
+    public void ImportLocalization()
+    {
+        var fileRaw = File.ReadAllText(LOCALIZATION_FOLDER+LOCALIZATION_FILE);
+        var newData = JsonConvert.DeserializeObject<List<LocalizationConfigurationInfo>>(fileRaw);
+        if (newData?.Count > 0)
+        {
+            _localizationConfig = newData;
+        }
     }
 }
 
