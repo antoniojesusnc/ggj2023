@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LocalizationConfiguration", menuName = "ScriptableObjects/LocalizationConfiguration", order = 1)]
@@ -27,7 +29,7 @@ public class LocalizationConfiguration : ScriptableObject
     [ContextMenu("ExportLocalization")]
     public void ExportLocalization()
     {
-        var json = Newtonsoft.Json.JsonConvert.SerializeObject(_localizationConfig);
+        var json = Newtonsoft.Json.JsonConvert.SerializeObject(_localizationConfig, typeof(List<LocalizationConfigurationInfo>), Formatting.Indented, new JsonSerializerSettings());
         File.WriteAllText(LOCALIZATION_FOLDER+LOCALIZATION_FILE, json);
     }
     
@@ -38,7 +40,7 @@ public class LocalizationConfiguration : ScriptableObject
         var newData = JsonConvert.DeserializeObject<List<LocalizationConfigurationInfo>>(fileRaw);
         if (newData?.Count > 0)
         {
-            _localizationConfig = newData;
+            _localizationConfig = newData.ToList();
         }
     }
 }

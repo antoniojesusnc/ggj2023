@@ -28,4 +28,7 @@ public class SoundConfigurationInfo
     
     [field: SerializeField] 
     public float FadeOut { get; private set; }
+    
+    [field: SerializeField] 
+    public bool CanPlayTwice { get; private set; }
 }

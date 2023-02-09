@@ -48,8 +48,6 @@ public class EnemyController : MonoBehaviour
     
     private IEnumerator FollowPlayerCo()
     {
-        var character = GameManager.Instance.Character;
-
         while (_following)
         {
             Vector3 direction = (GameManager.Instance.Character.HeadTransform.position - transform.position).normalized;

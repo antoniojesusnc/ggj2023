@@ -708,6 +708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8078762434170633602, guid: b5521c7283033624aac5b47198a1e664, type: 3}
+      propertyPath: _persistent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8316371321865282066, guid: b5521c7283033624aac5b47198a1e664, type: 3}
       propertyPath: m_Name
       value: LocalizationManager
@@ -1312,7 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6744f0c073b47c84882482c101bf5b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persistent: 1
+  _persistent: 0
   _audioConfig: {fileID: 11400000, guid: 1753dccdffa74b94cbdc27fbea4f0788, type: 2}
 --- !u!4 &757017794
 Transform:
@@ -2946,7 +2950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6062471095931081919, guid: 94943e71134361d4b91ad0bedf084168, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7286922963373567736, guid: 94943e71134361d4b91ad0bedf084168, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

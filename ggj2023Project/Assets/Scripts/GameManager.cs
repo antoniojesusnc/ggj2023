@@ -13,8 +13,21 @@ public class GameManager : Singleton<GameManager>
     public float Intensity { get; private set; }
 
     [field: SerializeField]
-    public CharacterManager Character { get; private set; }
-    
+    public CharacterManager _character { get; private set; }
+
+    public CharacterManager Character
+    {
+        get
+        {
+            if (_character == null)
+            {
+                _character = GameObject.FindObjectOfType<CharacterManager>();
+            }
+
+            return _character;
+        }
+    }
+
     public bool IsGameOver { get; private set; }
 
     [field: SerializeField] public event Action<bool> OnShakeStatusChanged;
@@ -38,11 +51,6 @@ public class GameManager : Singleton<GameManager>
 
             Intensity = enemyEncounterConfig.IntensityOverTime.Evaluate(timeStamp / enemyEncounterConfig.EncounterDuration);
 
-            if (timeStamp > enemyEncounterConfig.EncounterDuration)
-            {
-                FinishShaker();
-            }
-            
             yield return 0;
         }
     }
@@ -53,15 +61,9 @@ public class GameManager : Singleton<GameManager>
     {
         IsShaking = false;
         OnShakeStatusChanged?.Invoke(false);
-
-        PlayAmbienceAudio();
     }
 
-    public void PlayAmbienceAudio()
-    {
-        var audio = UnityEngine.Random.value < 0.5f ? AudioTypes.Ambiente01 : AudioTypes.Ambiente02;
-        AudioManager.Instance.PlaySound(audio);
-    }
+   
 
     public void PlayAgain()
     {

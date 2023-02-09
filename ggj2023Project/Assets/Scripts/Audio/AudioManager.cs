@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -12,21 +10,36 @@ public class AudioManager : Singleton<AudioManager>
     private AudioConfiguration _audioConfig;
 
     private List<AudioManagerInfo> _audioSourcesInfo = new();
-    
+
     void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
     }
 
-    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    private void OnDestroy()
     {
-        var audioSources = GetComponents<AudioSource>();
-        for (int i = 0; i < audioSources.Length; i++)
+        GameManager.Instance.OnShakeStatusChanged -= OnShakeStatusChanged;
+    }
+
+    private void OnShakeStatusChanged(bool shaking)
+    {
+        if (shaking)
         {
-            audioSources[i].Stop();
+            FinishAudio(AudioTypes.Ambiente01);
+            FinishAudio(AudioTypes.Ambiente02);
+        }
+        else
+        {
+            PlayAmbienceAudio();
         }
     }
 
+    public void PlayAmbienceAudio()
+    {
+        var audio = UnityEngine.Random.value < 0.5f ? AudioTypes.Ambiente01 : AudioTypes.Ambiente02;
+        PlaySound(audio);
+    }
+    
     public void PlaySound(AudioTypes audioType)
     {
         PlaySound(audioType, transform);
@@ -45,15 +58,26 @@ public class AudioManager : Singleton<AudioManager>
 
     private void PlaySoundInternal(SoundConfigurationInfo soundConfigInfo, Transform parent)
     {
+        if (!soundConfigInfo.CanPlayTwice)
+        {
+            if (IsAlreadySound(soundConfigInfo))
+            {
+                return;
+            }
+        }
+        
         AudioSource audioSource;
         if (parent != transform)
         {
             audioSource = GetAudioSource();
+            _audioSourcesInfo.Add( new AudioManagerInfo(soundConfigInfo.AudioType, audioSource));
         }
         else
         {
             audioSource = GetNewAudioSource(parent);
-            StartCoroutine(DestroyAudioSourceAfter(audioSource, soundConfigInfo.AudioClip.length + soundConfigInfo.FadeOut));
+            var managerInfo = new AudioManagerInfo(soundConfigInfo.AudioType, audioSource);
+            _audioSourcesInfo.Add( managerInfo);
+            StartCoroutine(DestroyAudioSourceAfterCo(managerInfo, soundConfigInfo.AudioClip.length + soundConfigInfo.FadeOut));
         }
 
         transform.position = transform.position + transform.forward;
@@ -61,30 +85,57 @@ public class AudioManager : Singleton<AudioManager>
         audioSource.volume = soundConfigInfo.Volume;
         audioSource.Play();
         
-        _audioSourcesInfo.Add( new AudioManagerInfo(soundConfigInfo.AudioType, audioSource));
     }
 
-    private IEnumerator DestroyAudioSourceAfter(AudioSource audioSource, float audioClipLength)
+    private bool IsAlreadySound(SoundConfigurationInfo soundConfigInfo)
+    {
+        for (int i = 0; i < _audioSourcesInfo.Count; i++)
+        {
+            if (_audioSourcesInfo[i].AudioTypes == soundConfigInfo.AudioType &&
+                _audioSourcesInfo[i].AudioSource.isPlaying)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private IEnumerator DestroyAudioSourceAfterCo(AudioManagerInfo audioSourcesInfo, float audioClipLength)
     {
         yield return new WaitForSeconds(audioClipLength);
 
-        bool loop = false;
-        if (_audioConfig.TryGetSoundConfig(AudioTypes.Ambiente01, out var soundConfigInfo))
+        if (audioSourcesInfo == null)
         {
-            loop = true;
-        }
-        
-        if (_audioConfig.TryGetSoundConfig(AudioTypes.Ambiente02, out var soundConfigInfo2))
-        {
-            loop = true;
+            yield break;
         }
 
-        if (loop)
+        DestroyAudioSource(audioSourcesInfo);
+    }
+
+    private void DestroyAudioSource(AudioManagerInfo audioSourcesInfo)
+    {
+        if (audioSourcesInfo.AudioSource != null)
         {
-            GameManager.Instance.PlayAmbienceAudio();
+            audioSourcesInfo.AudioSource.Stop();
+            Destroy(audioSourcesInfo.AudioSource);
         }
-            
-        Destroy(audioSource);
+        _audioSourcesInfo.Remove(audioSourcesInfo);
+        OnDestroySound(audioSourcesInfo.AudioTypes);
+    }
+
+    private void OnDestroySound(AudioTypes audioTypes)
+    {
+        if (GameManager.Instance.IsShaking)
+        {
+            return;
+        }
+
+        if (audioTypes == AudioTypes.Ambiente01
+            || audioTypes == AudioTypes.Ambiente02)
+        {
+            PlayAmbienceAudio();
+        }
     }
 
     private AudioSource GetAudioSource()
@@ -108,27 +159,28 @@ public class AudioManager : Singleton<AudioManager>
 
     public void FinishAudio(AudioTypes audioToFade)
     {
-        var audioSource =_audioSourcesInfo.Find(audioInfo => audioInfo.AudioTypes == audioToFade);
-        if (audioSource == null)
+        var audioSourcesInfo =_audioSourcesInfo.Find(audioInfo => audioInfo.AudioTypes == audioToFade);
+        if (audioSourcesInfo == null)
         {
             return;
         }
 
 
-        FadeOut(audioToFade, audioSource.AudioSource);
+        FadeOut(audioSourcesInfo);
     }
 
-    private void FadeOut(AudioTypes audioToFade, AudioSource audioSource)
+    private void FadeOut(AudioManagerInfo audioSourcesInfo)
     {
-        _audioConfig.TryGetSoundConfig(audioToFade, out var _audioSourcesInfo);
+        _audioConfig.TryGetSoundConfig(audioSourcesInfo.AudioTypes, out var audioSourcesConfigInfo);
 
-        if (_audioSourcesInfo.FadeOut > 0)
+        if (audioSourcesConfigInfo.FadeOut > 0)
         {
-            audioSource.DOFade(0, _audioSourcesInfo.FadeOut).onComplete += () => DestroyAudioSourceAfter(audioSource, 0);
+            audioSourcesInfo.AudioSource.DOFade(0, audioSourcesConfigInfo.FadeOut);
+            StartCoroutine(DestroyAudioSourceAfterCo(audioSourcesInfo, audioSourcesConfigInfo.FadeOut));
         }
         else
         {
-            DestroyAudioSourceAfter(audioSource, 0);
+            DestroyAudioSource(audioSourcesInfo);
         }
     }
 
