@@ -100,54 +100,54 @@ MonoBehaviour:
     <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 16
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 8d6b6f04540ad094381a73b1095dfeb8, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 17
     <AudioClip>k__BackingField: {fileID: 8300000, guid: a5e102287e5b38e46ad1c2acda5995fa, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 19
     <AudioClip>k__BackingField: {fileID: 8300000, guid: f427ed5416c97824c80c6f6da19e2d79, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 20
     <AudioClip>k__BackingField: {fileID: 8300000, guid: b6c3bf9e829b99a43ae7e975c7807a04, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 21
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 2dea680801bed8245887a3a1fde74d77, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 22
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 13e24cb5ec44e714e8bb0712a735269d, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 23
     <AudioClip>k__BackingField: {fileID: 8300000, guid: bbf6ad6f9caf7d34286bbbfa8904e9b0, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 24
     <AudioClip>k__BackingField: {fileID: 8300000, guid: fb1769709c8721541815cd77616a7ec9, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
-  - <AudioType>k__BackingField: 4
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
+  - <AudioType>k__BackingField: 25
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 94c104b2764021d42a4430d2ea58c7d8, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 18
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 7b848b5b747edf74eb4b5aa1efeb4dae, type: 3}
-    <Volume>k__BackingField: 0.7
-    <FadeOut>k__BackingField: 0
-    <CanPlayTwice>k__BackingField: 0
+    <Volume>k__BackingField: 0.4
+    <FadeOut>k__BackingField: 0.2
+    <CanPlayTwice>k__BackingField: 1
   - <AudioType>k__BackingField: 26
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 6faf96e62b140c748a329a914476c2dd, type: 3}
     <Volume>k__BackingField: 0.5

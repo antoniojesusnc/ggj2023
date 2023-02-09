@@ -104,6 +104,15 @@ public class AudioManager : Singleton<AudioManager>
         return false;
     }
 
+    public void DestroyAudioSourceAfter(AudioTypes audioTypes, float delayToDestroy)
+    {
+        var audioSourcesInfo = _audioSourcesInfo.Find(audioSource => audioSource.AudioTypes == audioTypes);
+        if (audioSourcesInfo != null)
+        {
+            StartCoroutine(DestroyAudioSourceAfterCo(audioSourcesInfo, delayToDestroy));
+        }
+    }
+    
     private IEnumerator DestroyAudioSourceAfterCo(AudioManagerInfo audioSourcesInfo, float audioClipLength)
     {
         yield return new WaitForSeconds(audioClipLength);

@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: CharacterMovementConfiguration
   m_EditorClassIdentifier: 
   <MovementSpeed>k__BackingField: 2
+  <MovementBackwardsFactor>k__BackingField: 0.5
+  <RunFactor>k__BackingField: 2
   <RotationSpeed>k__BackingField: 60
+  <ForwardStepDuration>k__BackingField: 0.5
+  <RunningStepDuration>k__BackingField: 1
+  <BackwardStepDuration>k__BackingField: 0.75
+  <RotateStepDuration>k__BackingField: 0.5

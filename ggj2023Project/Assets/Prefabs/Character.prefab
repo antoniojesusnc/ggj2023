@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 3617786671058802709}
   - component: {fileID: 7928811854996773485}
   - component: {fileID: -6262117050694869205}
+  - component: {fileID: 4367089874339438348}
   - component: {fileID: 8862278537737128325}
   - component: {fileID: 1099704746666268882}
   m_Layer: 0
@@ -250,6 +251,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterMovementConfiguration: {fileID: 11400000, guid: 385564dc8b42b4147a63b8f5a0d672ec, type: 2}
   _animator: {fileID: 843419344729775229}
+--- !u!114 &4367089874339438348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809768884605230542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ddd0f2c9e0a5c47ae1375a86a9a5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterMovementConfig: {fileID: 11400000, guid: 385564dc8b42b4147a63b8f5a0d672ec, type: 2}
+  _stepSounds: 10000000110000001200000013000000140000001500000016000000170000001800000019000000
 --- !u!54 &8862278537737128325
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -17,10 +17,13 @@ namespace Character
 		private bool _rightPressed = false;
 		private bool _runPressed = false;
 
+		private CharacterSteps _characterSteps;
 		private void Start() {
 			SubscribeEvents();
 
 			GameManager.Instance.OnShakeStatusChanged += OnShakeStatusChanged;
+
+			_characterSteps = GetComponent<CharacterSteps>();
 		}
 
 		void Update() {
@@ -47,6 +50,11 @@ namespace Character
 			DoMovement();
 			// Check rotation inputs
 			DoRotation();
+
+			if (!IsRotating() && !IsMoving())
+			{
+				_characterSteps.IsNotWalking();
+			}
 		}
 
 		/// <summary>
@@ -81,8 +89,10 @@ namespace Character
 		private void DoMovement() {
 			if (IsWalkingForward()) {
 				gameObject.transform.position += gameObject.transform.forward * (CurrentSpeed() * Time.deltaTime);
+				_characterSteps.IsWalkingForward(_runPressed);
 			} else if (IsWalkingBackwards()) {
 				gameObject.transform.position += gameObject.transform.forward * (-CurrentSpeed() * Time.deltaTime);
+				_characterSteps.IsWalkingBackward();
 			}
 		}
 
@@ -92,8 +102,10 @@ namespace Character
 		private void DoRotation() {
 			if (IsRotatingLeft()) {
 				gameObject.transform.Rotate(0.0f, -_characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
+				_characterSteps.IsRotating();
 			} else if (IsRotatingRight()) {
 				gameObject.transform.Rotate(0.0f, _characterMovementConfiguration.RotationSpeed * Time.deltaTime, 0.0f, Space.Self);
+				_characterSteps.IsRotating();
 			}
 		}
 
