@@ -18,7 +18,10 @@ public class AudioManager : Singleton<AudioManager>
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnShakeStatusChanged -= OnShakeStatusChanged;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnShakeStatusChanged -= OnShakeStatusChanged;
+        }
     }
 
     private void OnShakeStatusChanged(bool shaking)

@@ -45,13 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 1
-  _itemInfoConfig:
-  - {fileID: 11400000, guid: 3f90aea6e0974db4a9d00ed08a60bc63, type: 2}
-  - {fileID: 11400000, guid: 76526be6d187d464094259d4f078ce0f, type: 2}
-  - {fileID: 11400000, guid: fb200c73c69ee9d4291a73d3bc763bcf, type: 2}
-  - {fileID: 11400000, guid: 8d7345573470c904786c1c2391da6ee5, type: 2}
-  - {fileID: 11400000, guid: c303bcb895fbb9a429a954c14e5242c1, type: 2}
-  - {fileID: 11400000, guid: d0639069e831178429aa9c705e0094d9, type: 2}
-  - {fileID: 11400000, guid: 3354576404a71e448af6dac55582dfa2, type: 2}
-  - {fileID: 11400000, guid: 33142e2334033b84aa61e6066a05e970, type: 2}
-  - {fileID: 11400000, guid: 8697ccc035fac324dbe02d970f0fc1f5, type: 2}
+  _key: {fileID: 0}
+  _hasKeyFake: 0
+  _numItemsToGetKey: 4
+  <ItemsCollected>k__BackingField: []

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,8 @@ namespace Character
 
 		private ItemDetector _itemToInteract;
 
+		private CharacterInputs _characterInputs;
+		
 		private void Start() {
 			SubscribeEvents();
 		}
@@ -21,12 +24,17 @@ namespace Character
 		/// Subscribes to all required events.
 		/// </summary>
 		private void SubscribeEvents() {
-			CharacterInputs characterInputs = new();
-			characterInputs.Character.Enable();
+			_characterInputs = new();
+			_characterInputs.Character.Enable();
 
-			characterInputs.Character.Interact.performed += OnInteract;
+			_characterInputs.Character.Interact.performed += OnInteract;
 
 			PickingUp.OnPickedUp += OnPickedUp;
+		}
+
+		private void OnDestroy()
+		{
+			PickingUp.OnPickedUp -= OnPickedUp;
 		}
 
 		private void OnInteract(InputAction.CallbackContext context)

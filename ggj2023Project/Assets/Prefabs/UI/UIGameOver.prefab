@@ -1049,7 +1049,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9188550831265963778}
         m_TargetAssemblyTypeName: UIGameOver, Assembly-CSharp
-        m_MethodName: OnClickInPlayAgainButton
+        m_MethodName: OnClickInRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1240,7 +1240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064f8799113f1e14b9564c234814fa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _persistent: 1
+  _uIConfig: {fileID: 11400000, guid: 3b77f73e293ffbd4a996c12a1bf98cf5, type: 2}
   _canvasGroupGameOver: {fileID: 1200908938659184026}
   _canvasGroupGameOverSuccess: {fileID: 8088047755206250400}
-  victoryMessage: {fileID: 3147541516510179907}
-  _uIConfig: {fileID: 11400000, guid: 3b77f73e293ffbd4a996c12a1bf98cf5, type: 2}
+  victoryMessage: {fileID: 0}
+  _playAgainButton: {fileID: 0}
