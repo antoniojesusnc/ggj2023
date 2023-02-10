@@ -65,7 +65,7 @@ Transform:
   m_Children:
   - {fileID: 7962330566220537440}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7905397691382263248
 MonoBehaviour:
@@ -82,6 +82,7 @@ MonoBehaviour:
   _uiConfig: {fileID: 11400000, guid: 3b77f73e293ffbd4a996c12a1bf98cf5, type: 2}
   _lastRotation: 180
   _door: {fileID: 7962330566220537440}
+  _closeDoor: 0
 --- !u!65 &6336403344762403600
 BoxCollider:
   m_ObjectHideFlags: 0

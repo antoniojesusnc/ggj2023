@@ -12,7 +12,6 @@ public class InfoTextDetector : MonoBehaviour
     }
     
     private void OnDrawGizmos() {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireCube(this.transform.position, this.transform.lossyScale);
+        DrawGizmosUtil.Draw(Color.white, transform);
     }
 }

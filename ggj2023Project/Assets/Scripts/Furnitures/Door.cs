@@ -14,7 +14,11 @@ public class Door : MonoBehaviour
     
     [SerializeField]
     private Transform _door;
+    
+    [SerializeField]
+    private bool _closeDoor;
 
+    
     private float _originalRotation;
 
     private void OnTriggerEnter()
@@ -27,7 +31,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (ItemManager.Instance.HasKey)
+        if (ItemManager.Instance.HasKey && _closeDoor)
         {
             CloseDoor();
         }
