@@ -39,7 +39,7 @@ namespace Character
 
 		private void OnInteract(InputAction.CallbackContext context)
 		{
-			if (_itemToInteract == null)
+			if (_itemToInteract == null || UIDiary.Instance.IsOpened)
 			{
 				return;
 			}
@@ -50,10 +50,13 @@ namespace Character
 
 		private void OnPickedUp() {
 			GameManager.Instance.OpenItem(_itemToInteract);
-			_itemToInteract = null;
-			
-			GameManager.Instance.Character.InTrigger(null);
-			UITriggerInput.Instance.ShowSpace(false);
+
+			if (_itemToInteract.ItemInfoConfig.IsCollectable)
+			{
+				_itemToInteract = null;
+				GameManager.Instance.Character.InTrigger(null);
+				UITriggerInput.Instance.ShowSpace(false);
+			}
 		}
 
 		public void SetTrigger(ItemDetector itemDetector)

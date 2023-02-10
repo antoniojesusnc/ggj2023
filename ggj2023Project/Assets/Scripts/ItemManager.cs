@@ -19,7 +19,6 @@ public class ItemManager : Singleton<ItemManager>
     {
         ItemsCollected.Add(nextItem);
 
-        
         if (ItemsCollected.Count >= _numItemsToGetKey && !HasKey)
         {
             AddKey();

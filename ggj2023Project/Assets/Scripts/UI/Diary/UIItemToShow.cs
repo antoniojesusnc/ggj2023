@@ -12,11 +12,15 @@ public class UIItemToShow : MonoBehaviour
     private Image _image;
     [SerializeField] 
     private UISlowText _slowText;
+    [SerializeField] 
+    private GameObject _background;
     
     public void Open(ItemInfoConfiguration itemToInteract)
     {
         _tittle.SetText(LocalizationManager.Instance.GetTittleText(itemToInteract.Name));
         _image.sprite = itemToInteract.Image;
         _slowText.SetText(LocalizationManager.Instance.GetText(itemToInteract.Description), false);
+        
+        _background.SetActive(itemToInteract.Name == LocalizationTypes.Llave);
     }
 }
