@@ -8,36 +8,47 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LocalizationConfiguration", menuName = "ScriptableObjects/LocalizationConfiguration", order = 1)]
 public class LocalizationConfiguration : ScriptableObject
 {
-    private string LOCALIZATION_FOLDER = "Assets/GameConfig/Localization/";
-    private string LOCALIZATION_FILE = "localizationData.json";
+    private string LOCALIZATION_FOLDER = "Assets/GameConfig/Localization/Resources/";
+    private string LOCALIZATION_FILE = "localizationData{0}";
+    private string EXTENSION = ".json";
     
     [SerializeField]
     private List<LocalizationConfigurationInfo> _localizationConfig;
 
-    public string GetTittleKeyText(LocalizationTypes localizationKey, Languages language = Languages.Es)
+    public string GetTittleKeyText(LocalizationTypes localizationKey)
     {
         var localizationConfigurationInfo = _localizationConfig.Find(language => language.LocalizationTypes == localizationKey);
-        return localizationConfigurationInfo.GetTittleByLanguage(language);
+        return localizationConfigurationInfo.Title;
     }
     
-    public string GetKeyText(LocalizationTypes localizationKey, Languages language = Languages.Es)
+    public string GetKeyText(LocalizationTypes localizationKey)
     {
         var localizationConfigurationInfo = _localizationConfig.Find(language => language.LocalizationTypes == localizationKey);
-        return localizationConfigurationInfo.GetDescriptionByLanguage(language);
+        return localizationConfigurationInfo.Description;
     }
 
     [ContextMenu("ExportLocalization")]
     public void ExportLocalization()
     {
         var json = Newtonsoft.Json.JsonConvert.SerializeObject(_localizationConfig, typeof(List<LocalizationConfigurationInfo>), Formatting.Indented, new JsonSerializerSettings());
-        File.WriteAllText(LOCALIZATION_FOLDER+LOCALIZATION_FILE, json);
+        File.WriteAllText(LOCALIZATION_FOLDER+string.Format(LOCALIZATION_FILE, Languages.Es)+EXTENSION, json);
+    }
+
+    [ContextMenu("ImportLocalization ES")]
+    public void ImportLocalizationEs()
+    {
+        LoadLanguage(Languages.Es);
+    }
+    [ContextMenu("ImportLocalization EN")]
+    public void ImportLocalizationEn()
+    {
+        LoadLanguage(Languages.En);
     }
     
-    [ContextMenu("ImportLocalization")]
-    public void ImportLocalization()
+    public void LoadLanguage(Languages language)
     {
-        var fileRaw = File.ReadAllText(LOCALIZATION_FOLDER+LOCALIZATION_FILE);
-        var newData = JsonConvert.DeserializeObject<List<LocalizationConfigurationInfo>>(fileRaw);
+        var textAsset = Resources.Load<TextAsset>(string.Format(LOCALIZATION_FILE, language));
+        var newData = JsonConvert.DeserializeObject<List<LocalizationConfigurationInfo>>(textAsset.text);
         if (newData?.Count > 0)
         {
             _localizationConfig = newData.ToList();
@@ -48,33 +59,13 @@ public class LocalizationConfiguration : ScriptableObject
 [System.Serializable]
 public class LocalizationConfigurationInfo
 {
-    [field: SerializeField]
+    [field: SerializeField][JsonProperty][JsonConverter(typeof(StringEnumConverter))]
     public LocalizationTypes LocalizationTypes { get; private set; }
     
-    [field: SerializeField]
-    public List<LocalizationConfigurationInfoLanguage> Text { get; private set; }
-
-    public string GetTittleByLanguage(Languages language)
-    {
-        return Text.Find(text => text.Language == language).Tittle;
-    }
+    [field: SerializeField][JsonProperty]
+    public string Title { get; private set; }
     
-    public string GetDescriptionByLanguage(Languages language)
-    {
-        return Text.Find(text => text.Language == language).Description;
-    }
-}
-
-[System.Serializable]
-public class LocalizationConfigurationInfoLanguage
-{
-    [field: SerializeField]
-    public Languages Language { get; private set; }
-
-    [field: SerializeField]
-    public string Tittle { get; private set; }
-    
-    [field: SerializeField]
+    [field: SerializeField][JsonProperty]
     public string Description { get; private set; }
 }
     

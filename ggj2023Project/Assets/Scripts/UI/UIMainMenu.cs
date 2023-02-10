@@ -63,12 +63,12 @@ public class UIMainMenu : MonoBehaviour
 	}
 
     public void SetLanguageEs() {
-		GeneralSetting.Instance.SetLanguage(Languages.Es);
+	    LocalizationManager.Instance.SetLanguage(Languages.Es);
 		UpdateTextsToLanguage();
 	}
 
     public void SetLanguageEn() {
-		GeneralSetting.Instance.SetLanguage(Languages.En);
+	    LocalizationManager.Instance.SetLanguage(Languages.En);
 		UpdateTextsToLanguage();
 	}
 }

@@ -7,11 +7,16 @@ public class LocalizationManager : Singleton<LocalizationManager>
 
     public string GetTittleText(LocalizationTypes localizationType)
     {
-        return _localizationConfig.GetTittleKeyText(localizationType, GeneralSetting.Instance.Language);
+        return _localizationConfig.GetTittleKeyText(localizationType);
     }
     
     public string GetText(LocalizationTypes localizationType)
     {
-        return _localizationConfig.GetKeyText(localizationType, GeneralSetting.Instance.Language);
+        return _localizationConfig.GetKeyText(localizationType);
+    }
+
+    public void SetLanguage(Languages language)
+    {
+        _localizationConfig.LoadLanguage(language);
     }
 }

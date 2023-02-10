@@ -14,344 +14,200 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _localizationConfig:
   - <LocalizationTypes>k__BackingField: 0
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: '"November 27, 1999 Eva Dwight has arrived at
-        the estate she inherited. ""I can''t believe it!"" I thought, how lucky I
-        was. Apparently the estate has been abandoned for 100 years, and my own great-great-grandfather
-        he gave precise instructions that only his great-great-grandson should inherit
-        it. Anyway... ""Things of Victorian gentlemen, he''ll have to settle for
-        a great-great-granddaughter inheriting it"" Eva thinks optimistically. Behind
-        her, the door of the mansion closes. close."'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: "\"27 de Noviembre, 1999  Eva Dwight ha llegado
-        a la hacienda que ha heredado. \"\"\xA1No me lo puedo creer!\"\" pensaba,
-        en la suerte que hab\xEDa tenido.  Al parecer la mansi\xF3n lleva abandonada
-        100 a\xF1os, y mi propio tatarabuelo dio instrucciones precisas de que solo
-        la heredase su tataranieto. En fin... \"\"cosas de se\xF1oros victorianos,
-        tendr\xE1 que conformarse con que lo herede una tataranieta\"\" piensa Eva
-        de forma optimista. Detr\xE1s de si, la puerta de la mansi\xF3n se cierra.\""
+    <Title>k__BackingField: 
+    <Description>k__BackingField: November 27, 1999 Eva Dwight has arrived at the
+      estate that she has inherited. Apparently the mansion has been abandoned for
+      100 years, and her own great-great-grandfather gave precise instructions that
+      only her great-great-grandson should inherit it. Anyway... ""things of Victorian
+      lords, you'll have to settle for a great-great-granddaughter inheriting it""
+      Eva thinks. Behind her, the door of the mansion closes.
   - <LocalizationTypes>k__BackingField: 1
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: '"Eva decisively grabs the bottle with both hands,
-        and throws it to the ground, breaking it against the roots. Green smoke begins
-        to rise from the remains of the bottle, entering Eva''s mouth, nose and eyes,
-        drowning out all her screams. The girl she collapses to the ground. After
-        a few minutes she gets up recovered. She looks at her arms and looks at her
-        body. Albert Sickert: ""Oh wow, apparently there was only one great-great-granddaughter
-        left in the family line. It will have to be worth... Century XXI, I arrived
-        in time to see you born..."" Eva Sickert ascends the basement stairs with
-        unsteady steps, but whistling a happy but old-fashioned tune. END"'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: "\"Eva agarras con decisi\xF3n la botella con
-        ambas manos, y lo lanza al suelo quebrandola contra las raices.  Un humo
-        verde comienza a ascender desde los restos de la botella introduci\xE9ndose
-        por la boca, nariz y ojos de Eva, ahog\xE1ndole todo grito.  La chica cae
-        colapsada al suelo. Tras unos minutos se levanta recuperada. Se mira los
-        brazos y revisa su cuerpo con la mirada.  Albert Sickert: \"\"Oh vaya, al
-        parecer de la linea familiar solo quedaba una tataranieta. Tendr\xE1 que
-        valer...  Siglo XXI, llego a tiempo de verte nacer...\"\"  Eva Sickert asciende
-        por las escaleras del s\xF3tano con paso vacilante, pero silbando una alegre
-        aunque anticuada melod\xEDa.  FIN\""
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 'Eva decisively grabs the bottle and throws it
+      to the ground, breaking it against the roots. Green smoke rises from the remains
+      of the bottle, entering Eva''s mouth, nose and eyes, drowning out her screams.
+      She takes her hands to her throat and she falls to the ground unconscious.
+      After a few minutes she gets up recovered. She looks at her arms and checks
+      her body. Eva Sickert: "Oh wow, apparently there was only one great-great-granddaughter
+      left in the family line. It will have to do... "21st century, I arrived in
+      time to see you born..." Eva Sickert ascends the basement stairs unsteadily,
+      but whistling a happy but old-fashioned tune. THE END'
   - <LocalizationTypes>k__BackingField: 2
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: Page 1
-      <Description>k__BackingField: '"Monday, November 1, 1852 Here at last! We have
-        arrived at Dwight Manor after an exhausting journey from London, my wife,
-        Mary Anne Sickert, and my daughter, little Anni Ariadne. The welcome by the
-        Dwight patriarch "It couldn''t have been colder. I have big plans for the
-        farm, I''ll show the old miser that I can handle things better than him.
-        Good fortune is smiling on me at last!"'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "P\xE1gina 1"
-      <Description>k__BackingField: "\"Lunes, 1 de noviembre de 1852  \xA1Al fin
-        aqu\xED! Hemos llegado a la mansi\xF3n Dwight despu\xE9s de un viaje agotador
-        desde Londres, mi esposa, Mary Anne Sickert, y mi hija, la peque\xF1a Anni
-        Ariadne.  El recibimiento por parte del patriarca Dwight no ha podido se
-        m\xE1s fr\xEDo. Tengo grandes planes para la finca, le demostrar\xE9 al viejo
-        avaro que puedo manejar las cosas mejor que \xE9l.\xA1Por fin la buena fortuna
-        me sonr\xEDe!\""
+    <Title>k__BackingField: "P\xE1gina 1"
+    <Description>k__BackingField: Monday, November 1, 1852 Here at last! We have
+      arrived at Dwight Manor after an exhausting journey from London, my wife, Mary
+      Anne Sickert, and my daughter, little Anni Ariadne. The welcome by the Dwight
+      patriarch It couldn't have been colder. He has never trusted me, and it was
+      only after much insistence from Mary Anne and her mother that the great patriarch
+      stooped to bequeath the family estate to me, while they retire to their summer
+      residence ( much bigger and more luxurious) permanently. I have big plans for
+      the estate, I'll show the old miser that I can handle things better than him.
+      Good fortune is smiling on me at last!
   - <LocalizationTypes>k__BackingField: 3
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: Page 2
-      <Description>k__BackingField: '"Sunday, October 23, 1853 We are broke. Not
-        a year has passed without the entire administration of the Dwight estate
-        gone to hell! I sometimes wonder if it was not a poisoned inheritance on
-        the part of the patriarch Dwight. But no, I have no one else to blame but
-        myself. At least I''ve gotten something good out of it. I''ve come into contact
-        with the Christian Science Society, practitioners of mesmerism."'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "P\xE1gina 2"
-      <Description>k__BackingField: "\"Domingo, 23 de octubre de 1853  Estamos en
-        la ruina. \xA1No ha pasado ni un a\xF1o sin que toda la administraci\xF3n
-        de la finca Dwight se haya ido al traste!  A veces me pregunto si no habr\xE1
-        sido una herencia envenenada por parte del patriarca Dwight. Pero no, no
-        tengo a nadie m\xE1s que culpar excepto a mi mismo. Al menos algo bueno he
-        sacado de todo ello. He entrado en contacto con la Sociedad por la Ciencia
-        Cristiana, practicantes del mesmerismo.\""
+    <Title>k__BackingField: "P\xE1gina 2"
+    <Description>k__BackingField: Sunday, October 23, 1853 We are broke! Not a year
+      has passed without the entire administration of the Dwight estate having gone
+      to waste. I sometimes wonder if it was not a poisoned inheritance on the part
+      of the Patriarch Dwight. That old miser never liked me. Damn old Dwight kept
+      telling me that you can't make money so fast, you just have to wait and progress
+      little by little. He was there waiting to see me fail... But no, I have no
+      one else to blame but myself. I made a series of bad business decisions that
+      didn't pan out the way I thought. Our coming-out hasn't been cheap, either,
+      a series of expensive parties and balls. All those old men rich people came,
+      ate my food, drank my drink, and then grandly told me why they couldn't support
+      my business. Freeloaders! At least I've got something good out of it all. I've
+      contacted the Society for Christian Science, an interesting group of practitioners
+      of mesmerism. It interests me greatly but with the little that the estate gives
+      now we only have left to live badly in the same way that we lived badly in
+      London.
   - <LocalizationTypes>k__BackingField: 4
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: "\xBF?\xBF?"
-      <Description>k__BackingField: '"Correspondence with Sir W.W.Gull cannot be
-        the most fascinating. If only the mail were faster in this accursed country...
-        He has accepted me as his disciple, and together we are delving into the
-        Science of the Salts of the Soul." The expansion of the east wing had not
-        even begun when a worker sank to the ground and fell to his death.The discovery
-        was fascinating: There was an ""underground tree"" with a natural recess
-        in the form of an altar ."'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "\xBF?\xBF?"
-      <Description>k__BackingField: "\"La correspondencia con Sir W.W.Gull no puede
-        ser de lo m\xE1s fascinante. Si tan solo el correo fuese m\xE1s r\xE1pido
-        en este maldito pa\xEDs... Me ha aceptado como su disc\xEDpulo, y juntos
-        nos estamos adentrando en la Ciencia de las Sales del Alma. La ampliaci\xF3n
-        del ala este no acababa ni de empezar cuando un trabajador se ha hundido
-        en el suelo y se ha precipitado hacia su muerte. El descubrimiento ha sido
-        fascinante: Hab\xEDa un \"\"\xE1rbol subterr\xE1neo\"\" tiene un receso natural
-        en forma de altar.\""
+    <Title>k__BackingField: "P\xE1gina perdida"
+    <Description>k__BackingField: '(date unintelligible) The correspondence with
+      Sir W.W.Gull cannot be the most fascinating. If only the post was faster in
+      this accursed country... He has accepted me as his disciple, and together we
+      are delving into the Science of the Salts of the Soul. Mary Anne doesn''t like
+      Sir Gull. She says he has a strange air about him, and she doesn''t like the
+      way he looks at the rest of the world, as if we were vessels for his own use.
+      Pah, what does she know! "If you''ve even been so kind as to be willing to
+      finance renovations to Dwight Mansion for the construction of a laboratory.
+      The extension to the east wing had hardly even begun when a workman sank to
+      the ground and plunged into its death. The discovery has been fascinating:
+      There was an underground chamber that adjoins the Dwight mansion, just below
+      that big tree in the direction of the swamps. It is as if the roots of this
+      tree held the earth and then grew back in an inverted way, under the ground
+      , as if Atlas himself had chosen this place to hold the world. This ""underground
+      tree"" has a natural recess in the form of an altar. It is incredible, it is
+      the perfect place that we were looking for for the crib!'
   - <LocalizationTypes>k__BackingField: 5
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: Page 3
-      <Description>k__BackingField: '"Friday, March 3, 1854 The Society for Mesmedical
-        Science has turned out to be nothing more than a bunch of amateur idiots
-        who allow themselves to be deceived by swindlers, conjurers, and charlatans.
-        But among them I have met one Sir William W. Gull, a very intelligent person
-        who has told me about the ""science of salts"" A very interesting guy this
-        Gull..."'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "P\xE1gina 3"
-      <Description>k__BackingField: "\"Viernes, 3 de marzo de 1854  La Sociedad por
-        la Ciencia Mesmedica no ha resultado m\xE1s que ser un grupo de bobos aficionados
-        que se dejan engatusar por estafadores, prestidigitadores y charlatanes.
-        Pero entre ellos he conocido a un tal Sir William W. Gull, una persona inteligent\xEDsima
-        que me ha hablado de la \"\"ciencia de las sales\"\" Un tipo muy interesante
-        este Gull...\""
+    <Title>k__BackingField: "P\xE1gina 3"
+    <Description>k__BackingField: Friday, March 3, 1854 The Society for Christian
+      Science has turned out to be nothing more than a group of amateur fools who
+      allow themselves to be deceived by swindlers, conjurers and charlatans. A group
+      of simple minds who would not be able to distinguish an extraordinary event
+      from among so much smoke and artifice. Bah, you stupid morons! They are bound
+      by the dogma of their pathetic god. They have no capacity to understand. They
+      can never see beyond. But among them I have met one Sir William W. Gull, a
+      person very intelligent person who has told me about the ""science of salts"",
+      an evolution of mesmerism combined with alchemy with the aim of subduing the
+      nature of the mortal soul. She tells me that the Dwight estate presents a good
+      atmosphere predisposition thanks to the properties exotics from the nearby
+      swamp. Which would be a good place to build a "cradle". Very interesting fellow
+      this Gull...
   - <LocalizationTypes>k__BackingField: 6
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: Page 4
-      <Description>k__BackingField: '"Thursday, August 31, 1854 I am ready to begin
-        the first step of my great masterpiece. I have ensured that the quality of
-        the salts is of the highest possible purity. I have reviewed the formulas
-        with W.W.Gull dozens of times. They are perfect Only one essential element
-        is missing, which fortunately we both possess: a container of our own blood."'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "P\xE1gina 4"
-      <Description>k__BackingField: "\"Jueves, 31 de agosto de 1854 Estoy listo para
-        iniciar el primer paso de mi gran obra maestra. Me he asegurado que la calidad
-        de las sales sea de la m\xE1xima pureza posible. He revisado las f\xF3rmulas
-        con W.W.Gull decenas de veces. Son perfectas. Tan solo falta un elemento
-        esencial, que afortunadamente, ambos poseemos: un recipiente de nuestra propia
-        sangre.\""
+    <Title>k__BackingField: "P\xE1gina 4"
+    <Description>k__BackingField: 'Thursday, August 31, 1854 I am ready to begin
+      the first step of my great masterpiece. I have ensured that the quality of
+      the salts is of the highest purity possible. I have reviewed the formulas with
+      Gull dozens of times. They are perfect. Only one essential item is missing
+      which, fortunately, we both possess: a vessel of our own blood. Despite my
+      misfortune, I cannot feel more blessed to have provided myself with a family
+      and offspring. Ha! Yes, miser Dwight If he could see me now MWUAHAHA! Bah,
+      he wouldn''t understand the magnitude of what I''m about to start here. LUCKY
+      OLD MAN! I''ll outlive you and outlive you all!'
   - <LocalizationTypes>k__BackingField: 7
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: Page 5
-      <Description>k__BackingField: Mary Anne has abandoned me, taking little Anni
-        with her. The straw that broke the camel's back, according to her, was the
-        experiment I conducted with little Annie. But it was a success! And I took
-        all the care a parent should have, but there was an unexpected side effect
-        and the little one she fell ill with a high fever for a week. She took her
-        to her parents' house but they never came back. The service has also been
-        fired. It doesn't matter. I have experiments to do.
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "P\xE1gina 5"
-      <Description>k__BackingField: "Mary Anne me ha abandonado, llev\xE1ndose a
-        la peque\xF1a Anni con ella. La gota que colm\xF3 el vaso, seg\xFAn ella,
-        fue el experimento que conduje con la peque\xF1a Annie. \xA1Pero si fue un
-        \xE9xito! \xA1Y puse todo el cuidado que un padre debiera tener, pero hubo
-        un efecto secudario no esperado y la peque\xF1a cay\xF3 enferma con fiebres
-        altas durante una semana. Se la llev\xF3 a casa de sus padres pero ya no
-        volvieron jam\xE1s. El servicio tambi\xE9n se ha despedido. No importa. Tengo
-        experimentos que hacer."
+    <Title>k__BackingField: "P\xE1gina 5"
+    <Description>k__BackingField: (undated) Mary Anne has abandoned me, taking little
+      Anni with her. It is true that our relationship has grown apart in recent years
+      after so much misfortune, and that I have been more distant than the sacred
+      duty of the marriage recommends. I have not been a devoted husband, still harboring
+      a grudge that he could not give me more children. The last straw, according
+      to her, was the experiment I conducted on little Annie. But it was a success!
+      And I took all the care a father should have! But there was an unexpected side
+      effect and the little girl fell ill with a high fever for a week. She was taken
+      to her parents' house to recover, and a week later she returned with her daughter's
+      carriage. father to pick up his things and they never came back. The service
+      has also fired, claiming that they can no longer bear the noise and the smell
+      emanating from the basement. It doesn't matter. I have experiments to do, formulations
+      to calculate, and the fact that I don't have someone no one here makes it more
+      conducive to the next phases that Gull and I have planned.
   - <LocalizationTypes>k__BackingField: 8
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: Page 6
-      <Description>k__BackingField: '"Friday, November 9, 1888 After the abandonment
-        of Mary Anne, I was for a time very lost. I wandered through the halls of
-        the mansion devoid of human warmth, howling loudly, drowned in drink, and
-        with visions of ghosts that were not there. there. W.W.Gull rescued me. That
-        same day we performed the transposition of the soul in the bottles. The process
-        could not have been more exhausting, after which we stayed in bed for more
-        than three days. The bottles are beautiful, I could be looking at their glow
-        and warmth for hours."'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "P\xE1gina 6"
-      <Description>k__BackingField: "\"Viernes, 9 de noviembre de 1888  Tras el abandono
-        de Mary Anne, durante un tiempo estuve muy perdido. Vagu\xE9 por los pasillos
-        de la mansi\xF3n vac\xEDa de calor humano,vociferando grandes gritos, ahogado
-        en la bebida y con visiones de fantasmas que no estaban ah\xED.  W.W.Gull
-        me rescat\xF3. Ese mismo d\xEDa hemos realizado la transposici\xF3n del alma
-        en las botellas. El proceso no pudo ser m\xE1s agotador, tras el cual permanecimos
-        en cama durante m\xE1s de tres d\xEDas.  Las botellas son preciosas, pod\xEDa
-        estar mirando su resplandor y calidez durante horas.\""
+    <Title>k__BackingField: "P\xE1gina 6"
+    <Description>k__BackingField: 'Friday, November 9, 1888 After the abandonment
+      of Mary Anne, I was for a time very lost. I wandered through the corridors
+      of the mansion devoid of human warmth, howling loudly, drowning in drink, and
+      with visions of ghosts that did not they were there. W.W.Gull rescued me, but
+      not because he held me in high esteem, he still needed me for his own plans...
+      he told me so himself, and looking into my soul, he uncovered all my pathos
+      to take pity on me: he would allow me to take this trip with him. That same
+      day we did the transposition of the soul into the bottles. The process could
+      not have been more exhausting, after which we stayed in bed for more than three
+      days. The bottles are beautiful, and I could spend hours looking at their brilliance
+      and warmth. On the other hand, the bottle of Gull produced an inexplicable
+      revulsion in me, and left me with a sensation of terrifying cold. From that
+      moment, Gull and I embarked on a journey of power and pleasure, seeking the
+      most extreme that e he world could offer, to test the limits of our newly acquired
+      power. The process was a complete success and I have to say shamelessly, yes:
+      I have enjoyed the whole process. Thus ends an important stage after years
+      of experiments and research. But there is still one last stage to complete:
+      the most important.'
   - <LocalizationTypes>k__BackingField: 9
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: Page 7
-      <Description>k__BackingField: '"Sunday, December 31, 1899 My dear descendants.
-        If you have come this far, it is because you are worthy heir of your name.
-        I write to you through time. The science of salts has avoided the damnation
-        of my soul, at least for a while. time, but the corruption of my body has
-        been inevitable! I deeply regret the life I have led. I deeply regret taking
-        my dear Mary Anne and little Anni away from me. This is why I need your help.
-        Break the bottle to free me so that I can rest! Come to me! Your dear great-great-grandfather...
-        Signed. Albert Sickert"'
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: "P\xE1gina 7"
-      <Description>k__BackingField: "\"domingo, 31 de diciembre de 1899  Mi querida
-        descendencia.  Si has llegado hasta aqu\xED es que eres digno heredero de
-        tu nombre. Te escribo a trav\xE9s del tiempo.  La ciencia de las sales ha
-        evitado la condenaci\xF3n de mi alma, al menos durante un tiempo, pero \xA1la
-        corrupci\xF3n de mi cuerpo ha sido inevitable!  Me arrepiento profundamente
-        de la vida que he llevado. Me arrepiento profundamente de haber alejado de
-        mi a mis queridas Mary Anne y la peque\xF1a Anni. Es por esto que necesito
-        tu ayuda. \xA1R\xF3mpe la botella para liberarme y que pueda descansar! 
-        \xA1Ven a mi! Tu querido tatarabuelo...  Fdo. Albert Sickert\""
+    <Title>k__BackingField: "P\xE1gina 7"
+    <Description>k__BackingField: Sunday, December 31, 1899 My dear offspring. If
+      you have come this far, it is because you are worthy heir to your name. Even
+      if my dearest Anne disowned me while retaining her maiden name, you should
+      know that in the depths of your soul you carry the seed of your true ancestor.
+      I write to you through time. After mastering the science of soul salts, I walked
+      with the worst of companies, in the worst possible adventures, in the greatest
+      dangers; thinking that I had avoided damnation of my soul, but in the process,
+      it has become duller than I expected and has not only doomed me, but the corruption
+      of my body has finally been inevitable, and indeed imminent! The end is near
+      and though the bottle binds me here, I fear I have damned my mortal soul for
+      all eternity. I am deeply sorry for the life I have led. I am deeply sorry
+      that I took my dear Mary Anne and little Anni away from me. I do not hope understanding,
+      or redemption, I know they are not possible, but I cannot spend all eternity
+      without seeing my family again. This is why I need your help. The sealed bottle
+      that you see before you must still shine with the brilliance of the salts.
+      The formula has been prepared to compensate for the sins of my soul during
+      these 100 years. Break it to set me free so I can rest! Come to me! Your dear
+      great-grandfather...
   - <LocalizationTypes>k__BackingField: 10
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Anciano
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 11
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Familia Albert
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 12
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Tocha
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 13
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Madre Sola
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 14
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Masion
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 15
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Nina Sola
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 22
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Play
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Jugar
+    <Title>k__BackingField: 
+    <Description>k__BackingField: Play
   - <LocalizationTypes>k__BackingField: 23
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Credits
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: "Cr\xE9ditos"
+    <Title>k__BackingField: 
+    <Description>k__BackingField: Credits
   - <LocalizationTypes>k__BackingField: 24
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Exit
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Salir
+    <Title>k__BackingField: 
+    <Description>k__BackingField: Close
   - <LocalizationTypes>k__BackingField: 26
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Concept Artist/2D
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Artista conceptual/2D
+    <Title>k__BackingField: Concept Artist/2D
+    <Description>k__BackingField: Concept/2D artist
   - <LocalizationTypes>k__BackingField: 27
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: 3D artist/modeling
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Artista 3D/modelado
+    <Title>k__BackingField: 3D artist/modeling
+    <Description>k__BackingField: 3D/modeling artist
   - <LocalizationTypes>k__BackingField: 28
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Programming/3D design
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: "Programaci\xF3n/dise\xF1o 3D"
+    <Title>k__BackingField: Programming/3D design
+    <Description>k__BackingField: Programming/3D design
   - <LocalizationTypes>k__BackingField: 29
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Music/sound design
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: "M\xFAsica/dise\xF1o de sonido"
+    <Title>k__BackingField: Music/sound design
+    <Description>k__BackingField: Music/sound design
   - <LocalizationTypes>k__BackingField: 30
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Game design/narrative
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: "Dise\xF1o de juego/narrativa"
+    <Title>k__BackingField: Game design/narrative
+    <Description>k__BackingField: Game design/narrative
   - <LocalizationTypes>k__BackingField: 31
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Close
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Cerrar
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 31
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Close
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: No Sabria que hacer con este frasco
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
   - <LocalizationTypes>k__BackingField: 25
-    <Text>k__BackingField:
-    - <Language>k__BackingField: 1
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Close
-    - <Language>k__BackingField: 2
-      <Tittle>k__BackingField: 
-      <Description>k__BackingField: Tambien he encontrado estac curiosa llave, creo
-        que puedo abrir el sotano con ella.
+    <Title>k__BackingField: 
+    <Description>k__BackingField: 
