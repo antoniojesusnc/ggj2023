@@ -117,25 +117,25 @@ public class MiniGameManager : MonoBehaviour
         if (_leftMovement)
         {
             _mousePoint.transform.position +=
-                Vector3.left * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+                Vector3.left * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
         }
 
         if (_rightMovement)
         {
             _mousePoint.transform.position +=
-                Vector3.right * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+                Vector3.right * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
         }
 
         if (_upMovement)
         {
             _mousePoint.transform.position +=
-                Vector3.up * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+                Vector3.up * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
         }
 
         if (_downMovement)
         {
             _mousePoint.transform.position +=
-                Vector3.down * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x);
+                Vector3.down * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
         }
     }
 
