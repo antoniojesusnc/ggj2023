@@ -134,8 +134,8 @@ namespace Character
 			_animator.SetBool("isWalkingForward", IsWalkingForward());
 			_animator.SetBool("isWalkingBackwards", IsWalkingBackwards());
 			_animator.SetBool("isRunning", IsRunning());
-			_animator.SetBool("isRotatingLeft", !IsMoving() && IsRotatingLeft());
-			_animator.SetBool("isRotatingRight", !IsMoving() && IsRotatingRight());
+			_animator.SetBool("isRotatingLeft", IsRotatingLeft());
+			_animator.SetBool("isRotatingRight", IsRotatingRight());
 		}
 
 		/// <summary>
