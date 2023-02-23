@@ -114,28 +114,26 @@ public class MiniGameManager : MonoBehaviour
 
     private void MoveMouseInput()
     {
-        if (_leftMovement)
+        var displacement = _mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime;
+
+		if (_leftMovement)
         {
-            _mousePoint.transform.position +=
-                Vector3.left * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
+            _mousePoint.transform.position += Vector3.left * displacement;
         }
 
         if (_rightMovement)
         {
-            _mousePoint.transform.position +=
-                Vector3.right * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
+            _mousePoint.transform.position += Vector3.right * displacement;
         }
 
         if (_upMovement)
         {
-            _mousePoint.transform.position +=
-                Vector3.up * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
+            _mousePoint.transform.position += Vector3.up * displacement;
         }
 
         if (_downMovement)
         {
-            _mousePoint.transform.position +=
-                Vector3.down * (_mousePointConfig.Speed * _mousePoint.transform.lossyScale.x * Time.deltaTime);
+            _mousePoint.transform.position += Vector3.down * displacement;
         }
     }
 
